@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvpkbofikuto7"]
+
+[ext_resource type="PackedScene" uid="uid://cr6dsgdnij4aw" path="res://spaceship_raider_class__pathfinder.glb" id="1_khimf"]
+
+[node name="plane" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_khimf")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)

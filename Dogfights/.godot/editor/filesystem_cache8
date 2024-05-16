@@ -1,0 +1,24 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715875025
+low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1706577200::1706577200::1::::<><>::
+low-poly_spaceship_2.glb::PackedScene::5760941788468181398::1706577200::1706577201::1::::<><>::
+plane.tscn::PackedScene::6278382449245927752::1706577430::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb
+spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1706575992::1706575993::1::::<><>::
+::res://models/::1706575712
+AXWing.gltf::PackedScene::3732702150925200996::1706575691::1706575712::1::::<><>::
+::res://scenes/::1706577502
+root.tscn::PackedScene::7503707919441512012::1706577502::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
+::res://scripts/::1706577430
+math_lib.gd::GDScript::-1::1706575691::0::1::::MathLib<>Node<>::
+move_along_object_forward.gd::GDScript::-1::1706575691::0::1::::MoveAlongObjectForward<>Node3D<>::
+player_flight_controller.gd::GDScript::-1::1706577430::0::1::::PlayerFlightController<>Node3D<>::
+reticle.gd::GDScript::-1::1706575691::0::1::::Reticle<>Control<>::
+smooth_follow.gd::GDScript::-1::1706575691::0::1::::SmoothFollow<>Node3D<>::
+::res://textures/::1706577248
+low-poly_spaceship (1)_0.png::CompressedTexture2D::631235923011754163::1706577200::1706577238::1::::<><>::
+low-poly_spaceship (1)_1.png::CompressedTexture2D::2632320726997620480::1706577200::1706577241::1::::<><>::
+low-poly_spaceship (1)_2.png::CompressedTexture2D::3261304874718072689::1706577200::1706577242::1::::<><>::
+low-poly_spaceship_2_0.png::CompressedTexture2D::7121746013261314298::1706577201::1706577248::1::::<><>::
+low-poly_spaceship_2_1.png::CompressedTexture2D::7008675664734254550::1706577201::1706577244::1::::<><>::
+low-poly_spaceship_2_2.png::CompressedTexture2D::6215132828627630821::1706577201::1706577246::1::::<><>::
+SolAsteroidBeltHDRI.png::CompressedTexture2D::454380413326955207::1706575691::1706575715::1::::<><>::
