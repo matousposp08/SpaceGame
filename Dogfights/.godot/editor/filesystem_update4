@@ -1,2 +1,2 @@
 res://scenes/root.tscn
-res://plane.tscn
+res://scripts/player_flight_controller.gd
