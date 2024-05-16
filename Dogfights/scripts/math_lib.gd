@@ -1,7 +1,7 @@
 class_name MathLib
 extends Node
 
-# Source: https://gist.github.com/johnsoncodehk/2ecb0136304d4badbb92bd0c1dbd8bae
+
 static func clamp_angle(angle:float, min:float, max:float) -> float:
 	var start:float = (min + max) * 0.5 - 180
 	var floorVal:float = floori((angle - start) / 360) * 360

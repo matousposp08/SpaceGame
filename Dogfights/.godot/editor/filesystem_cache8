@@ -1,17 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715901996
+::res://::1715902127
 low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1706577200::1706577200::1::::<><>::
 low-poly_spaceship_2.glb::PackedScene::5760941788468181398::1706577200::1706577201::1::::<><>::
-plane.tscn::PackedScene::6278382449245927752::1715875037::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb
+plane.tscn::PackedScene::6278382449245927752::1715902042::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb
 spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1706575992::1706575993::1::::<><>::
 ::res://models/::1706575712
 AXWing.gltf::PackedScene::3732702150925200996::1706575691::1706575712::1::::<><>::
-::res://scenes/::1715875036
-root.tscn::PackedScene::7503707919441512012::1715875036::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
-::res://scripts/::1706577430
+::res://scenes/::1715902042
+root.tscn::PackedScene::7503707919441512012::1715902042::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
+::res://scripts/::1715902010
 math_lib.gd::GDScript::-1::1706575691::0::1::::MathLib<>Node<>::
 move_along_object_forward.gd::GDScript::-1::1706575691::0::1::::MoveAlongObjectForward<>Node3D<>::
-player_flight_controller.gd::GDScript::-1::1706577430::0::1::::PlayerFlightController<>Node3D<>::
+player_flight_controller.gd::GDScript::-1::1715902010::0::1::::PlayerFlightController<>Node3D<>::
 reticle.gd::GDScript::-1::1706575691::0::1::::Reticle<>Control<>::
 smooth_follow.gd::GDScript::-1::1706575691::0::1::::SmoothFollow<>Node3D<>::
 ::res://textures/::1706577248
