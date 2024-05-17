@@ -1,24 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715902127
+::res://::1715971679
 low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1706577200::1706577200::1::::<><>::
 low-poly_spaceship_2.glb::PackedScene::5760941788468181398::1706577200::1706577201::1::::<><>::
-plane.tscn::PackedScene::6278382449245927752::1715902042::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb
+malabar_medium_transport.glb::PackedScene::6586575797066942261::1715971673::1715971679::1::::<><>::uid://dnieu5acxnuey::::res://malabar_medium_transport_0.png<>uid://bmedi4yfnkupv::::res://malabar_medium_transport_3.png
+plane.tscn::PackedScene::6278382449245927752::1715971662::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb
+malabar_medium_transport_0.png::CompressedTexture2D::8088512200078011272::1715971673::1715971682::1::::<><>::
+malabar_medium_transport_1.png::CompressedTexture2D::8265976698262725870::1715971673::1715971682::1::::<><>::
+malabar_medium_transport_2.png::CompressedTexture2D::6303902982689191276::1715971676::1715971679::1::::<><>::
+malabar_medium_transport_3.png::CompressedTexture2D::3237142316192693667::1715971676::1715971682::1::::<><>::
 spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1706575992::1706575993::1::::<><>::
 ::res://models/::1706575712
 AXWing.gltf::PackedScene::3732702150925200996::1706575691::1706575712::1::::<><>::
-::res://scenes/::1715902042
-root.tscn::PackedScene::7503707919441512012::1715902042::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
-::res://scripts/::1715902010
-math_lib.gd::GDScript::-1::1706575691::0::1::::MathLib<>Node<>::
+::res://scenes/::1715902140
+root.tscn::PackedScene::7503707919441512012::1715902140::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
+::res://scripts/::1715902141
+math_lib.gd::GDScript::-1::1715902141::0::1::::MathLib<>Node<>::
 move_along_object_forward.gd::GDScript::-1::1706575691::0::1::::MoveAlongObjectForward<>Node3D<>::
 player_flight_controller.gd::GDScript::-1::1715902010::0::1::::PlayerFlightController<>Node3D<>::
 reticle.gd::GDScript::-1::1706575691::0::1::::Reticle<>Control<>::
 smooth_follow.gd::GDScript::-1::1706575691::0::1::::SmoothFollow<>Node3D<>::
-::res://textures/::1706577248
+::res://textures/::1715971602
 low-poly_spaceship (1)_0.png::CompressedTexture2D::631235923011754163::1706577200::1706577238::1::::<><>::
 low-poly_spaceship (1)_1.png::CompressedTexture2D::2632320726997620480::1706577200::1706577241::1::::<><>::
 low-poly_spaceship (1)_2.png::CompressedTexture2D::3261304874718072689::1706577200::1706577242::1::::<><>::
 low-poly_spaceship_2_0.png::CompressedTexture2D::7121746013261314298::1706577201::1706577248::1::::<><>::
 low-poly_spaceship_2_1.png::CompressedTexture2D::7008675664734254550::1706577201::1706577244::1::::<><>::
 low-poly_spaceship_2_2.png::CompressedTexture2D::6215132828627630821::1706577201::1706577246::1::::<><>::
+malabar_medium_transport.glb::PackedScene::6631463928581932727::1715971595::1715971602::1::::<><>::uid://cqj0sv8djulno::::res://textures/malabar_medium_transport_0.png<>uid://bntfvv40upygn::::res://textures/malabar_medium_transport_3.png
+malabar_medium_transport_0.png::CompressedTexture2D::5915993488608739268::1715971596::1715971602::1::::<><>::
+malabar_medium_transport_1.png::CompressedTexture2D::8802663470980410182::1715971596::1715971598::1::::<><>::
+malabar_medium_transport_2.png::CompressedTexture2D::5282708421714103674::1715971598::1715971599::1::::<><>::
+malabar_medium_transport_3.png::CompressedTexture2D::3338441063903403857::1715971599::1715971602::1::::<><>::
 SolAsteroidBeltHDRI.png::CompressedTexture2D::454380413326955207::1706575691::1706575715::1::::<><>::

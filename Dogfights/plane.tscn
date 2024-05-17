@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvpkbofikuto7"]
+[gd_scene load_steps=3 format=3 uid="uid://cvpkbofikuto7"]
 
 [ext_resource type="PackedScene" uid="uid://cr6dsgdnij4aw" path="res://spaceship_raider_class__pathfinder.glb" id="1_khimf"]
+[ext_resource type="PackedScene" uid="uid://c03t684xu05tp" path="res://malabar_medium_transport.glb" id="2_lr50e"]
 
 [node name="plane" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_khimf")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("2_lr50e")]
+transform = Transform3D(-0.0299644, 0, 0.00146131, 0, 0.03, 0, -0.00146131, 0, -0.0299644, 0, 0, 0)
