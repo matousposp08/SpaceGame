@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceghakcn3j0oh"]
+
+[ext_resource type="Script" path="res://scripts/move_along_object_forward.gd" id="1_64qxn"]
+[ext_resource type="Script" path="res://scripts/player_flight_controller.gd" id="2_yy657"]
+[ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="3_ghag0"]
+
+[node name="PlayerMovePlane" type="Node3D" node_paths=PackedStringArray("target")]
+script = ExtResource("1_64qxn")
+target = NodePath("")
+speed = 2.0
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("2_yy657")
+
+[node name="AimAt" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="plane" parent="Player" instance=ExtResource("3_ghag0")]
