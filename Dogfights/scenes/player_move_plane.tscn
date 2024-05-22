@@ -4,9 +4,8 @@
 [ext_resource type="Script" path="res://scripts/player_flight_controller.gd" id="2_yy657"]
 [ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="3_ghag0"]
 
-[node name="PlayerMovePlane" type="Node3D" node_paths=PackedStringArray("target")]
+[node name="PlayerMovePlane" type="Node3D"]
 script = ExtResource("1_64qxn")
-target = NodePath("")
 speed = 2.0
 
 [node name="Player" type="Node3D" parent="."]

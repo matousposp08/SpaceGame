@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://de538c62welpc"]
+[gd_scene load_steps=8 format=3 uid="uid://de538c62welpc"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
-[ext_resource type="Script" path="res://scripts/move_along_object_forward.gd" id="2_uqyup"]
-[ext_resource type="Script" path="res://scripts/player_flight_controller.gd" id="3_m6gvb"]
-[ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="4_t81cj"]
+[ext_resource type="PackedScene" uid="uid://ceghakcn3j0oh" path="res://scenes/player_move_plane.tscn" id="2_twbn6"]
 [ext_resource type="Script" path="res://scripts/smooth_follow.gd" id="5_b133x"]
 [ext_resource type="Script" path="res://scripts/reticle.gd" id="6_pof7r"]
 
@@ -30,23 +28,11 @@ transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
 environment = SubResource("Environment_x4t8m")
 
-[node name="PlayerMovePlane" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("2_uqyup")
-target = NodePath("Player")
-speed = 2.0
+[node name="PlayerMovePlane" parent="." instance=ExtResource("2_twbn6")]
 
-[node name="Player" type="Node3D" parent="PlayerMovePlane"]
-script = ExtResource("3_m6gvb")
-
-[node name="AimAt" type="Node3D" parent="PlayerMovePlane/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-
-[node name="plane" parent="PlayerMovePlane/Player" instance=ExtResource("4_t81cj")]
-
-[node name="PlayerFollower" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+[node name="PlayerFollower" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("5_b133x")
-target = NodePath("../PlayerMovePlane")
 distance = 2.0
 height = 0.75
 rotation_damping = 3.25
@@ -56,7 +42,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Reticle" type="Control" parent="HUD" node_paths=PackedStringArray("aim_at_object")]
+[node name="Reticle" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +52,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_pof7r")
-aim_at_object = NodePath("../../PlayerMovePlane/Player/AimAt")
 
 [node name="Label" type="Label" parent="HUD/Reticle"]
 layout_mode = 1

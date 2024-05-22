@@ -40,6 +40,7 @@ func _process(delta):
 	var speed = clampf(_movement_plane.speed + (speed_delta * delta), brake_speed, boost_speed);
 	_movement_plane.speed = speed;
 	_rotation_look(horizontal, vertical, delta)
+	
 
 
 
