@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c03t684xu05tp"
-path="res://.godot/imported/malabar_medium_transport.glb-7ca80eb43106cbe746d44c2d4bfbe1b5.scn"
+uid="uid://c1cr4oe3ogjmk"
+path="res://.godot/imported/low-poly_spaceship (1).glb-4fb314b9666457f775671d2c53ebd6ce.scn"
 
 [deps]
 
-source_file="res://malabar_medium_transport.glb"
-dest_files=["res://.godot/imported/malabar_medium_transport.glb-7ca80eb43106cbe746d44c2d4bfbe1b5.scn"]
+source_file="res://models/low-poly_spaceship (1).glb"
+dest_files=["res://.godot/imported/low-poly_spaceship (1).glb-4fb314b9666457f775671d2c53ebd6ce.scn"]
 
 [params]
 

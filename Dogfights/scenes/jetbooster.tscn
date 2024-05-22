@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg6in1plthqfc"]
+
+[ext_resource type="Texture2D" uid="uid://cped5ifdu15tk" path="res://textures/light_01.png" id="1_le2ms"]
+
+[node name="jetbooster" type="CPUParticles2D"]
+texture = ExtResource("1_le2ms")
+direction = Vector2(0, 0)
+spread = 88.64
+gravity = Vector2(0, 0)
+initial_velocity_min = 171.72
+initial_velocity_max = 202.02
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0

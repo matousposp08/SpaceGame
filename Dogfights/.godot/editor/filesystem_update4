@@ -1,2 +1,5 @@
-res://plane.tscn
 res://scenes/root.tscn
+res://plane.tscn
+res://jetbooster.tscn
+res://scripts/smooth_follow.gd
+res://menu.tscn

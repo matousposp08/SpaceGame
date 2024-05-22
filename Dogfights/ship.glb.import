@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1cr4oe3ogjmk"
-path="res://.godot/imported/low-poly_spaceship (1).glb-fcba362e9c3b8753f123fdba237eeda7.scn"
+uid="uid://6vf4hbcww1sg"
+path="res://.godot/imported/ship.glb-542d3b03a0c39a8290962ca3ba3eb7c3.scn"
 
 [deps]
 
-source_file="res://low-poly_spaceship (1).glb"
-dest_files=["res://.godot/imported/low-poly_spaceship (1).glb-fcba362e9c3b8753f123fdba237eeda7.scn"]
+source_file="res://ship.glb"
+dest_files=["res://.godot/imported/ship.glb-542d3b03a0c39a8290962ca3ba3eb7c3.scn"]
 
 [params]
 
