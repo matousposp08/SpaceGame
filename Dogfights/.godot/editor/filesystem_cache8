@@ -1,13 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716339068
-menu.tscn::PackedScene::1509004501112673603::1716338828::0::1::::<><>::
-plane.tscn::PackedScene::6278382449245927752::1716338771::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb<>uid://6vf4hbcww1sg::::res://ship.glb
-vr_metaverse_spaceship_interior_10_2.png::CompressedTexture2D::4447517308274910899::1716339068::1716339069::1::::<><>::
-vr_metaverse_spaceship_interior_10_1.png::CompressedTexture2D::1199539338030976118::1716339068::1716339069::1::::<><>::
-vr_metaverse_spaceship_interior_10_0.png::CompressedTexture2D::6806201984195785715::1716339068::1716339069::1::::<><>::
+::res://::1716398006
+GlacialIndifference-Regular.otf::FontFile::2391591754145954000::1716396395::1716396395::1::::<><>::
+menu.tscn::PackedScene::1509004501112673603::1716397663::0::1::::<><>::
+plane.tscn::PackedScene::6278382449245927752::1716397663::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb<>uid://6vf4hbcww1sg::::res://ship.glb
+room.glb::PackedScene::9180994081963386477::1716398006::1716398007::1::::<><>::
 ship.glb::PackedScene::2219561827930754530::1716337779::1716337780::1::::<><>::
 spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1706575992::1706575993::1::::<><>::
-vr_metaverse_spaceship_interior_10.glb::::-1::1716339067::1716339068::0::::<><>::
 ::res://models/::1716337732
 AXWing.gltf::PackedScene::3732702150925200996::1706575691::1706575712::1::::<><>::
 low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1706577200::1716337721::1::::<><>::uid://c0pk3xlyloy4::::res://models/low-poly_spaceship (1)_0.png<>uid://bbx06vg2ea058::::res://models/low-poly_spaceship (1)_1.png<>uid://hs72g3gnncbf::::res://models/low-poly_spaceship (1)_2.png
@@ -23,9 +21,10 @@ malabar_medium_transport_0.png::CompressedTexture2D::62367045414563415::17163377
 malabar_medium_transport_1.png::CompressedTexture2D::7098991500527966458::1716337726::1716337728::1::::<><>::
 malabar_medium_transport_2.png::CompressedTexture2D::7182221439220321755::1716337728::1716337728::1::::<><>::
 malabar_medium_transport_3.png::CompressedTexture2D::4172881306162800489::1716337729::1716337732::1::::<><>::
-::res://scenes/::1716338827
+::res://scenes/::1716397663
 jetbooster.tscn::PackedScene::2872059796464687604::1716338827::0::1::::<><>::uid://cped5ifdu15tk::::res://textures/light_01.png
-root.tscn::PackedScene::7503707919441512012::1716338771::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
+plane_ui.tscn::PackedScene::3327432676318704722::1716397663::0::1::::<><>::uid://bacrfw16ijp8k::::res://GlacialIndifference-Regular.otf
+root.tscn::PackedScene::7503707919441512012::1716397663::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn<>res://scripts/smooth_follow.gd<>res://scripts/reticle.gd
 ::res://scripts/::1716338522
 math_lib.gd::GDScript::-1::1715902141::0::1::::MathLib<>Node<>::
 move_along_object_forward.gd::GDScript::-1::1706575691::0::1::::MoveAlongObjectForward<>Node3D<>::

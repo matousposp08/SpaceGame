@@ -10,12 +10,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
 panorama = ExtResource("1_31hwd")
 
-[sub_resource type="Sky" id="Sky_ykfqd"]
+[sub_resource type="Sky" id="Sky_f8kay"]
 sky_material = SubResource("PanoramaSkyMaterial_hi0hg")
 
 [sub_resource type="Environment" id="Environment_x4t8m"]
 background_mode = 2
-sky = SubResource("Sky_ykfqd")
+sky = SubResource("Sky_f8kay")
 
 [node name="root" type="Node3D"]
 
