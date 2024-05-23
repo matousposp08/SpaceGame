@@ -7,7 +7,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kkqu5"]
 
-[node name="plane" type="CharacterBody3D"]
+[node name="ship" type="CharacterBody3D"]
 script = ExtResource("1_6vsd0")
 
 [node name="ship" parent="." instance=ExtResource("2_glmua")]
