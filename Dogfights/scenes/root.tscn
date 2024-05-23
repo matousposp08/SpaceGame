@@ -19,7 +19,7 @@ sky = SubResource("Sky_f8kay")
 [node name="Scenery" type="Node3D" parent="."]
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, 5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
 transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
@@ -57,5 +57,5 @@ text = ">   <"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="plane" parent="." instance=ExtResource("3_nsaci")]
+[node name="ship" parent="." instance=ExtResource("3_nsaci")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
