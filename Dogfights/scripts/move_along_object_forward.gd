@@ -1,6 +1,8 @@
 class_name MoveAlongObjectForward
 extends Node3D
 
+var LASER : PackedScene = preload('res://scenes/laser.tscn')
+
 @export var target:Node3D
 @export var local_space:bool = false
 @export var speed:float = 6.0
@@ -24,3 +26,10 @@ func _process(delta):
 		else:
 			forward = target.transform.basis.z
 		global_translate((forward * speed) * delta)
+
+func laser(pos, bas):
+	var instance = LASER.instantiate()
+	instance.position = pos
+	instance.transform.basis = bas
+	print(str(position) + " " + str(instance.position))
+	get_parent().add_child(instance)

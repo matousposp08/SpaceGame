@@ -29,6 +29,7 @@ transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.
 environment = SubResource("Environment_x4t8m")
 
 [node name="PlayerMovePlane" parent="." instance=ExtResource("2_twbn6")]
+local_space = false
 
 [node name="PlayerFollower" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
