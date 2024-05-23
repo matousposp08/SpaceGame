@@ -11,7 +11,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var pos = aim_at_object.global_position
-	var cam = get_tree().root.get_camera_3d()
-	var screenPos = cam.unproject_position(pos)
-	global_position = screenPos
+	pass
+	#var pos = aim_at_object.global_position
+	#var cam = get_tree().root.get_camera_3d()
+	#var screenPos = cam.unproject_position(pos)
+	#global_position = screenPos

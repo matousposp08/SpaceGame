@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b443ceba685uv"]
+
+[ext_resource type="Script" path="res://scripts/plane.gd" id="1_6vsd0"]
+[ext_resource type="PackedScene" uid="uid://6vf4hbcww1sg" path="res://ship.glb" id="2_glmua"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yc67g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkqu5"]
+
+[node name="plane" type="CharacterBody3D"]
+script = ExtResource("1_6vsd0")
+
+[node name="ship" parent="." instance=ExtResource("2_glmua")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_yc67g")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_kkqu5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.44053e-16, 8.74228e-08, 2.71123e-08, 0.950695, 0.310129, -8.31124e-08, 0.310129, -0.950695, 2.08165e-12, 10, -36.1968)

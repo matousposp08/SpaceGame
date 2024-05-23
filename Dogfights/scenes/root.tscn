@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://de538c62welpc"]
+[gd_scene load_steps=7 format=3 uid="uid://de538c62welpc"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
-[ext_resource type="PackedScene" uid="uid://ceghakcn3j0oh" path="res://scenes/player_move_plane.tscn" id="2_twbn6"]
-[ext_resource type="Script" path="res://scripts/smooth_follow.gd" id="5_b133x"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
 [ext_resource type="Script" path="res://scripts/reticle.gd" id="6_pof7r"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
@@ -27,19 +26,6 @@ transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
 environment = SubResource("Environment_x4t8m")
-
-[node name="PlayerMovePlane" parent="." instance=ExtResource("2_twbn6")]
-local_space = false
-
-[node name="PlayerFollower" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("5_b133x")
-distance = 2.0
-height = 0.75
-rotation_damping = 3.25
-
-[node name="Camera3D" type="Camera3D" parent="PlayerFollower"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -70,3 +56,6 @@ grow_vertical = 2
 text = ">   <"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="plane" parent="." instance=ExtResource("3_nsaci")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
