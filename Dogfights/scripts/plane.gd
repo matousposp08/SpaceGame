@@ -58,9 +58,11 @@ func _physics_process(delta):
 		if (yvel < 0) :
 			yvel += 0.05
 	
-	print(input_dir)
+	
+	print(rotation_degrees)
 	rotation_degrees.y += xvel
-	rotation_degrees.x += yvel
+	rotation_degrees.x -= yvel
+	
 	if (Input.is_action_just_pressed("shoot")) :
 		laser(position, transform.basis)
 	
