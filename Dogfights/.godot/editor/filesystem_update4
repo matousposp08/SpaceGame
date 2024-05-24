@@ -1,9 +1,7 @@
-res://scripts/plane.gd
 res://scenes/root.tscn
-res://plane.tscn
 res://menu.tscn
 res://scenes/plane_ui.tscn
 res://scenes/player_move_plane.tscn
 res://scenes/laser.tscn
 res://scenes/ship.tscn
-res://scripts/reticle.gd
+res://plane.tscn
