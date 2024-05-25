@@ -28,8 +28,11 @@ func _physics_process(delta):
 	#var direction = (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	if (Input.is_action_pressed("boost")) :
 		SPEED = -8
+	elif Input.is_action_pressed("brake"):
+		SPEED = -2
 	else :
-		SPEED = -3
+		SPEED = -5
+	
 	
 	if input_dir.x < 0:
 		xvel -= 0.1

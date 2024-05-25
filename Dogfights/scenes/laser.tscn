@@ -7,6 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ohbds"]
 
 [node name="laser" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_haix8")
 
 [node name="Area3D" type="Area3D" parent="."]
