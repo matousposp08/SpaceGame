@@ -8,3 +8,4 @@ res://scenes/npc.tscn
 res://scenes/ship.tscn
 res://scenes/plaine_ui.tscn
 res://scenes/root.tscn
+res://scripts/plane.gd

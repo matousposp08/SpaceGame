@@ -1,4 +1,7 @@
+MultiplayerSynchronizer
 Node
+Node3D
+MultiplayerSpawner
 LineEdit
 Button
 Label
@@ -10,5 +13,3 @@ ColorRect
 CanvasLayer
 ProgressBar
 Node2D
-Marker3D
-CollisionShape3D

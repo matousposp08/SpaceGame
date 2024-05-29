@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 var SPEED = -3
 const JUMP_VELOCITY = 4.5
 var xvel = 0
@@ -12,10 +11,18 @@ var LASER : PackedScene = preload('res://scenes/laser.tscn')
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@onready var camera = $Camera3D
+
+func _enter_tree():
+	set_multiplayer_authority(str(name).to_int())
+
 func _ready():
+	if not is_multiplayer_authority(): return
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	camera.current = true
 
 func _physics_process(delta):
+	if not is_multiplayer_authority(): return
 	# Add the gravity.
 	#if not is_on_floor():
 	#	velocity.y -= gravity * delta
@@ -86,6 +93,7 @@ var mouse_sens = 0.002
 var camera_anglev=0
 
 func _input(event):  
+	if not is_multiplayer_authority(): return
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)		
 	if event is InputEventMouseMotion:
@@ -96,6 +104,7 @@ func _input(event):
 			rotate_x(changev)
 
 func reverse():
+	if not is_multiplayer_authority(): return
 	if rev < 1: 
 		rev = 60
 	else:
@@ -104,6 +113,7 @@ func reverse():
 		rev -= 1
 
 func laser(pos, bas):
+	if not is_multiplayer_authority(): return
 	var instance = LASER.instantiate()
 	instance.position = pos
 	instance.transform.basis = bas
