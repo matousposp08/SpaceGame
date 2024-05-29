@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3u4jhemhepbr"]
+[gd_scene load_steps=7 format=3 uid="uid://b3u4jhemhepbr"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_yfje4"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
@@ -14,6 +15,7 @@ background_mode = 2
 sky = SubResource("Sky_hu7nf")
 
 [node name="root" type="Node3D"]
+script = ExtResource("1_yfje4")
 
 [node name="Scenery" type="Node3D" parent="."]
 
