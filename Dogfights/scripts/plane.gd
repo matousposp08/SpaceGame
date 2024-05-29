@@ -15,15 +15,16 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
-	var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
-	if(username != ""):
-		if not is_multiplayer_authority(): return
-		$Username.text = username
-		$Username.billboard = true
-	else:
-		if not is_multiplayer_authority(): return
-		$Username.text = "guest"+str(get_parent().ps)
-		$Username.billboard = true
+	# ONLY WORKS IF IT'S RAN IN THE WORLD.TSCN INSTEAD OF ROOT.TSCN
+	#var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
+	#if(username != ""):
+		#if not is_multiplayer_authority(): return
+		#$Username.text = username
+		#$Username.billboard = true
+	#else:
+		#if not is_multiplayer_authority(): return
+		#$Username.text = "guest"+str(get_parent().ps)
+		#$Username.billboard = true
 
 func _ready():
 	if not is_multiplayer_authority(): return
