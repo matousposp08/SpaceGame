@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://0ubrptxw8rb5"]
+
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_55m06"]
+[ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://GlacialIndifference-Regular.otf" id="1_i3q8u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05gb3"]
+bg_color = Color(0.243137, 0.254902, 0.584314, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xftfn"]
+bg_color = Color(0.478431, 0.513726, 0.87451, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epdi6"]
+bg_color = Color(0.478431, 0.513726, 0.87451, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_right = 4.0
+
+[node name="lvlselect" type="Node2D"]
+
+[node name="SolAsteroidBeltHdri" type="Sprite2D" parent="."]
+position = Vector2(245, 313)
+scale = Vector2(0.377474, 0.434375)
+texture = ExtResource("1_55m06")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 228.0
+offset_right = 629.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 01"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 278.0
+offset_right = 629.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 02"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 327.0
+offset_right = 629.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 03"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 375.0
+offset_right = 629.0
+offset_bottom = 406.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 04"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 422.0
+offset_right = 629.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 05"

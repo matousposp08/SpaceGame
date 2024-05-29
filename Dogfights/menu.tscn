@@ -58,6 +58,7 @@ transform = Transform3D(-0.928135, 0, 0.372243, 0, 1, 0, -0.372243, 0, -0.928135
 [node name="PlaneUI" parent="." instance=ExtResource("2_0gnub")]
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 56.0
 offset_top = 55.0
 offset_right = 1145.0
@@ -71,6 +72,7 @@ text = "GALACTIC THEFT
 "
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 64.0
 offset_top = 196.0
 offset_right = 627.0
