@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctrxxju7y0exu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4dns"]
+bg_color = Color(0.819608, 0.796078, 0.780392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62com"]
+bg_color = Color(0, 0.964706, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1gka"]
+bg_color = Color(0.819608, 0.796078, 0.780392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux8nf"]
+bg_color = Color(0.486275, 0.784314, 1, 1)
+
+[node name="PLAINE UI" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+
+[node name="ProgressBar" type="ProgressBar" parent="Node2D"]
+offset_left = 36.0
+offset_top = 600.0
+offset_right = 363.0
+offset_bottom = 619.0
+theme_override_styles/background = SubResource("StyleBoxFlat_o4dns")
+theme_override_styles/fill = SubResource("StyleBoxFlat_62com")
+value = 40.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="Node2D"]
+offset_left = 36.0
+offset_top = 580.0
+offset_right = 362.0
+offset_bottom = 592.0
+theme_override_styles/background = SubResource("StyleBoxFlat_n1gka")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ux8nf")
+value = 75.0
+show_percentage = false

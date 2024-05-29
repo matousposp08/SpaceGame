@@ -1,9 +1,11 @@
+ProgressBar
+Node2D
+CanvasLayer
 Marker3D
 CollisionShape3D
 Area3D
 CharacterBody3D
 Label
-CanvasLayer
 Node
 MeshInstance3D
 StaticBody3D
@@ -11,5 +13,3 @@ Node3D
 Camera3D
 DirectionalLight3D
 Button
-OmniLight3D
-CPUParticles2D
