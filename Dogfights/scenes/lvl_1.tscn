@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://nk6qabb2taqa"]
+
+[ext_resource type="Script" path="res://scenes/lvl_1.gd" id="1_i8b6u"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_kgga5"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_fgw7v"]
+[ext_resource type="PackedScene" uid="uid://c740l5vtekp3s" path="res://scenes/npc.tscn" id="3_twgb4"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_br6vi"]
+panorama = ExtResource("1_kgga5")
+
+[sub_resource type="Sky" id="Sky_f8kay"]
+sky_material = SubResource("PanoramaSkyMaterial_br6vi")
+
+[sub_resource type="Environment" id="Environment_8tah0"]
+background_mode = 2
+sky = SubResource("Sky_f8kay")
+
+[node name="tutorial" type="Node3D"]
+script = ExtResource("1_i8b6u")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
+environment = SubResource("Environment_8tah0")
+
+[node name="ship" parent="." instance=ExtResource("2_fgw7v")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="NPC" parent="." instance=ExtResource("3_twgb4")]
+transform = Transform3D(0.140766, 0, -1.99504, 0, 2, 0, 1.99504, 0, 0.140766, 4.89318, 1.1463, 3.39655)

@@ -35,9 +35,9 @@ scale = Vector2(0.377474, 0.434375)
 texture = ExtResource("1_55m06")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 469.0
+offset_left = 474.0
 offset_top = 228.0
-offset_right = 629.0
+offset_right = 634.0
 offset_bottom = 259.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
@@ -47,9 +47,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 01"
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 469.0
+offset_left = 474.0
 offset_top = 278.0
-offset_right = 629.0
+offset_right = 634.0
 offset_bottom = 309.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
@@ -59,9 +59,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 02"
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 469.0
+offset_left = 474.0
 offset_top = 327.0
-offset_right = 629.0
+offset_right = 634.0
 offset_bottom = 358.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
@@ -71,9 +71,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 03"
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 469.0
+offset_left = 475.0
 offset_top = 375.0
-offset_right = 629.0
+offset_right = 635.0
 offset_bottom = 406.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
@@ -83,9 +83,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 04"
 
 [node name="Button5" type="Button" parent="."]
-offset_left = 469.0
+offset_left = 475.0
 offset_top = 422.0
-offset_right = 629.0
+offset_right = 635.0
 offset_bottom = 453.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23

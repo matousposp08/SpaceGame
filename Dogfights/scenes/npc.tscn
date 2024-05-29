@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c740l5vtekp3s"]
+
+[ext_resource type="PackedScene" uid="uid://c0p8rdjafvks5" path="res://low-poly_ship_practice.glb" id="1_mk3jn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajyp0"]
+size = Vector3(2.65515, 1, 1)
+
+[node name="NPC" type="CharacterBody3D"]
+
+[node name="npc1" parent="." instance=ExtResource("1_mk3jn")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0.1, 0)
+shape = SubResource("BoxShape3D_ajyp0")
