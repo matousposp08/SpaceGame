@@ -15,6 +15,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
+	var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
+	if(username != ""):
+		if not is_multiplayer_authority(): return
+		$Username.text = username
+		$Username.billboard = true
+	else:
+		if not is_multiplayer_authority(): return
+		$Username.text = "guest"+str(get_parent().ps)
+		$Username.billboard = true
 
 func _ready():
 	if not is_multiplayer_authority(): return
@@ -119,3 +128,4 @@ func laser(pos, bas):
 	instance.transform.basis = bas
 	print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+		

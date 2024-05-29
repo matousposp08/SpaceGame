@@ -1,8 +1,9 @@
+Label3D
+LineEdit
 MultiplayerSynchronizer
 Node
 Node3D
 MultiplayerSpawner
-LineEdit
 Button
 Label
 VBoxContainer

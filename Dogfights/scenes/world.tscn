@@ -51,6 +51,11 @@ layout_mode = 2
 placeholder_text = "Enter IP"
 alignment = 1
 
+[node name="Username" type="LineEdit" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Username"
+alignment = 1
+
 [node name="Scenery" type="Node3D" parent="."]
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]

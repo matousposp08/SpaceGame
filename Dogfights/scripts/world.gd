@@ -6,6 +6,9 @@ extends Node
 const Player = preload("res://scenes/ship.tscn")
 const PORT = 9999
 var enet_peer = ENetMultiplayerPeer.new()
+
+var ps = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,8 +26,10 @@ func _on_host_pressed():
 	multiplayer.peer_connected.connect(add_player)
 	multiplayer.peer_disconnected.connect(remove_player)
 	add_player(multiplayer.get_unique_id())
+	ps = 1
 
 func _on_join_pressed():
+	ps += 1
 	main_menu.hide()
 	enet_peer.create_client("localhost", PORT)
 	multiplayer.multiplayer_peer = enet_peer
