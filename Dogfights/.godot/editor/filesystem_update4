@@ -1,7 +1,9 @@
-res://scenes/root.tscn
 res://menu.tscn
+res://scenes/root.tscn
 res://scenes/plane_ui.tscn
 res://scenes/player_move_plane.tscn
 res://scenes/laser.tscn
 res://scenes/ship.tscn
 res://plane.tscn
+res://scenes/lvlselect.tscn
+res://scenes/plane_ui.gd
