@@ -66,34 +66,19 @@ func _physics_process(delta):
 	
 	
 	print(rotation_degrees)
-	rotation_degrees.z = 0
-	rotate_y(xvel*0.02)
-	rotate_x(yvel*0.02)
+	#rotation.z = 0
+	if abs(yvel) > 0:
+		$Camera3D.rotation_degrees.x += yvel*0.1
+	if abs(xvel) > 0:
+		$Camera3D.rotation_degrees.y += xvel*0.1
+	
+	rotation_degrees.y += xvel
+	if rotation_degrees.x < 87 or rotation_degrees.x > -87:
+		rotation_degrees.x += yvel
 	if (Input.is_action_just_pressed("shoot")) :
 		laser(position, transform.basis)
 	
 	move_and_slide()
-
-#func _input(event):
-#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#	if event is InputEventMouseMotion:
-#		transform.basis.x += Vector3.UP * event.relative.y * -0.003
-#		transform.basis.y += Vector3.UP * event.relative.x * -0.003
-		#parts["head"].rotation.x = clamp(parts["head"].rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
-var mouse_sens = 0.002
-var camera_anglev=0
-
-func _input(event):  
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)		
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x*mouse_sens)
-		var changev=-event.relative.y*mouse_sens
-		if camera_anglev+changev>-50 and camera_anglev+changev<50:
-			camera_anglev+=changev
-			rotate_x(changev)
 
 func reverse():
 	if rev < 1: 
