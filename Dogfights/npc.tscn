@@ -1,15 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://de263dji8brml"]
+[gd_scene load_steps=8 format=3 uid="uid://de263dji8brml"]
 
 [ext_resource type="ArrayMesh" uid="uid://c4dgyyq0myies" path="res://scenes/Quick ship 4.1.obj" id="1_e266c"]
+[ext_resource type="Script" path="res://npc.gd" id="1_pd0u1"]
+[ext_resource type="Script" path="res://ship.gd" id="3_x5e4x"]
+[ext_resource type="Script" path="res://shiplaser.gd" id="4_fle4r"]
 
 [sub_resource type="Skin" id="Skin_0rj7e"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_1y0nq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqitn"]
+albedo_color = Color(1, 0.133333, 0.215686, 1)
+
 [node name="Npc" type="Node"]
+script = ExtResource("1_pd0u1")
 
 [node name="ship" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = ExtResource("1_e266c")
 skin = SubResource("Skin_0rj7e")
 skeleton = NodePath("../shiplaser")
+script = ExtResource("3_x5e4x")
 
 [node name="shiplaser" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 1.31154)
+mesh = SubResource("SphereMesh_1y0nq")
+surface_material_override/0 = SubResource("StandardMaterial3D_vqitn")
+script = ExtResource("4_fle4r")
