@@ -16,8 +16,8 @@ albedo_color = Color(0.227451, 0.945098, 0, 1)
 lifetime_randomness = 0.19
 direction = Vector3(1, 1, 1)
 spread = 94.821
-initial_velocity_min = 54.48
-initial_velocity_max = 63.41
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvwt5"]
 albedo_color = Color(0, 0.741176, 0.423529, 1)
@@ -66,4 +66,6 @@ process_material = SubResource("ParticleProcessMaterial_yu8gy")
 draw_pass_1 = SubResource("BoxMesh_rvuk3")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="area_entered" from="Area3D2" to="." method="_on_area_3d_2_area_entered"]
+[connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

@@ -18,4 +18,5 @@ func _process(delta):
 func rockSpawn(pos: Vector3):
 	var instance = ROCK.instantiate()
 	instance.position = pos
+	instance.scale *= 5
 	get_parent().add_child(instance)

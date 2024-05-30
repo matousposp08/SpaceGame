@@ -32,12 +32,17 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	#var direction = (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	if (Input.is_action_pressed("boost")) :
-		SPEED = -8
+		SPEED = -40
 	elif Input.is_action_pressed("brake"):
-		SPEED = -2
+		SPEED = -8
 	else :
-		SPEED = -5
-	
+		SPEED = -20
+	print("a: " + str($Camera3D.rotation_degrees))
+	print("b: "+ str(rotation_degrees))
+	#$Camera3D.rotation_degrees.x = yvel-10
+	#$Camera3D.rotation_degrees.z = xvel
+	$ship.rotation_degrees.z = xvel*18
+	$ship.rotation_degrees.x = yvel*9
 	
 	if input_dir.x < 0:
 		xvel -= 0.1
@@ -67,8 +72,8 @@ func _physics_process(delta):
 			yvel += 0.05
 	
 	
-	print(rotation_degrees)
-	rotation_degrees.z = 0
+	#print(rotation_degrees)
+	#rotation_degrees.z = 0
 	#rotate_y(xvel*0.02)
 	#rotate_x(yvel*0.02)
 	#rotation.z = 0
@@ -106,12 +111,12 @@ func laser(pos, bas):
 	var instance = LASER.instantiate()
 	instance.position = pos
 	instance.transform.basis = bas
-	print(str(position) + " " + str(instance.position))
+	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 	
 func chargeShot(pos, bas):
 	var instance = CHARGE.instantiate()
 	instance.position = pos
 	instance.transform.basis = bas
-	print(str(position) + " " + str(instance.position))
+	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
