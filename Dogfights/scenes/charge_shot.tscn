@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvqb8hdf4e5sy"]
+
+[ext_resource type="Script" path="res://scripts/chargeShot.gd" id="1_1v2s6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6b26"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_elrij"]
+material = SubResource("StandardMaterial3D_e6b26")
+radius = 2.0
+height = 4.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2qq0i"]
+radius = 2.0
+
+[node name="chargeShot" type="Node3D"]
+script = ExtResource("1_1v2s6")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_elrij")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_2qq0i")

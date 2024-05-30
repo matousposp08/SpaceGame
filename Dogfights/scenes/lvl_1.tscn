@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://nk6qabb2taqa"]
+[gd_scene load_steps=9 format=3 uid="uid://nk6qabb2taqa"]
 
 [ext_resource type="Script" path="res://scenes/lvl_1.gd" id="1_i8b6u"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_kgga5"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_fgw7v"]
-[ext_resource type="PackedScene" uid="uid://c740l5vtekp3s" path="res://scenes/npc.tscn" id="3_twgb4"]
-[ext_resource type="Script" path="res://scenes/npc.gd" id="5_uy5s0"]
+[ext_resource type="PackedScene" uid="uid://ug3tljlva4" path="res://npc.tscn" id="5_ydawd"]
 [ext_resource type="PackedScene" uid="uid://ctrxxju7y0exu" path="res://scenes/plaine_ui.tscn" id="6_8x7px"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_br6vi"]
@@ -31,8 +30,6 @@ environment = SubResource("Environment_8tah0")
 [node name="ship" parent="." instance=ExtResource("2_fgw7v")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="NPC" parent="." instance=ExtResource("3_twgb4")]
-transform = Transform3D(-0.140766, 0, 1.99504, 0, 2, 0, -1.99504, 0, -0.140766, 4.89318, 1.1463, 3.39655)
-script = ExtResource("5_uy5s0")
-
 [node name="PLAINE UI" parent="." instance=ExtResource("6_8x7px")]
+
+[node name="npc" parent="." instance=ExtResource("5_ydawd")]

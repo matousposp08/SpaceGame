@@ -1,38 +1,23 @@
 extends CharacterBody3D
 
+
 var SPEED = -3
 const JUMP_VELOCITY = 4.5
 var xvel = 0
 var yvel = 0
 var rev = 0
+var charge = 0
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
+var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var camera = $Camera3D
-
-func _enter_tree():
-	set_multiplayer_authority(str(name).to_int())
-	# ONLY WORKS IF IT'S RAN IN THE WORLD.TSCN INSTEAD OF ROOT.TSCN
-	#var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
-	#if(username != ""):
-		#if not is_multiplayer_authority(): return
-		#$Username.text = username
-		#$Username.billboard = true
-	#else:
-		#if not is_multiplayer_authority(): return
-		#$Username.text = "guest"+str(get_parent().ps)
-		#$Username.billboard = true
-
 func _ready():
-	if not is_multiplayer_authority(): return
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	camera.current = true
 
 func _physics_process(delta):
-	if not is_multiplayer_authority(): return
 	# Add the gravity.
 	#if not is_on_floor():
 	#	velocity.y -= gravity * delta
@@ -84,13 +69,27 @@ func _physics_process(delta):
 	
 	print(rotation_degrees)
 	rotation_degrees.z = 0
-	rotate_y(xvel*0.02)
-	rotate_x(yvel*0.02)
-	if (Input.is_action_just_pressed("shoot")) :
+	#rotate_y(xvel*0.02)
+	#rotate_x(yvel*0.02)
+	#rotation.z = 0
+	
+	if Input.is_action_pressed("shoot"):
+		charge += 1
+	if Input.is_action_just_released("shoot") and charge > 40:
+		chargeShot(position, transform.basis)
+		charge = 0
+	elif Input.is_action_just_released("shoot"):
+		charge = 0
+		laser(position, transform.basis)
+	
+	rotation_degrees.y -= xvel
+	if rotation_degrees.x < 87 or rotation_degrees.x > -87:
+		rotation_degrees.x += yvel
+	if (Input.is_action_just_pressed("shoot")):
 		laser(position, transform.basis)
 	
 	move_and_slide()
-
+	
 #func _input(event):
 #	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -99,34 +98,20 @@ func _physics_process(delta):
 #		transform.basis.y += Vector3.UP * event.relative.x * -0.003
 		#parts["head"].rotation.x = clamp(parts["head"].rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
-var mouse_sens = 0.002
-var camera_anglev=0
-
-func _input(event):  
-	if not is_multiplayer_authority(): return
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)		
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x*mouse_sens)
-		var changev=-event.relative.y*mouse_sens
-		if camera_anglev+changev>-50 and camera_anglev+changev<50:
-			camera_anglev+=changev
-			rotate_x(changev)
-
 func reverse():
-	if not is_multiplayer_authority(): return
 	if rev < 1: 
 		rev = 60
-	else:
-		# rotation_degrees.z += 3
-		rotation_degrees.y += 3
-		rev -= 1
 
 func laser(pos, bas):
-	if not is_multiplayer_authority(): return
 	var instance = LASER.instantiate()
 	instance.position = pos
 	instance.transform.basis = bas
 	print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
-		
+	
+func chargeShot(pos, bas):
+	var instance = CHARGE.instantiate()
+	instance.position = pos
+	instance.transform.basis = bas
+	print(str(position) + " " + str(instance.position))
+	get_parent().add_child(instance)

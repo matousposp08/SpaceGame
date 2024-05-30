@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3u4jhemhepbr"]
+[gd_scene load_steps=8 format=3 uid="uid://b3u4jhemhepbr"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_yfje4"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n52f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
 panorama = ExtResource("1_31hwd")
@@ -21,6 +23,9 @@ script = ExtResource("1_yfje4")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/CSGBox3D3"]
+shape = SubResource("BoxShape3D_8n52f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
 transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
