@@ -1,7 +1,8 @@
+MeshInstance3D
+Node
 Label3D
 LineEdit
 MultiplayerSynchronizer
-Node
 Node3D
 MultiplayerSpawner
 Button
@@ -11,5 +12,3 @@ MarginContainer
 PanelContainer
 PinJoint3D
 ColorRect
-CanvasLayer
-ProgressBar

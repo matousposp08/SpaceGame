@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://de263dji8brml"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4dgyyq0myies" path="res://scenes/Quick ship 4.1.obj" id="1_e266c"]
+
+[sub_resource type="Skin" id="Skin_0rj7e"]
+
+[node name="Npc" type="Node"]
+
+[node name="ship" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("1_e266c")
+skin = SubResource("Skin_0rj7e")
+skeleton = NodePath("../shiplaser")
+
+[node name="shiplaser" type="MeshInstance3D" parent="."]

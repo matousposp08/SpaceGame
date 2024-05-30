@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4dgyyq0myies"
+path="res://.godot/imported/Quick ship 4.1.obj-52b08b2d5c2d6cc2c475890840f78c12.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Quick ship 4.1.obj-52b08b2d5c2d6cc2c475890840f78c12.mesh"]
+
+source_file="res://scenes/Quick ship 4.1.obj"
+dest_files=["res://.godot/imported/Quick ship 4.1.obj-52b08b2d5c2d6cc2c475890840f78c12.mesh", "res://.godot/imported/Quick ship 4.1.obj-52b08b2d5c2d6cc2c475890840f78c12.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
