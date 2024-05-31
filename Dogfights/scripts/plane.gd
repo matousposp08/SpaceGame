@@ -7,6 +7,8 @@ var xvel = 0
 var yvel = 0
 var rev = 0
 var charge = 0
+var health = 100
+var shield = 100
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
@@ -109,6 +111,7 @@ func reverse():
 
 func laser(pos, bas):
 	var instance = LASER.instantiate()
+	instance.add_to_group("player")
 	instance.position = pos
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
@@ -116,7 +119,16 @@ func laser(pos, bas):
 	
 func chargeShot(pos, bas):
 	var instance = CHARGE.instantiate()
+	instance.add_to_group("player")
 	instance.position = pos
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+
+
+func _on_area_3d_area_entered(area):
+	if not area.is_in_group("player"):
+		if area.is_in_group("laser"):
+			health -= 2
+		if area.is_in_group("asteroid"):
+			health -= 20

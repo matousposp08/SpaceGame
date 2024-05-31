@@ -17,7 +17,7 @@ func _process(delta):
 	x -= 1
 	if explode:
 		y -= 1
-	if (x < 1 or y < 0) :
+	if (x < 1 or y < 1) :
 		queue_free()
 
 func destroy():
@@ -28,16 +28,20 @@ func destroy():
 	$Area3D2/CollisionShape3D.disabled = true
 
 func _on_area_3d_area_entered(area):
-	destroy()
+	if not area.is_in_group(get_groups()[0]):
+		destroy()
 
 
 func _on_area_3d_2_area_entered(area):
-	destroy()
+	if not area.is_in_group(get_groups()[0]):
+		destroy()
 
 
 func _on_area_3d_body_entered(body):
-	destroy()
+	if not body.is_in_group(get_groups()[0]):
+		destroy()
 
 
 func _on_area_3d_2_body_entered(body):
-	destroy()
+	if not body.is_in_group(get_groups()[0]):
+		destroy()

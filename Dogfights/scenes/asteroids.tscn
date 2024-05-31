@@ -16,7 +16,7 @@ radius = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.640731, -0.399147, -0.405487)
 shape = SubResource("SphereShape3D_l7gkf")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["asteroid"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484974, -0.267061, -0.494008)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
