@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ug3tljlva4"]
 
-[ext_resource type="ArrayMesh" path="res://scenes/Quick ship 4.1.obj" id="1_e266c"]
+[ext_resource type="ArrayMesh" uid="uid://c4dgyyq0myies" path="res://scenes/Quick ship 4.1.obj" id="1_e266c"]
 [ext_resource type="Script" path="res://npc.gd" id="1_pd0u1"]
 [ext_resource type="Script" path="res://ship.gd" id="3_x5e4x"]
 [ext_resource type="Script" path="res://shiplaser.gd" id="4_fle4r"]

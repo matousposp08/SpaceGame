@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3u4jhemhepbr"]
+[gd_scene load_steps=8 format=3 uid="uid://b3u4jhemhepbr"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_yfje4"]
-[ext_resource type="PackedScene" uid="uid://ctrxxju7y0exu" path="res://scenes/plaine_ui.tscn" id="3_87hgy"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8n52f"]
@@ -33,8 +32,6 @@ transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
 environment = SubResource("Environment_x4t8m")
-
-[node name="PLAINE UI" parent="." instance=ExtResource("3_87hgy")]
 
 [node name="ship" parent="." instance=ExtResource("3_nsaci")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
