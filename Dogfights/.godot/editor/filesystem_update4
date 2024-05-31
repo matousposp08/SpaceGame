@@ -1,4 +1,7 @@
 res://scenes/lvl_1.tscn
-res://npc.tscn
+res://n1pc.gd
 res://scenes/ship_laser.tscn
+res://scenes/ship_laser.gd
+res://npc.tscn
+res://scripts/plaine_ui.gd
 res://npc.gd

@@ -8,5 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Node2D/ProgressBar.value = get_parent().health
-	$Node2D/ProgressBar2.value = get_parent().shield
+	pass

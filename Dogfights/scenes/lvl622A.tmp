@@ -40,3 +40,4 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 [node name="npc" parent="." instance=ExtResource("5_ydawd")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 28.8654, 0, 0)
 script = ExtResource("7_4fr0u")
+laser_scene = null

@@ -16,6 +16,6 @@ func can_shoot() -> bool:
 func shoot_laser():
 	var laser_instance = laser_scene.instance()
 	laser_instance.translation = 5
-	get_tree().root.get_node("main").add_child(laser_instance)
+	get_tree().add_child(laser_instance)
 	var direction = (player.translation - 5).normalized()
 	laser_instance.set_direction(direction)

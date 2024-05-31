@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcdmotpwgt0qo"]
+[gd_scene load_steps=9 format=3 uid="uid://dcdmotpwgt0qo"]
+
+[ext_resource type="Script" path="res://scenes/ship_laser.gd" id="1_0lc6e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_qaigl"]
 
@@ -26,6 +28,7 @@ emission = Color(0, 1, 0, 1)
 material = SubResource("StandardMaterial3D_gvwt5")
 
 [node name="ship laser" type="Node3D"]
+script = ExtResource("1_0lc6e")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)
