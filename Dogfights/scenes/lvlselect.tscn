@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://0ubrptxw8rb5"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_55m06"]
-[ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://GlacialIndifference-Regular.otf" id="1_i3q8u"]
+[ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://textures/GlacialIndifference-Regular.otf" id="1_i3q8u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05gb3"]
 bg_color = Color(0.243137, 0.254902, 0.584314, 1)

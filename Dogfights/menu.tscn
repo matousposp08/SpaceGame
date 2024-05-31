@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_5asoa"]
 [ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="1_ed7my"]
 [ext_resource type="PackedScene" uid="uid://bnn3lhrxu3tu5" path="res://scenes/plane_ui.tscn" id="2_0gnub"]
-[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://JudgeExpanded-7BxGB.ttf" id="4_mr8k5"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="4_mr8k5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8p31i"]
 panorama = ExtResource("1_5asoa")

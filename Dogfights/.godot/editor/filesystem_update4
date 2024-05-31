@@ -1,2 +1,4 @@
+res://scenes/lvl_1.tscn
 res://npc.tscn
+res://scenes/ship_laser.tscn
 res://npc.gd

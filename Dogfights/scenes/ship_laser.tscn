@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcdmotpwgt0qo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qaigl"]
+
+[sub_resource type="Skin" id="Skin_i10wo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n66e"]
+albedo_color = Color(1, 0.231373, 0.164706, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5h4u4"]
+radius = 4.17
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4650"]
+lifetime_randomness = 0.19
+direction = Vector3(1, 1, 1)
+spread = 94.821
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvwt5"]
+albedo_color = Color(0, 0.741176, 0.423529, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26rif"]
+material = SubResource("StandardMaterial3D_gvwt5")
+
+[node name="ship laser" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1.92146, 0, 0, 0, 1.69173, 0, 0, 0, 2, -0.130491, 0.286029, 0)
+mesh = SubResource("SphereMesh_qaigl")
+skin = SubResource("Skin_i10wo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0n66e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.329574, 0, 0, 0, 0.276309, 0, 0, 0, -0.252887, -0.19, 0.12, 0)
+shape = SubResource("SphereShape3D_5h4u4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_g4650")
+draw_pass_1 = SubResource("BoxMesh_26rif")

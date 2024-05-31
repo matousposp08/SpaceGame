@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnn3lhrxu3tu5"]
 
 [ext_resource type="Script" path="res://scenes/plane_ui.gd" id="1_egh0s"]
-[ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://GlacialIndifference-Regular.otf" id="1_xugbd"]
+[ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://textures/GlacialIndifference-Regular.otf" id="1_xugbd"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wwnj"]
 bg_color = Color(0.243137, 0.254902, 0.584314, 1)
