@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmvow20oifgj4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_plqfg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x5ws"]
+emission_enabled = true
+emission = Color(0.945098, 0.945098, 0.682353, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ugjf"]
+
+[node name="star" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(21.2032, 0, 0, 0, 21.2032, 0, 0, 0, 21.2032, 0, 0, 0)
+mesh = SubResource("SphereMesh_plqfg")
+surface_material_override/0 = SubResource("StandardMaterial3D_7x5ws")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4ugjf")
