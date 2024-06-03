@@ -19,6 +19,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
+
+func _ready():
+	if not is_multiplayer_authority(): return
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Username.billboard = true
 	var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
 	if(username != ""):
@@ -29,12 +33,7 @@ func _enter_tree():
 		if not is_multiplayer_authority(): return
 		$Username.text = "guest"+str(get_parent().ps)
 		$Username.billboard = true
-
-func _ready():
-	if not is_multiplayer_authority(): return
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	camera.current = true
-	$Username.billboard = true
 
 func _physics_process(delta):
 	if not is_multiplayer_authority(): return
@@ -124,10 +123,12 @@ func _physics_process(delta):
 		#parts["head"].rotation.x = clamp(parts["head"].rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func reverse():
+	if not is_multiplayer_authority(): return
 	if rev < 1: 
 		rev = 60
 
 func laser(pos, bas):
+	if not is_multiplayer_authority(): return
 	var instance = LASER.instantiate()
 	instance.add_to_group("player")
 	instance.position = pos
@@ -136,6 +137,7 @@ func laser(pos, bas):
 	get_parent().add_child(instance)
 	
 func chargeShot(pos, bas):
+	if not is_multiplayer_authority(): return
 	var instance = CHARGE.instantiate()
 	instance.add_to_group("player")
 	instance.position = pos
@@ -145,6 +147,7 @@ func chargeShot(pos, bas):
 
 
 func _on_area_3d_area_entered(area):
+	if not is_multiplayer_authority(): return
 	if not area.is_in_group("player"):
 		if area.is_in_group("laser"):
 			health -= 2
