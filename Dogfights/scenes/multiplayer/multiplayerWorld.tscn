@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://de538c62welpc"]
 
-[ext_resource type="Script" path="res://scripts/multiplayerWorld.gd" id="1_lekdj"]
-[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_qna60"]
-[ext_resource type="Script" path="res://scripts/reticle.gd" id="3_csd15"]
+[ext_resource type="Script" path="res://scripts/multiplayerWorld.gd" id="1_yju4u"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_ab2ik"]
+[ext_resource type="Script" path="res://scripts/reticle.gd" id="3_ooqhg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
-panorama = ExtResource("2_qna60")
+panorama = ExtResource("2_ab2ik")
 
 [sub_resource type="Sky" id="Sky_f8kay"]
 sky_material = SubResource("PanoramaSkyMaterial_hi0hg")
@@ -15,7 +15,7 @@ background_mode = 2
 sky = SubResource("Sky_f8kay")
 
 [node name="world" type="Node"]
-script = ExtResource("1_lekdj")
+script = ExtResource("1_yju4u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -56,6 +56,15 @@ layout_mode = 2
 placeholder_text = "ENTER USERNAME"
 alignment = 1
 
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+offset_left = 98.0
+offset_top = 475.0
+offset_right = 191.0
+offset_bottom = 584.0
+text = "UPNP"
+alignment = 1
+icon_alignment = 1
+
 [node name="Scenery" type="Node3D" parent="."]
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]
@@ -78,7 +87,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_csd15")
+script = ExtResource("3_ooqhg")
 
 [node name="Label" type="Label" parent="HUD/Reticle"]
 layout_mode = 1
@@ -103,3 +112,4 @@ spawn_path = NodePath("..")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]
