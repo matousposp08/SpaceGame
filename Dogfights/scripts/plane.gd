@@ -39,12 +39,11 @@ func _physics_process(delta):
 		SPEED = -8
 	else :
 		SPEED = -20
-	print("a: " + str($Camera3D.rotation_degrees))
-	print("b: "+ str(rotation_degrees))
 	#$Camera3D.rotation_degrees.x = yvel-10
 	#$Camera3D.rotation_degrees.z = xvel
 	$ship.rotation_degrees.z = xvel*18
 	$ship.rotation_degrees.x = yvel*9
+	$Area3D.rotation_degrees = $ship.rotation_degrees
 	
 	if input_dir.x < 0:
 		xvel -= 0.1
@@ -125,10 +124,21 @@ func chargeShot(pos, bas):
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 
+func damage(num):
+	if shield < num and shield > 0:
+		shield = 0
+		health -= num - shield
+	elif shield > 0:
+		shield -= num
+	else:
+		health -= num
 
 func _on_area_3d_area_entered(area):
 	if not area.is_in_group("player"):
 		if area.is_in_group("laser"):
-			health -= 2
+			damage(2)
 		if area.is_in_group("asteroid"):
 			health -= 20
+		if area.is_in_group("charge"):
+			print(area.get_groups())
+			damage(20)

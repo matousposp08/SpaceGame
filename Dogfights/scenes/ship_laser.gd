@@ -1,10 +1,10 @@
 extends Node3D
 
 var direction = Vector3.ZERO
-@export var speed: float = 300.0
+@export var speed: float = 220.0
 
 func _process(delta):
-	position += direction * speed * delta
+	position += transform.basis * Vector3(0,0,speed) * delta
 	if is_out_of_bounds() or is_colliding():
 		queue_free()
 

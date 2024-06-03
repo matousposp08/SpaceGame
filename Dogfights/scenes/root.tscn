@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_yfje4"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
-[ext_resource type="PackedScene" uid="uid://dmvow20oifgj4" path="res://scenes/star.tscn" id="4_sa2ax"]
+[ext_resource type="PackedScene" path="res://scenes/star.tscn" id="4_sa2ax"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8n52f"]
 

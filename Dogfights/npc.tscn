@@ -3,8 +3,10 @@
 [ext_resource type="Script" path="res://npc.gd" id="1_pd0u1"]
 [ext_resource type="PackedScene" uid="uid://bwbp6yomwrj4g" path="res://models/low_poly_spaceship_stardestroyer.glb" id="2_bs1ox"]
 
-[node name="npc" type="CharacterBody3D"]
+[node name="npc" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_pd0u1")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_bs1ox")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.605)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
