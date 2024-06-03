@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 @onready var laser_scene = load("res://scenes/ship_laser.tscn")
 var player: CharacterBody3D
-@export var speed: float = 10.0
-@export var acceleration: float = 5000
+@export var speed: float = 40.0
+@export var acceleration: float = 1
 var accelerating: bool = false
 
 
