@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b443ceba685uv"]
+[gd_scene load_steps=7 format=3 uid="uid://b1gngm03l713x"]
 
-[ext_resource type="Script" path="res://scripts/plane.gd" id="1_6vsd0"]
-[ext_resource type="PackedScene" uid="uid://6vf4hbcww1sg" path="res://ship.glb" id="2_glmua"]
-[ext_resource type="PackedScene" uid="uid://cocv4thwj48tu" path="res://models/low-poly_spaceship_2.glb" id="3_8w1rn"]
+[ext_resource type="Script" path="res://scripts/multiplayerShip.gd" id="1_1y7ps"]
+[ext_resource type="PackedScene" uid="uid://6vf4hbcww1sg" path="res://ship.glb" id="2_yyhaq"]
+[ext_resource type="PackedScene" uid="uid://cocv4thwj48tu" path="res://models/low-poly_spaceship_2.glb" id="3_axg8o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yc67g"]
 
@@ -28,14 +28,14 @@ properties/5/path = NodePath("Username:text")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
-[node name="ship" type="CharacterBody3D" groups=["player"]]
+[node name="multiplayership" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-script = ExtResource("1_6vsd0")
+script = ExtResource("1_1y7ps")
 
-[node name="ship" parent="." instance=ExtResource("2_glmua")]
+[node name="ship" parent="." instance=ExtResource("2_yyhaq")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_8w1rn")]
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_axg8o")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.113396, 0, -0.477441)
 visible = false
 

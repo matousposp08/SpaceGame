@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://de538c62welpc"]
+[gd_scene load_steps=7 format=3 uid="uid://cgly8c342hlho"]
 
-[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_gpni3"]
-[ext_resource type="Script" path="res://scripts/reticle.gd" id="6_pof7r"]
+[ext_resource type="Script" path="res://scripts/multiplayerWorld.gd" id="1_e3phg"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_fmeih"]
+[ext_resource type="Script" path="res://scripts/reticle.gd" id="3_84mkw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
-panorama = ExtResource("1_31hwd")
+panorama = ExtResource("2_fmeih")
 
 [sub_resource type="Sky" id="Sky_f8kay"]
 sky_material = SubResource("PanoramaSkyMaterial_hi0hg")
@@ -15,7 +15,7 @@ background_mode = 2
 sky = SubResource("Sky_f8kay")
 
 [node name="world" type="Node"]
-script = ExtResource("1_gpni3")
+script = ExtResource("1_e3phg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -78,7 +78,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_pof7r")
+script = ExtResource("3_84mkw")
 
 [node name="Label" type="Label" parent="HUD/Reticle"]
 layout_mode = 1

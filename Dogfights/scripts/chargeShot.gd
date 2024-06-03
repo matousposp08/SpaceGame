@@ -8,6 +8,7 @@ var y = 20
 func _ready():
 	scale *= 5
 	x = 600
+	$Area3D.add_to_group(get_groups()[0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

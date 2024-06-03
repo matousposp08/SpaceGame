@@ -15,11 +15,28 @@ var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var camera = $Camera3D
+
+func _enter_tree():
+	set_multiplayer_authority(str(name).to_int())
 
 func _ready():
+	if not is_multiplayer_authority(): return
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	$Username.billboard = true
+	var username = get_parent().get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Username").text
+	if(username != ""):
+		if not is_multiplayer_authority(): return
+		$Username.text = username
+		$Username.billboard = true
+	else:
+		if not is_multiplayer_authority(): return
+		$Username.text = "guest"+str(get_parent().ps)
+		$Username.billboard = true
+	camera.current = true
 
 func _physics_process(delta):
+	if not is_multiplayer_authority(): return
 	# Add the gravity.
 	#if not is_on_floor():
 	#	velocity.y -= gravity * delta
@@ -39,11 +56,12 @@ func _physics_process(delta):
 		SPEED = -8
 	else :
 		SPEED = -20
+	print("a: " + str($Camera3D.rotation_degrees))
+	print("b: "+ str(rotation_degrees))
 	#$Camera3D.rotation_degrees.x = yvel-10
 	#$Camera3D.rotation_degrees.z = xvel
 	$ship.rotation_degrees.z = xvel*18
 	$ship.rotation_degrees.x = yvel*9
-	$Area3D.rotation_degrees = $ship.rotation_degrees
 	
 	if input_dir.x < 0:
 		xvel -= 0.1
@@ -105,10 +123,12 @@ func _physics_process(delta):
 		#parts["head"].rotation.x = clamp(parts["head"].rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func reverse():
+	if not is_multiplayer_authority(): return
 	if rev < 1: 
 		rev = 60
 
 func laser(pos, bas):
+	if not is_multiplayer_authority(): return
 	var instance = LASER.instantiate()
 	instance.add_to_group("player")
 	instance.position = pos
@@ -117,6 +137,7 @@ func laser(pos, bas):
 	get_parent().add_child(instance)
 	
 func chargeShot(pos, bas):
+	if not is_multiplayer_authority(): return
 	var instance = CHARGE.instantiate()
 	instance.add_to_group("player")
 	instance.position = pos
@@ -124,21 +145,11 @@ func chargeShot(pos, bas):
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 
-func damage(num):
-	if shield < num and shield > 0:
-		shield = 0
-		health -= num - shield
-	elif shield > 0:
-		shield -= num
-	else:
-		health -= num
 
 func _on_area_3d_area_entered(area):
+	if not is_multiplayer_authority(): return
 	if not area.is_in_group("player"):
 		if area.is_in_group("laser"):
-			damage(2)
+			health -= 2
 		if area.is_in_group("asteroid"):
 			health -= 20
-		if area.is_in_group("charge"):
-			print(area.get_groups())
-			damage(20)

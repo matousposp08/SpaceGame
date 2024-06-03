@@ -34,7 +34,7 @@ material = SubResource("StandardMaterial3D_unsfi")
 [node name="chargeShot" type="Node3D"]
 script = ExtResource("1_1v2s6")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["charge"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 mesh = SubResource("SphereMesh_elrij")
