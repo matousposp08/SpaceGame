@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3404t2t8s057"]
+[gd_scene load_steps=3 format=3 uid="uid://c3404t2t8s057"]
 
 [ext_resource type="Script" path="res://scripts/asteroids.gd" id="1_b86gg"]
-[ext_resource type="PackedScene" uid="uid://b5qs54cdekxad" path="res://models/asteroids/LongAsteroid.glb" id="1_v4vqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tlj2r"]
 radius = 0.35
@@ -10,7 +9,7 @@ height = 1.8
 [node name="LongAsteroid" type="Node3D"]
 script = ExtResource("1_b86gg")
 
-[node name="LongAsteroid" parent="." instance=ExtResource("1_v4vqw")]
+[node name="LongAsteroid" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98412, 1.39716, 0.302966)
 
 [node name="Area3D" type="Area3D" parent="."]

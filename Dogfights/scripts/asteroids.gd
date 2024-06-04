@@ -3,6 +3,7 @@ extends Node3D
 var IMPACT : PackedScene = preload('res://scenes/asteroidexplode.tscn')
 var rng = RandomNumberGenerator.new()
 var x = 90
+var rot_speed = deg_to_rad(0.1)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,6 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	rotate_y(rot_speed)
 	pass
 
 func explode():
