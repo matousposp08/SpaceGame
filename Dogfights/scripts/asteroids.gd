@@ -24,4 +24,3 @@ func impactGen(pos: Vector3):
 
 func _on_area_3d_area_entered(area):
 	explode()
-	print("Boom")
