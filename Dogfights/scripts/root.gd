@@ -21,7 +21,9 @@ func _process(delta):
 		SUN_added = true
 	if (x > 0) :
 		x -= 1
-		rockSpawn(Vector3(rng.randf_range(-1000.0, 1000.0), rng.randf_range(-300.0, 300.0), rng.randf_range(-300.0, 300.0)))
+		rockSpawn(Vector3(rng.randf_range(-400.0, 400.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))
+		rockSpawn(Vector3(rng.randf_range(-400.0, 400.0), rng.randf_range(-400.0, 400.0), rng.randf_range(-50.0, 50.0)))
+		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))
 
 func rockSpawn(pos: Vector3):
 	var instance = ROCK.instantiate()
