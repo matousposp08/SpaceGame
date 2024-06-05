@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://f3goaholtcti"]
+
+[ext_resource type="Script" path="res://scripts/boostPU.gd" id="1_1458h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3c8m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxkvu"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hl8h2"]
+material = SubResource("StandardMaterial3D_gxkvu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_be6l4"]
+
+[node name="boostPU" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_1458h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_v3c8m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hl8h2")
+
+[node name="Area3D" type="Area3D" parent="." groups=["boost"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_be6l4")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var LASER :PackedScene = preload("res://scenes/ship_laser.tscn")
 var player: CharacterBody3D
 var x = 0
+var health = 1000
 
 func _ready():
 	player = $ship
@@ -13,6 +14,7 @@ func _process(delta):
 	#$Sketchfab_Scene.rotation.x = 0
 	#$RayCast3D.look_at()
 	if x % 300 == 0 and can_shoot():
+		print("pluh")
 		shoot_laser(position, transform.basis)
 
 func can_shoot() -> bool:
@@ -24,3 +26,7 @@ func shoot_laser(pos, bas):
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+
+
+func _on_area_3d_area_entered(area):
+	pass # Replace with function body.

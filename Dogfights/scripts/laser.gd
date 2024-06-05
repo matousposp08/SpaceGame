@@ -23,7 +23,6 @@ func _process(delta):
 		queue_free()
 
 func destroy():
-	print("yes")
 	explode = true
 	$GPUParticles3D.emitting = true
 	$Area3D/CollisionShape3D.disabled = true

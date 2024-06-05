@@ -70,7 +70,7 @@ shape = SubResource("BoxShape3D_ohbds")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 emitting = false
-amount = 20
+amount = 10
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_yu8gy")

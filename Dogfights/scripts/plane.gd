@@ -9,6 +9,7 @@ var rev = 0
 var charge = 0
 var health = 100
 var shield = 100
+var boostpower = 0
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
@@ -39,6 +40,11 @@ func _physics_process(delta):
 		SPEED = -8
 	else :
 		SPEED = -20
+	if boostpower > 0:
+		if (Input.is_action_pressed("boost")) :
+			SPEED = -50
+		boostpower -= 1
+		SPEED *= 1.5
 	#$Camera3D.rotation_degrees.x = yvel-10
 	#$Camera3D.rotation_degrees.z = xvel
 	$ship.rotation_degrees.z = xvel*18
@@ -142,3 +148,5 @@ func _on_area_3d_area_entered(area):
 		if area.is_in_group("charge"):
 			print(area.get_groups())
 			damage(20)
+		if area.is_in_group("boost"):
+			boostpower = 900
