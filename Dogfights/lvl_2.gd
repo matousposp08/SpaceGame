@@ -10,7 +10,7 @@ var played = false;
 func _ready():
 	#for i in range(0, 90):
 	#	rockSpawn(Vector3(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0)))
-	$level1/AnimationPlayer.play("fade")
+	$level2/AnimationPlayer.play("fade2")
 	played = true;
 
 
