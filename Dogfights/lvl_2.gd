@@ -1,6 +1,7 @@
 extends Node3D
 
-var ROCK : PackedScene = preload('res://scenes/asteroids.tscn')
+var ROCK : PackedScene = preload('res://scenes/asteroid_scenes/asteroids.tscn')
+var LONG_ROCK : PackedScene = preload('res://scenes/asteroid_scenes/long_asteroid.tscn')
 var SUN : PackedScene = preload('res://scenes/star.tscn')
 var rng = RandomNumberGenerator.new()
 var SUN_added = false
