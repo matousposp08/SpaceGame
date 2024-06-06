@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://q3misfv5wrv3"]
 
-[ext_resource type="Script" path="res://scripts/asteroids.gd" id="1_i1j1b"]
-[ext_resource type="PackedScene" uid="uid://co535kb5mnsby" path="res://models/asteroids/Asteroids.glb" id="1_rxxw6"]
+[ext_resource type="Script" path="res://scripts/asteroids.gd" id="1_roome"]
+[ext_resource type="PackedScene" uid="uid://co535kb5mnsby" path="res://models/asteroids/Asteroids.glb" id="2_bhovr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l7gkf"]
 radius = 1.0
@@ -10,9 +10,9 @@ radius = 1.0
 radius = 1.0
 
 [node name="Asteroids" type="Node3D"]
-script = ExtResource("1_i1j1b")
+script = ExtResource("1_roome")
 
-[node name="Asteroid1" parent="." instance=ExtResource("1_rxxw6")]
+[node name="Asteroid1" parent="." instance=ExtResource("2_bhovr")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.640731, -0.399147, -0.405487)

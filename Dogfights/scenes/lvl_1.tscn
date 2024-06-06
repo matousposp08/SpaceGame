@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_3tysl"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_kgga5"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_fgw7v"]
-[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroids.tscn" id="3_vyl5n"]
+[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="3_vyl5n"]
 [ext_resource type="PackedScene" uid="uid://ug3tljlva4" path="res://npc.tscn" id="5_ydawd"]
 [ext_resource type="Script" path="res://n1pc.gd" id="7_4fr0u"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="7_ykvsb"]
