@@ -1,3 +1,5 @@
+AnimationPlayer
+Label
 MeshInstance3D
 Node
 Label3D
@@ -6,9 +8,7 @@ MultiplayerSynchronizer
 Node3D
 MultiplayerSpawner
 Button
-Label
 VBoxContainer
 MarginContainer
 PanelContainer
 PinJoint3D
-ColorRect

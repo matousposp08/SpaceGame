@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://nk6qabb2taqa"]
+[gd_scene load_steps=15 format=3 uid="uid://nk6qabb2taqa"]
 
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_3tysl"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_kgga5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="3_vyl5n"]
 [ext_resource type="PackedScene" uid="uid://ug3tljlva4" path="res://npc.tscn" id="5_ydawd"]
 [ext_resource type="Script" path="res://n1pc.gd" id="7_4fr0u"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="7_ykvsb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_br6vi"]
 panorama = ExtResource("1_kgga5")
@@ -17,7 +18,61 @@ sky_material = SubResource("PanoramaSkyMaterial_br6vi")
 background_mode = 2
 sky = SubResource("Sky_6eomh")
 
-[node name="tutorial" type="Node3D"]
+[sub_resource type="Animation" id="Animation_v5yea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_th22u"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.3, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x6g0x"]
+resource_name = "fade1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgaht"]
+_data = {
+"RESET": SubResource("Animation_v5yea"),
+"fade": SubResource("Animation_th22u"),
+"fade1": SubResource("Animation_x6g0x")
+}
+
+[node name="lvl1" type="Node3D"]
 script = ExtResource("1_3tysl")
 
 [node name="Scenery" type="Node3D" parent="."]
@@ -39,3 +94,17 @@ transform = Transform3D(0.244296, 0, 6.99574, 0, 7, 0, -6.99574, 0, 0.244296, 28
 script = ExtResource("7_4fr0u")
 speed = 40.0
 acceleration = 1.0
+
+[node name="level1" type="Label" parent="."]
+offset_left = 322.0
+offset_top = 266.0
+offset_right = 817.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("7_ykvsb")
+theme_override_font_sizes/font_size = 150
+text = "LEVEL 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level1"]
+libraries = {
+"": SubResource("AnimationLibrary_sgaht")
+}

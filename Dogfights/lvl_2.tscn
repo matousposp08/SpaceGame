@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cavp06vaemwt8"]
+[gd_scene load_steps=12 format=3 uid="uid://cavp06vaemwt8"]
 
-[ext_resource type="Script" path="res://scripts/root.gd" id="1_it6s5"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_jcxps"]
-[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroids.tscn" id="2_wottn"]
+[ext_resource type="Script" path="res://lvl_2.gd" id="1_k576f"]
+[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="2_wottn"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_74uw6"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="5_ely83"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
 panorama = ExtResource("1_jcxps")
@@ -15,8 +16,45 @@ sky_material = SubResource("PanoramaSkyMaterial_t5du2")
 background_mode = 2
 sky = SubResource("Sky_f8kay")
 
+[sub_resource type="Animation" id="Animation_o55r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_51x4b"]
+resource_name = "fade2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.4, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qydi2"]
+_data = {
+"RESET": SubResource("Animation_o55r7"),
+"fade2": SubResource("Animation_51x4b")
+}
+
 [node name="lvl2" type="Node3D"]
-script = ExtResource("1_it6s5")
+script = ExtResource("1_k576f")
 
 [node name="Scenery2" type="Node3D" parent="."]
 
@@ -31,3 +69,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
 
 [node name="ship" parent="." instance=ExtResource("3_74uw6")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="level2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 322.0
+offset_top = 266.0
+offset_right = 817.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("5_ely83")
+theme_override_font_sizes/font_size = 150
+text = "LEVEL 2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level2"]
+libraries = {
+"": SubResource("AnimationLibrary_qydi2")
+}
