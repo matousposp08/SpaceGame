@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3u4jhemhepbr"]
+
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_31hwd"]
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_yfje4"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_nsaci"]
+[ext_resource type="PackedScene" uid="uid://dmvow20oifgj4" path="res://scenes/star.tscn" id="4_sa2ax"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n52f"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hi0hg"]
+panorama = ExtResource("1_31hwd")
+
+[sub_resource type="Sky" id="Sky_hu7nf"]
+sky_material = SubResource("PanoramaSkyMaterial_hi0hg")
+
+[sub_resource type="Environment" id="Environment_x4t8m"]
+background_mode = 2
+sky = SubResource("Sky_hu7nf")
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_yfje4")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/CSGBox3D3"]
+shape = SubResource("BoxShape3D_8n52f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
+environment = SubResource("Environment_x4t8m")
+
+[node name="ship" parent="." instance=ExtResource("3_nsaci")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="star" parent="." instance=ExtResource("4_sa2ax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 23)
