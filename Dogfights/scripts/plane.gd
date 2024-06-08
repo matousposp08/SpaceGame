@@ -124,7 +124,7 @@ func laser(pos, bas):
 	
 func chargeShot(pos, bas):
 	var instance = CHARGE.instantiate()
-	instance.add_to_group("player")
+	instance.add_to_group(name)
 	instance.position = pos
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
@@ -148,5 +148,7 @@ func _on_area_3d_area_entered(area):
 		if area.is_in_group("charge"):
 			print(area.get_groups())
 			damage(20)
+		if area.is_in_group("blast"):
+			damage(50)
 		if area.is_in_group("boost"):
 			boostpower = 900

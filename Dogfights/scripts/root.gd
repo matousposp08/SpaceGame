@@ -19,7 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	
 	if (!SUN_added):
 		var instance = SUN.instantiate()
 		instance.position = Vector3(100.0, 100.0, 0.0)

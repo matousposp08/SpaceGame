@@ -2,26 +2,32 @@ extends CharacterBody3D
 
 @onready var laser_scene = load("res://scenes/ship_laser.tscn")
 var player: CharacterBody3D
-@export var speed: float = 35.0
-@export var acceleration: float = 1
+@export var speed: float = 35
+@export var acceleration: float = 1000
 var accelerating: bool = false
 var health = 1000
+var mission_time = 3600
 var x = 0
 
 func _ready() -> void:
 	player = $ship
 	var timer = Timer.new()
-	timer.wait_time = 15.0
+	timer.wait_time = 60.0
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
 	add_child(timer)
 	timer.start()
 
-
 func _physics_process(delta: float) -> void:
+	mission_time -= 1
 	x += 1
-	if (x % 300 == 0) :
-		shoot_laser(position, $MeshInstance3D.transform.basis)
+	#$MeshInstance3D.look_at(get_parent().get_node("ship").position)
+	#print((get_parent().get_node("ship").position))
+	#print($MeshInstance3D.transform.basis)
+	#print($MeshInstance3D.rotation)
+	if (x % 180 == 0) :
+		print("shot")
+		shoot_laser(global_position, transform.basis)
 	if accelerating:
 		speed += acceleration * delta
 	position.x += speed * delta
@@ -39,8 +45,9 @@ func can_shoot() -> bool:
 
 func shoot_laser(pos, bas):
 	var instance = laser_scene.instantiate()
+	instance.look_at(get_parent().get_node("ship").global_position)
 	instance.position = pos
-	instance.transform.basis = bas
+	#instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 

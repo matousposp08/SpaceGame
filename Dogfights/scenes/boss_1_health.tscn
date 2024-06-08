@@ -10,3 +10,9 @@ offset_left = 112.0
 offset_top = 26.0
 offset_right = 1034.0
 offset_bottom = 73.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+offset_left = 113.0
+offset_top = 94.0
+offset_right = 1034.0
+offset_bottom = 121.0
