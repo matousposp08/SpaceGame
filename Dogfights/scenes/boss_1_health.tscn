@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://2fpuwlbn03hw"]
+
+[ext_resource type="Script" path="res://scripts/boss1Health.gd" id="1_lsvfu"]
+
+[node name="boss1Health" type="CanvasLayer"]
+script = ExtResource("1_lsvfu")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 112.0
+offset_top = 26.0
+offset_right = 1034.0
+offset_bottom = 73.0

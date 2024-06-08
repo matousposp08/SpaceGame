@@ -1,3 +1,5 @@
+ProgressBar
+CanvasLayer
 AnimationPlayer
 Label
 MeshInstance3D
@@ -11,4 +13,3 @@ Button
 VBoxContainer
 MarginContainer
 PanelContainer
-PinJoint3D
