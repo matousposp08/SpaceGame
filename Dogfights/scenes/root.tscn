@@ -16,6 +16,7 @@ sky_material = SubResource("PanoramaSkyMaterial_hi0hg")
 [sub_resource type="Environment" id="Environment_x4t8m"]
 background_mode = 2
 sky = SubResource("Sky_hu7nf")
+glow_enabled = true
 
 [node name="root" type="Node3D"]
 script = ExtResource("1_yfje4")
