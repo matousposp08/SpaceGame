@@ -29,7 +29,7 @@ properties/5/path = NodePath("Username:text")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
-[node name="ship" type="CharacterBody3D" groups=["player"]]
+[node name="ship" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_6vsd0")
 
@@ -44,7 +44,7 @@ visible = false
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("BoxShape3D_yc67g")
 
-[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+[node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)

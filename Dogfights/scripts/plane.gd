@@ -18,6 +18,8 @@ var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
+	add_to_group(name)
+	$Area3D.add_to_group(name)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta):
@@ -116,7 +118,7 @@ func reverse():
 
 func laser(pos, bas):
 	var instance = LASER.instantiate()
-	instance.add_to_group("player")
+	instance.add_to_group(name)
 	instance.position = pos
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
@@ -140,7 +142,8 @@ func damage(num):
 		health -= num
 
 func _on_area_3d_area_entered(area):
-	if not area.is_in_group("player"):
+	print(area.get_groups())
+	if not area.is_in_group(name):
 		if area.is_in_group("laser"):
 			damage(2)
 		if area.is_in_group("asteroid"):

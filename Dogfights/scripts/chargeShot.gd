@@ -8,7 +8,10 @@ var y = 20
 func _ready():
 	scale *= 5
 	x = 600
+	print("op")
+	print(get_groups())
 	$Area3D.add_to_group(get_groups()[0])
+	$Area3D.add_to_group(get_groups()[1])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,10 +30,10 @@ func destroy():
 	$Area3D/CollisionShape3D.disabled = true
 
 func _on_area_3d_area_entered(area):
-	if not area.is_in_group(get_groups()[0]):
+	if not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):
 		destroy()
 
 
 func _on_area_3d_body_entered(body):
-	if not body.is_in_group(get_groups()[0]):
+	if not body.is_in_group(get_groups()[0]) and not body.is_in_group(get_groups()[1]):
 		destroy()
