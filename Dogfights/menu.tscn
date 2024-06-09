@@ -1,9 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://vq8c3ymtfknj"]
+[gd_scene load_steps=22 format=3 uid="uid://vq8c3ymtfknj"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_5asoa"]
 [ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="1_ed7my"]
 [ext_resource type="PackedScene" uid="uid://bnn3lhrxu3tu5" path="res://scenes/plane_ui.tscn" id="2_0gnub"]
+[ext_resource type="PackedScene" uid="uid://dmvow20oifgj4" path="res://scenes/star.tscn" id="2_iuqas"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="4_mr8k5"]
+[ext_resource type="PackedScene" uid="uid://co535kb5mnsby" path="res://models/asteroids/Asteroids.glb" id="5_fatki"]
+[ext_resource type="PackedScene" path="res://scenes/sun.glb" id="7_ntphl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_miglh"]
+
+[sub_resource type="Skin" id="Skin_nc2e4"]
+
+[sub_resource type="Gradient" id="Gradient_5vvha"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_37mru"]
+gradient = SubResource("Gradient_5vvha")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jjqnn"]
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0htap"]
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 1
+albedo_color = Color(1, 1, 0.686275, 1)
+roughness_texture = SubResource("NoiseTexture2D_jjqnn")
+emission_enabled = true
+emission = Color(0.976471, 0.976471, 0.709804, 1)
+emission_energy_multiplier = 8.1
+emission_on_uv2 = true
+refraction_enabled = true
+refraction_scale = 0.89
+refraction_texture = SubResource("GradientTexture2D_37mru")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8p31i"]
 panorama = ExtResource("1_5asoa")
@@ -14,6 +43,8 @@ sky_material = SubResource("PanoramaSkyMaterial_8p31i")
 [sub_resource type="Environment" id="Environment_si7qo"]
 background_mode = 2
 sky = SubResource("Sky_ykfqd")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5eh8r"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87ub3"]
 
@@ -27,11 +58,24 @@ sky = SubResource("Sky_ykfqd")
 
 [node name="Scenery" type="Node3D" parent="."]
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenery"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 8.22205, 0, 29.2845)
+visible = false
+mesh = SubResource("SphereMesh_miglh")
+skin = SubResource("Skin_nc2e4")
+skeleton = NodePath("../star")
+surface_material_override/0 = SubResource("StandardMaterial3D_0htap")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
 transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
 environment = SubResource("Environment_si7qo")
+
+[node name="star" parent="Scenery" instance=ExtResource("2_iuqas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.222, 0, 137.285)
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_5eh8r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
@@ -83,3 +127,18 @@ theme_override_constants/shadow_offset_y = 8
 theme_override_fonts/font = ExtResource("4_mr8k5")
 theme_override_font_sizes/font_size = 200
 text = "AUTO"
+
+[node name="Asteroids" parent="." instance=ExtResource("5_fatki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04809, 0, 4.96167)
+
+[node name="Asteroids2" parent="." instance=ExtResource("5_fatki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45472, 0, -1.99733)
+
+[node name="Asteroids3" parent="." instance=ExtResource("5_fatki")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.44125, 3.56019, 2.17928)
+
+[node name="Asteroids4" parent="." instance=ExtResource("5_fatki")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.44125, 3.56019, 14.1793)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_ntphl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.2529, 0, 35.8083)

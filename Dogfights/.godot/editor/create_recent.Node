@@ -1,3 +1,5 @@
+MeshInstance3D
+Label
 AudioStreamPlayer
 ColorRect
 TextEdit
@@ -5,8 +7,6 @@ CanvasLayer
 Button
 ProgressBar
 AnimationPlayer
-Label
-MeshInstance3D
 Node
 Label3D
 LineEdit

@@ -71,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="level2" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 322.0
 offset_top = 266.0

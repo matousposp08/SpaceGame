@@ -13,7 +13,7 @@ var SUCCESS : PackedScene = preload('res://scenes/success.tscn')
 func _ready():
 	#for i in range(0, 90):
 	#	rockSpawn(Vector3(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0)))
-	$level1/AnimationPlayer.play("fade")
+
 	played = true;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

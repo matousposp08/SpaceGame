@@ -14,23 +14,40 @@ color = Color(0.32549, 0.717647, 1, 0.27451)
 
 [node name="Button" type="Button" parent="."]
 process_mode = 3
-offset_left = 430.0
+offset_left = 446.0
 offset_top = 528.0
-offset_right = 682.0
+offset_right = 698.0
 offset_bottom = 613.0
 text = "BEGIN"
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 366.0
-offset_top = 158.0
-offset_right = 744.0
-offset_bottom = 283.0
-text = "MISSION OBJECTIVE:
-
-DESTROY THE SHIP WITHIN 60 SECONDS."
+modulate = Color(1, 1, 1, 0.721569)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -62.0
+offset_right = 178.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+editable = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5okk3")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 418.0
+offset_top = 289.0
+offset_right = 730.0
+offset_bottom = 364.0
+text = "MISSION OBJECTIVE:
+
+DESTROY THE SHIP WITHIN 60 SECONDS."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

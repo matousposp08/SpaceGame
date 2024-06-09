@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ubrptxw8rb5"]
+[gd_scene load_steps=7 format=3 uid="uid://0ubrptxw8rb5"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_55m06"]
 [ext_resource type="FontFile" uid="uid://bacrfw16ijp8k" path="res://textures/GlacialIndifference-Regular.otf" id="1_i3q8u"]
+[ext_resource type="Script" path="res://scenes/lvlselect.gd" id="1_v6071"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05gb3"]
 bg_color = Color(0.243137, 0.254902, 0.584314, 1)
@@ -28,6 +29,7 @@ corner_radius_bottom_left = 11
 expand_margin_right = 4.0
 
 [node name="lvlselect" type="Node2D"]
+script = ExtResource("1_v6071")
 
 [node name="SolAsteroidBeltHdri" type="Sprite2D" parent="."]
 position = Vector2(245, 313)
@@ -93,3 +95,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 05"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
