@@ -1,101 +1,115 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717693226
-lvl_2.gd::GDScript::-1::1717693113::0::1::::<>Node3D<>::
-lvl_2.tscn::PackedScene::4817150360631167071::1717693142::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://lvl_2.gd<>uid://q3misfv5wrv3::::res://scenes/asteroids.tscn<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
-menu.tscn::PackedScene::1509004501112673603::1717692229::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://cvpkbofikuto7::::res://plane.tscn<>uid://bnn3lhrxu3tu5::::res://scenes/plane_ui.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
-n1pc.gd::GDScript::-1::1717508635::0::1::::<>CharacterBody3D<>::
-npc.gd::GDScript::-1::1717508635::0::1::::<>CharacterBody3D<>::
-npc.tscn::PackedScene::1226555136119929::1717693141::0::1::::<><>::res://npc.gd<>uid://bwbp6yomwrj4g::::res://models/low_poly_spaceship_stardestroyer.glb
-plane.tscn::PackedScene::6278382449245927752::1716988405::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb<>uid://6vf4hbcww1sg::::res://ship.glb
-raptor_spaceship_low_poly.glb::PackedScene::4908650808420156820::1717160825::1717160826::1::::<><>::
-room.glb::PackedScene::9180994081963386477::1716398006::1716398007::1::::<><>::
-ship.gd::GDScript::-1::1717075687::0::1::::<>MeshInstance3D<>::
-ship.glb::PackedScene::2219561827930754530::1716337779::1716337780::1::::<><>::
-shiplaser.gd::GDScript::-1::1717075690::0::1::::<>MeshInstance3D<>::
-spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1706575992::1706575993::1::::<><>::
-::res://models/::1717161312
-AXWing.gltf::PackedScene::3732702150925200996::1706575691::1706575712::1::::<><>::
-low-poly_ship_practice.glb::PackedScene::6560562315386394338::1717001288::1717161307::1::::<><>::
-low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1706577200::1716337721::1::::<><>::
-low-poly_spaceship (1)_0.png::CompressedTexture2D::192917250674721789::1716337721::1716337721::1::::<><>::
-low-poly_spaceship (1)_1.png::CompressedTexture2D::2505664613596032929::1716337721::1716337721::1::::<><>::
-low-poly_spaceship (1)_2.png::CompressedTexture2D::530472223928384423::1716337721::1716337721::1::::<><>::
-low-poly_spaceship (2).glb::PackedScene::1490869305038675044::1716570336::1716570337::1::::<><>::
-low-poly_spaceship_2.glb::PackedScene::5760941788468181398::1706577200::1716337723::1::::<><>::
-low-poly_spaceship_2_0.png::CompressedTexture2D::8002748244768958503::1716337723::1716337723::1::::<><>::
-low-poly_spaceship_2_1.png::CompressedTexture2D::508178508065819023::1716337723::1716337723::1::::<><>::
-low-poly_spaceship_2_2.png::CompressedTexture2D::5942035152964990766::1716337723::1716337723::1::::<><>::
-low_poly_spaceship.glb::PackedScene::4209333557050016673::1717001288::1717161309::1::::<><>::
-low_poly_spaceship_stardestroyer.glb::PackedScene::3933607018749391340::1717160820::1717161312::1::::<><>::
-malabar_medium_transport.glb::PackedScene::6586575797066942261::1715971673::1716337732::1::::<><>::
-malabar_medium_transport_0.png::CompressedTexture2D::62367045414563415::1716337726::1716337732::1::::<><>::
-malabar_medium_transport_1.png::CompressedTexture2D::7098991500527966458::1716337726::1716337728::1::::<><>::
-malabar_medium_transport_2.png::CompressedTexture2D::7182221439220321755::1716337728::1716337728::1::::<><>::
-malabar_medium_transport_3.png::CompressedTexture2D::4172881306162800489::1716337729::1716337732::1::::<><>::
-::res://models/asteroids/::1717693161
-Asteroids.glb::PackedScene::5819170688712993066::1717030494::1717030494::1::::<><>::
-LongAsteroid.glb::PackedScene::4526264042994806479::1717693161::1717693227::1::::<><>::
-::res://scenes/::1717693161
-asteroidexplode.tscn::PackedScene::9031501146027774967::1717508635::0::1::::<><>::
-charge_shot.tscn::PackedScene::6279957148605454276::1717508635::0::1::::<><>::res://scripts/chargeShot.gd
-jetbooster.tscn::PackedScene::2872059796464687604::1716338827::0::1::::<><>::uid://cped5ifdu15tk::::res://textures/light_01.png
-laser.tscn::PackedScene::4120667032220864641::1717508635::0::1::::<><>::res://scripts/laser.gd
-lvlselect.tscn::PackedScene::1796100539798421772::1717161298::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf
-lvl_1.gd::GDScript::-1::1717002338::0::1::::<>Node3D<>::
-lvl_1.tscn::PackedScene::935009545940325704::1717693161::0::1::::<><>::res://scripts/root.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://ug3tljlva4::::res://npc.tscn<>res://n1pc.gd<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
-multiplayer.tscn::PackedScene::5218198873189531056::1717508635::0::1::::<><>::res://scripts/multiplayerWorld.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/reticle.gd
-multiplayerShip.tscn::PackedScene::4224517590664187559::1717508635::0::1::::<><>::res://scripts/multiplayerShip.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb
-npc.gd::GDScript::-1::1717002875::0::1::::<>CharacterBody3D<>::
-npc.tscn::PackedScene::7080290496233514166::1717161306::0::1::::<><>::uid://c0p8rdjafvks5::::res://models/low-poly_ship_practice.glb
-npctut.gd::GDScript::-1::1717002686::0::1::::<>CharacterBody3D<>::
-plaine_ui.tscn::PackedScene::6142961887514508154::1717692229::0::1::::<><>::res://scripts/plaine_ui.gd
-plane_ui.gd::GDScript::-1::1716989246::0::1::::<>Node2D<>::
-plane_ui.tscn::PackedScene::3327432676318704722::1717161298::0::1::::<><>::res://scenes/plane_ui.gd<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf
-player_move_plane.tscn::PackedScene::5066408556363626863::1716988405::0::1::::<><>::res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn
-Quick ship 4.1.obj::Mesh::6814919413591785306::1717073249::1717073250::1::::<><>::
-root.tscn::PackedScene::4394773099971997567::1717693141::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/root.gd<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://dmvow20oifgj4::::res://scenes/star.tscn
-ship.tscn::PackedScene::4483467963130008301::1717693141::0::1::::<><>::res://scripts/plane.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb
-ship_laser.gd::GDScript::-1::1717508635::0::1::::<>Node3D<>::
-ship_laser.tscn::PackedScene::7306587498769505930::1717693141::0::1::::<><>::res://scenes/ship_laser.gd
-star.tscn::PackedScene::8045770890333139983::1717370964::0::1::::<><>::
-::res://scenes/asteroid_scenes/::1717693161
-asteroids.tscn::PackedScene::1181567919726072346::1717693161::0::1::::<><>::res://scripts/asteroids.gd<>uid://co535kb5mnsby::::res://models/asteroids/Asteroids.glb
-long_asteroid.tscn::PackedScene::6799566697522727488::1717693161::0::1::::<><>::res://scripts/asteroids.gd
-::res://scenes/multiplayer/::1717508635
-multiplayership.tscn::PackedScene::7038440503399763045::1717508635::0::1::::<><>::res://scripts/multiplayerPlane.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb
-multiplayerWorld.tscn::PackedScene::7503707919441512012::1717508635::0::1::::<><>::res://scripts/multiplayerWorld.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/reticle.gd
-::res://scripts/::1717693161
-asteroids.gd::GDScript::-1::1717693161::0::1::::<>Node3D<>::
-chargeShot.gd::GDScript::-1::1717508635::0::1::::<>Node3D<>::
-laser.gd::GDScript::-1::1717508635::0::1::::<>Node3D<>::
-math_lib.gd::GDScript::-1::1715902141::0::1::::MathLib<>Node<>::
-move_along_object_forward.gd::GDScript::-1::1716568650::0::1::::MoveAlongObjectForward<>Node3D<>::
-multiplayerPlane.gd::GDScript::-1::1717508635::0::1::::<>CharacterBody3D<>::
-multiplayerShip.gd::GDScript::-1::1717508635::0::1::::<>CharacterBody3D<>::
-multiplayerWorld.gd::GDScript::-1::1717508635::0::1::::<>Node<>::
-plaine_ui.gd::GDScript::-1::1717164133::0::1::::<>CanvasLayer<>::
-plane.gd::GDScript::-1::1717508635::0::1::::<>CharacterBody3D<>::
-player_flight_controller.gd::GDScript::-1::1716415767::0::1::::PlayerFlightController<>Node3D<>::
-reticle.gd::GDScript::-1::1716568650::0::1::::Reticle<>Control<>::
-root.gd::GDScript::-1::1717693161::0::1::::<>Node3D<>::
-smooth_follow.gd::GDScript::-1::1716338522::0::1::::SmoothFollow<>Node3D<>::
-::res://textures/::1717161304
-ai-generated-abstract-low-poly-dark-space-background-with-connecting-dots-and-lines-vector-illustration-ai-generated-free-photo.jpg::CompressedTexture2D::8031298191898429933::1716338666::1716338820::1::::<><>::
-GlacialIndifference-Regular.otf::FontFile::2391591754145954000::1716396395::1717161298::1::::<><>::
-JudgeCondensed-MVPRn.otf::FontFile::7225490605721748981::1716571341::1717161304::1::::<><>::
-JudgeExpanded-7BxGB.ttf::FontFile::6115292331357692122::1716571375::1717161300::1::::<><>::
-JumpersSemiItalic-2vvB3.otf::FontFile::5331228031291047738::1716571215::1717161301::1::::<><>::
-KosmicsitalicpersonaluseIta-Rp8DE (1).otf::FontFile::3534123465956140903::1716571236::1717161303::1::::<><>::
-light_01.png::CompressedTexture2D::5834167685843286712::1716338217::1716338827::1::::<><>::
-low-poly_spaceship (1)_0.png::CompressedTexture2D::631235923011754163::1706577200::1706577238::1::::<><>::
-low-poly_spaceship (1)_1.png::CompressedTexture2D::2632320726997620480::1706577200::1706577241::1::::<><>::
-low-poly_spaceship (1)_2.png::CompressedTexture2D::3261304874718072689::1706577200::1706577242::1::::<><>::
-low-poly_spaceship_2_0.png::CompressedTexture2D::7121746013261314298::1706577201::1706577248::1::::<><>::
-low-poly_spaceship_2_1.png::CompressedTexture2D::7008675664734254550::1706577201::1706577244::1::::<><>::
-low-poly_spaceship_2_2.png::CompressedTexture2D::6215132828627630821::1706577201::1706577246::1::::<><>::
-malabar_medium_transport.glb::PackedScene::6631463928581932727::1715971595::1715971602::1::::<><>::
-malabar_medium_transport_0.png::CompressedTexture2D::5915993488608739268::1715971596::1715971602::1::::<><>::
-malabar_medium_transport_1.png::CompressedTexture2D::8802663470980410182::1715971596::1715971598::1::::<><>::
-malabar_medium_transport_2.png::CompressedTexture2D::5282708421714103674::1715971598::1715971599::1::::<><>::
-malabar_medium_transport_3.png::CompressedTexture2D::3338441063903403857::1715971599::1715971602::1::::<><>::
-SolAsteroidBeltHDRI.png::CompressedTexture2D::454380413326955207::1706575691::1706575715::1::::<><>::
+::res://::1717889707
+lvl_2.gd::GDScript::-1::1717797301::0::1::::<>Node3D<>::
+lvl_2.tscn::PackedScene::4817150360631167071::1717889707::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://lvl_2.gd<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
+menu.tscn::PackedScene::1509004501112673603::1717169969::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://cvpkbofikuto7::::res://plane.tscn<>uid://bnn3lhrxu3tu5::::res://scenes/plane_ui.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
+n1pc.gd::GDScript::-1::1717886687::0::1::::<>CharacterBody3D<>::
+npc.gd::GDScript::-1::1717525262::0::1::::<>CharacterBody3D<>::
+npc.tscn::PackedScene::1226555136119929::1717889707::0::1::::<><>::res://n1pc.gd<>uid://bwbp6yomwrj4g::::res://models/low_poly_spaceship_stardestroyer.glb<>uid://2fpuwlbn03hw::::res://scenes/boss_1_health.tscn
+plane.tscn::PackedScene::6278382449245927752::1717015220::0::1::::<><>::uid://cr6dsgdnij4aw::::res://spaceship_raider_class__pathfinder.glb<>uid://6vf4hbcww1sg::::res://ship.glb
+raptor_spaceship_low_poly.glb::PackedScene::4908650808420156820::1717169969::1717169969::1::::<><>::
+room.glb::PackedScene::9180994081963386477::1716399539::1716399539::1::::<><>::
+ship.gd::GDScript::-1::1717075950::0::1::::<>MeshInstance3D<>::
+ship.glb::PackedScene::2219561827930754530::1716399539::1716399539::1::::<><>::
+shiplaser.gd::GDScript::-1::1717075950::0::1::::<>MeshInstance3D<>::
+spaceship_raider_class__pathfinder.glb::PackedScene::6030262035253445810::1716399539::1716399539::1::::<><>::
+::res://models/::1717169969
+AXWing.gltf::PackedScene::3732702150925200996::1716399539::1716399539::1::::<><>::
+low-poly_ship_practice.glb::PackedScene::6560562315386394338::1717169969::1717169969::1::::<><>::
+low-poly_spaceship (1).glb::PackedScene::6602964777180702422::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_0.png::CompressedTexture2D::192917250674721789::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_1.png::CompressedTexture2D::2505664613596032929::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_2.png::CompressedTexture2D::530472223928384423::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (2).glb::PackedScene::1490869305038675044::1716646023::1716646023::1::::<><>::
+low-poly_spaceship_2.glb::PackedScene::5760941788468181398::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_0.png::CompressedTexture2D::8002748244768958503::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_1.png::CompressedTexture2D::508178508065819023::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_2.png::CompressedTexture2D::5942035152964990766::1716399539::1716399539::1::::<><>::
+low_poly_spaceship.glb::PackedScene::4209333557050016673::1717169969::1717169969::1::::<><>::
+low_poly_spaceship_stardestroyer.glb::PackedScene::3933607018749391340::1717169969::1717169969::1::::<><>::
+malabar_medium_transport.glb::PackedScene::6586575797066942261::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_0.png::CompressedTexture2D::62367045414563415::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_1.png::CompressedTexture2D::7098991500527966458::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_2.png::CompressedTexture2D::7182221439220321755::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_3.png::CompressedTexture2D::4172881306162800489::1716399539::1716399539::1::::<><>::
+::res://models/asteroids/::1717795252
+Asteroids.glb::PackedScene::5819170688712993066::1717010650::1717010650::1::::<><>::
+LongAsteroid.glb::PackedScene::4526264042994806479::1717558483::1717795252::1::::<><>::
+::res://music/::1717890001
+ready.mp3::AudioStreamMP3::6585280942243551939::1717888899::1717889247::1::::<><>::
+results.mp3::AudioStreamMP3::2091801578181822826::1717890001::1717890146::1::::<><>::
+::res://scenes/::1717889707
+asteroidexplode.tscn::PackedScene::9031501146027774967::1717523365::0::1::::<><>::
+boost_pu.tscn::PackedScene::409136109840279262::1717889301::0::1::::<><>::res://scripts/boostPU.gd
+boss_1_health.tscn::PackedScene::1906368310337142892::1717882843::0::1::::<><>::res://scripts/boss1Health.gd
+charge_shot.tscn::PackedScene::6279957148605454276::1717889301::0::1::::<><>::res://scripts/chargeShot.gd
+jetbooster.tscn::PackedScene::2872059796464687604::1716399539::0::1::::<><>::uid://cped5ifdu15tk::::res://textures/light_01.png
+laser.tscn::PackedScene::4120667032220864641::1717889707::0::1::::<><>::res://scripts/laser.gd
+lvlselect.tscn::PackedScene::1796100539798421772::1717169969::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf
+lvl_1.gd::GDScript::-1::1717006697::0::1::::<>Node3D<>::
+lvl_1.tscn::PackedScene::935009545940325704::1717889707::0::1::::<><>::res://scripts/root.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://ug3tljlva4::::res://npc.tscn<>uid://dfoo45pcvssu2::::res://scenes/ready_up.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
+multiplayer.tscn::PackedScene::5218198873189531056::1717438525::0::1::::<><>::res://scripts/multiplayerWorld.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/reticle.gd
+multiplayerShip.tscn::PackedScene::4224517590664187559::1717438525::0::1::::<><>::res://scripts/multiplayerShip.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb
+npc.gd::GDScript::-1::1717006697::0::1::::<>CharacterBody3D<>::
+npc.tscn::PackedScene::7080290496233514166::1717169969::0::1::::<><>::uid://c0p8rdjafvks5::::res://models/low-poly_ship_practice.glb
+npctut.gd::GDScript::-1::1717006697::0::1::::<>CharacterBody3D<>::
+plaine_ui.tscn::PackedScene::6142961887514508154::1717889707::0::1::::<><>::res://scripts/plaine_ui.gd
+plane_ui.gd::GDScript::-1::1717001609::0::1::::<>Node2D<>::
+plane_ui.tscn::PackedScene::3327432676318704722::1717169969::0::1::::<><>::res://scenes/plane_ui.gd<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf
+player_move_plane.tscn::PackedScene::5066408556363626863::1717015220::0::1::::<><>::res://scripts/move_along_object_forward.gd<>res://scripts/player_flight_controller.gd<>uid://cvpkbofikuto7::::res://plane.tscn
+Quick ship 4.1.obj::Mesh::6814919413591785306::1717073884::1717888834::1::::<><>::
+ready_up.tscn::PackedScene::7540010982740507883::1717889707::0::1::::<><>::res://scripts/ready_up.gd<>uid://c027u563363gp::::res://music/ready.mp3
+success.tscn::PackedScene::504994260143000114::1717890136::0::1::::<><>::res://scripts/success.gd<>uid://42jwwljcifl7::::res://music/results.mp3
+root.tscn::PackedScene::4394773099971997567::1717889707::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/root.gd<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://dmvow20oifgj4::::res://scenes/star.tscn
+ship.tscn::PackedScene::4483467963130008301::1717889707::0::1::::<><>::res://scripts/plane.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb<>uid://ctrxxju7y0exu::::res://scenes/plaine_ui.tscn
+ship_laser.gd::GDScript::-1::1717886666::0::1::::<>Node3D<>::
+ship_laser.tscn::PackedScene::7306587498769505930::1717889301::0::1::::<><>::res://scenes/ship_laser.gd
+star.tscn::PackedScene::8045770890333139983::1717872315::0::1::::<><>::res://scripts/shaders/star.gdshader
+::res://scenes/asteroid_scenes/::1717797275
+asteroids.tscn::PackedScene::1181567919726072346::1717797275::0::1::::<><>::res://scripts/asteroids.gd<>uid://co535kb5mnsby::::res://models/asteroids/Asteroids.glb
+long_asteroid.tscn::PackedScene::6799566697522727488::1717558483::0::1::::<><>::res://scripts/asteroids.gd
+::res://scenes/multiplayer/::1717882843
+multiplayership.tscn::PackedScene::7038440503399763045::1717882843::0::1::::<><>::res://scripts/multiplayerPlane.gd<>uid://6vf4hbcww1sg::::res://ship.glb<>uid://cocv4thwj48tu::::res://models/low-poly_spaceship_2.glb
+multiplayerWorld.tscn::PackedScene::7503707919441512012::1717882843::0::1::::<><>::res://scripts/multiplayerWorld.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/reticle.gd
+::res://scripts/::1717889671
+asteroids.gd::GDScript::-1::1717797275::0::1::::<>Node3D<>::
+boostPU.gd::GDScript::-1::1717886499::0::1::::<>Node3D<>::
+boss1Health.gd::GDScript::-1::1717809633::0::1::::<>CanvasLayer<>::
+chargeShot.gd::GDScript::-1::1717887888::0::1::::<>Node3D<>::
+laser.gd::GDScript::-1::1717887505::0::1::::<>Node3D<>::
+math_lib.gd::GDScript::-1::1716399539::0::1::::MathLib<>Node<>::
+move_along_object_forward.gd::GDScript::-1::1716401671::0::1::::MoveAlongObjectForward<>Node3D<>::
+multiplayerPlane.gd::GDScript::-1::1717442761::0::1::::<>CharacterBody3D<>::
+multiplayerShip.gd::GDScript::-1::1717442761::0::1::::<>CharacterBody3D<>::
+multiplayerWorld.gd::GDScript::-1::1717442761::0::1::::<>Node<>::
+plaine_ui.gd::GDScript::-1::1717799992::0::1::::<>CanvasLayer<>::
+plane.gd::GDScript::-1::1717889361::0::1::::<>CharacterBody3D<>::
+player_flight_controller.gd::GDScript::-1::1716400258::0::1::::PlayerFlightController<>Node3D<>::
+pointer.gd::GDScript::-1::1717525231::0::1::::<>MeshInstance3D<>::
+ready_up.gd::GDScript::-1::1717889671::0::1::::<>CanvasLayer<>::
+success.gd::GDScript::-1::1717890136::0::1::::<>CanvasLayer<>::
+reticle.gd::GDScript::-1::1716477847::0::1::::Reticle<>Control<>::
+root.gd::GDScript::-1::1717887449::0::1::::<>Node3D<>::
+smooth_follow.gd::GDScript::-1::1716399539::0::1::::SmoothFollow<>Node3D<>::
+::res://scripts/shaders/::1717872315
+star.gdshader::Shader::-1::1717872315::0::1::::<><>::
+::res://textures/::1717169969
+ai-generated-abstract-low-poly-dark-space-background-with-connecting-dots-and-lines-vector-illustration-ai-generated-free-photo.jpg::CompressedTexture2D::8031298191898429933::1716399539::1716399539::1::::<><>::
+GlacialIndifference-Regular.otf::FontFile::2391591754145954000::1717169969::1717169969::1::::<><>::
+JudgeCondensed-MVPRn.otf::FontFile::7225490605721748981::1717169969::1717169969::1::::<><>::
+JudgeExpanded-7BxGB.ttf::FontFile::6115292331357692122::1717169969::1717169969::1::::<><>::
+JumpersSemiItalic-2vvB3.otf::FontFile::5331228031291047738::1717169969::1717169969::1::::<><>::
+KosmicsitalicpersonaluseIta-Rp8DE (1).otf::FontFile::3534123465956140903::1717169969::1717169969::1::::<><>::
+light_01.png::CompressedTexture2D::5834167685843286712::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_0.png::CompressedTexture2D::631235923011754163::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_1.png::CompressedTexture2D::2632320726997620480::1716399539::1716399539::1::::<><>::
+low-poly_spaceship (1)_2.png::CompressedTexture2D::3261304874718072689::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_0.png::CompressedTexture2D::7121746013261314298::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_1.png::CompressedTexture2D::7008675664734254550::1716399539::1716399539::1::::<><>::
+low-poly_spaceship_2_2.png::CompressedTexture2D::6215132828627630821::1716399539::1716399539::1::::<><>::
+malabar_medium_transport.glb::PackedScene::6631463928581932727::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_0.png::CompressedTexture2D::5915993488608739268::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_1.png::CompressedTexture2D::8802663470980410182::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_2.png::CompressedTexture2D::5282708421714103674::1716399539::1716399539::1::::<><>::
+malabar_medium_transport_3.png::CompressedTexture2D::3338441063903403857::1716399539::1716399539::1::::<><>::
+SolAsteroidBeltHDRI.png::CompressedTexture2D::454380413326955207::1716399539::1716399539::1::::<><>::

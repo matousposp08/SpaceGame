@@ -1,5 +1,9 @@
-ProgressBar
+AudioStreamPlayer
+ColorRect
+TextEdit
 CanvasLayer
+Button
+ProgressBar
 AnimationPlayer
 Label
 MeshInstance3D
@@ -8,8 +12,3 @@ Label3D
 LineEdit
 MultiplayerSynchronizer
 Node3D
-MultiplayerSpawner
-Button
-VBoxContainer
-MarginContainer
-PanelContainer

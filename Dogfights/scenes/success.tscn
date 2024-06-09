@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://hgvgga53h4ag"]
+
+[ext_resource type="Script" path="res://scripts/success.gd" id="1_l72eb"]
+[ext_resource type="AudioStream" uid="uid://42jwwljcifl7" path="res://music/results.mp3" id="2_0oe0k"]
+
+[node name="success" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_l72eb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1191.0
+offset_bottom = 690.0
+color = Color(0.32549, 0.717647, 1, 0.27451)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 390.0
+offset_top = 245.0
+offset_right = 731.0
+offset_bottom = 379.0
+text = "MISSION SUCCESS
+
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0oe0k")
+stream_paused = true

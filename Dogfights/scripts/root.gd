@@ -8,13 +8,13 @@ var rng = RandomNumberGenerator.new()
 var SUN_added = false
 var x = 90
 var played = false;
+var SUCCESS : PackedScene = preload('res://scenes/success.tscn')
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#for i in range(0, 90):
 	#	rockSpawn(Vector3(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0)))
 	$level1/AnimationPlayer.play("fade")
 	played = true;
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -28,6 +28,9 @@ func _process(delta):
 	if (x > 0) :
 		x -= 1
 		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))
+	if ($npc.health <= 0) :
+		var instance = SUCCESS.instantiate()
+		get_parent().add_child(instance)
 
 func rockSpawn(pos: Vector3):
 	var random_rock_type = rng.randi_range(0, 1)

@@ -23,7 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.605)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="." groups=["enemy"]]
+[node name="Area3D" type="Area3D" parent="." groups=["enemy", "enemyship"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_vmf8d")

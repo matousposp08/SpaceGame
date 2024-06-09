@@ -20,7 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	add_to_group(name)
 	$Area3D.add_to_group(name)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -153,5 +153,7 @@ func _on_area_3d_area_entered(area):
 			damage(20)
 		if area.is_in_group("blast"):
 			damage(50)
+		if area.is_in_group("enemyship"):
+			damage(30)
 		if area.is_in_group("boost"):
 			boostpower = 900
