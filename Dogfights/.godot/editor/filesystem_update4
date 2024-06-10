@@ -11,5 +11,4 @@ res://scenes/multiplayer.tscn
 res://scenes/multiplayer/multiplayerWorld.tscn
 res://scenes/laser.tscn
 res://scenes/multiplayer/multiship.gd
-res://scenes/multiplayer/multiplayer_ops.gd
-res://scripts/multiplayerWorld.gd
+res://scenes/multiplayer/multiplayerlvl_1.gd

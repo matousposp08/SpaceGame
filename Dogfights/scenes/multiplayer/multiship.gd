@@ -127,14 +127,28 @@ func reverse():
 	if rev < 1: 
 		rev = 60
 
-func laser(pos, bas):
+#func laser(pos, bas):
+	#var instance = LASER.instantiate()
+	#instance.add_to_group(name)
+	#instance.position = pos
+	#instance.transform.basis = bas
+	##print(str(position) + " " + str(instance.position))
+	#get_parent().add_child(instance)
+
+func laser(position, basis):
 	var instance = LASER.instantiate()
+	instance.name = name
+	instance.position = position
+	instance.transform.basis = basis
+	#get_parent().areas[instance.get_node("Area3D")] = name
+	instance.get_node("Area3D").add_to_group(name)
 	instance.add_to_group(name)
-	instance.position = pos
-	instance.transform.basis = bas
-	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
-	
+	rpc("spawn_laser", position, basis)
+
+@rpc func spawn_laser(position, basis):
+	laser(position, basis)
+
 func chargeShot(pos, bas):
 	var instance = CHARGE.instantiate()
 	instance.add_to_group(name)
