@@ -16,11 +16,15 @@ func _ready():
 
 func _physics_process(delta):
 	x += 1
-	print("npc: " + str(health))
+	#print("npc: " + str(health))
 	
 	if health <= 0:
 		death(position, transform.basis)
 		queue_free()
+	
+	if $RayCast3D.is_colliding():
+		if $RayCast3D.get_collider().is_in_group("asteroid"):
+			laser(position, transform.basis)
 	
 	if (x > 120 and x % 3 == 0) :
 		laser(position, transform.basis)
@@ -86,3 +90,5 @@ func _on_area_3d_area_entered(area):
 			damage(20)
 		if area.is_in_group("blast"):
 			damage(50)
+		if area.is_in_group("blastshot"):
+			damage(70)

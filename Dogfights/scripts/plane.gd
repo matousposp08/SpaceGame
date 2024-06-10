@@ -10,10 +10,12 @@ var charge = 0
 var health = 100
 var shield = 100
 var boostpower = 0
+var strength = 0
 var alive = true
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
+var BLAST : PackedScene = preload('res://scenes/blast_shot.tscn')
 var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -85,20 +87,22 @@ func _physics_process(delta):
 			yvel -= 0.05
 		if (yvel < 0) :
 			yvel += 0.05
-	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and strength > 0:
+		blastShot(position, transform.basis)
+		strength -= 1
+	elif Input.is_action_pressed("shoot"):
 		charge += 1
-	if Input.is_action_just_released("shoot") and charge > 40:
+	elif Input.is_action_just_released("shoot") and charge > 40 and not strength > 0:
 		chargeShot(position, transform.basis)
 		charge = 0
-	elif Input.is_action_just_released("shoot"):
+	elif Input.is_action_just_released("shoot") and not strength > 0:
 		charge = 0
 		laser(position, transform.basis)
 	
 	rotation_degrees.y -= xvel
 	if rotation_degrees.x < 87 or rotation_degrees.x > -87:
 		rotation_degrees.x += yvel
-	if (Input.is_action_just_pressed("shoot")):
+	if (Input.is_action_just_pressed("shoot")) and not strength > 0:
 		laser(position, transform.basis)
 	
 	move_and_slide()
@@ -123,6 +127,15 @@ func chargeShot(pos, bas):
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 
+func blastShot(pos, bas):
+	var instance = BLAST.instantiate()
+	instance.add_to_group(name)
+	#instance.scale *= 5
+	instance.position = pos
+	instance.transform.basis = bas
+	#print(str(position) + " " + str(instance.position))
+	get_parent().add_child(instance)
+
 func death(pos, bas):
 	var instance = DEATH.instantiate()
 	instance.add_to_group(name)
@@ -140,6 +153,12 @@ func damage(num):
 		shield -= num
 	else:
 		health -= num
+
+func heal(num):
+	health += num
+	if health > 100:
+		shield += health - 100
+		health = 100
 
 func _on_Timer_timeout():
 	queue_free()
@@ -160,3 +179,7 @@ func _on_area_3d_area_entered(area):
 			damage(30)
 		if area.is_in_group("boost"):
 			boostpower = 900
+		if area.is_in_group("heal"):
+			heal(30)
+		if area.is_in_group("strength"):
+			strength = 480

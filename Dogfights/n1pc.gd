@@ -58,3 +58,5 @@ func _on_area_3d_area_entered(area):
 			health -= 2
 		if (area.is_in_group("charge")):
 			health -= 50
+		if (area.is_in_group("blastshot")):
+			health -= 70
