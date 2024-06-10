@@ -106,6 +106,10 @@ text = ">   <"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer/multiship.tscn")
+spawn_path = NodePath("..")
+
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]

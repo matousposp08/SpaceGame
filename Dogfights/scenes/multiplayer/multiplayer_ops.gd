@@ -37,8 +37,8 @@ func _process(delta):
 	#if (x > 0) :
 	#	x -= 1
 	#	rockSpawn(Vector3(rng.randf_range(-1000.0, 1000.0), rng.randf_range(-300.0, 300.0), rng.randf_range(-300.0, 300.0)))
-	if not is_multiplayer_authority(): 
-		return
+	#if not is_multiplayer_authority(): 
+		#return
 	$CanvasLayer/MarginContainer/VBoxContainer/Sprite2D.visible = true
 	var text = ""
 	print(ps)

@@ -110,6 +110,7 @@ libraries = {
 [node name="multiplayerOps" parent="." instance=ExtResource("8_fa6dr")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer/multiship.tscn")
 spawn_path = NodePath("..")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
