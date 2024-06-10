@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3c1612kd3r2d"]
+[gd_scene load_steps=4 format=3 uid="uid://cu8ag46rc8qju"]
 
 [ext_resource type="Script" path="res://scenes/multiplayer/multiplayer_ops.gd" id="1_b4rtx"]
-[ext_resource type="Texture2D" path="res://textures/HOSTIMG.png" id="1_okehm"]
+[ext_resource type="Texture2D" uid="uid://bgl2ii8pto4nh" path="res://textures/HOSTIMG.png" id="1_okehm"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_iq6me"]
 properties/0/path = NodePath("CanvasLayer/MarginContainer/VBoxContainer/players:text")
@@ -15,17 +15,17 @@ script = ExtResource("1_b4rtx")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 686.0
-offset_top = 213.0
-offset_right = 1147.0
-offset_bottom = 658.0
+offset_left = 803.0
+offset_top = 229.0
+offset_right = 1264.0
+offset_bottom = 674.0
 color = Color(0.32549, 0.717647, 1, 0.431373)
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-offset_left = 686.0
-offset_top = 213.0
-offset_right = 1012.0
-offset_bottom = 569.0
+offset_left = 803.0
+offset_top = 229.0
+offset_right = 1129.0
+offset_bottom = 585.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
@@ -71,6 +71,10 @@ text = "NONE"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_iq6me")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer/multiship.tscn")
+spawn_path = NodePath("..")
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/join" to="." method="_on_join_pressed"]
