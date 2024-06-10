@@ -11,6 +11,9 @@ var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
 
+func _ready():
+	$Area3D.add_to_group(name)
+
 func _physics_process(delta):
 	x += 1
 	print("npc: " + str(health))
@@ -19,15 +22,15 @@ func _physics_process(delta):
 		death(position, transform.basis)
 		queue_free()
 	
-	if (x < 120 and x % 3 == 0) :
+	if (x > 120 and x % 3 == 0) :
 		laser(position, transform.basis)
-	if x > 360:
-		x = 60
+	if x > 240:
+		x = 0
 	
-	$eyes.look_at(get_parent().get_node("ship").global_position)
-	rotate_y(deg_to_rad($eyes.rotation.y)*0.01)
-	rotate_x(deg_to_rad($eyes.rotation.x)*0.01)
-	look_at(get_parent().get_node("ship").global_position)
+	#$eyes.look_at(get_parent().get_node("ship").global_position)
+	#rotate_y(deg_to_rad($eyes.rotation.y)*0.01)
+	#rotate_x(deg_to_rad($eyes.rotation.x)*0.01)
+	look_at(get_parent().get_node("ship").position)
 	
 	position += transform.basis * Vector3(0,0,-SPEED) * delta
 	# Add the gravity.
@@ -56,6 +59,7 @@ func laser(pos, bas):
 	instance.add_to_group(name)
 	instance.position = pos
 	instance.transform.basis = bas
+	instance.SPEED *= -1
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 

@@ -44,7 +44,7 @@ visible = false
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("BoxShape3D_yc67g")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["player"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
