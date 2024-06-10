@@ -42,8 +42,8 @@ func _process(delta):
 	$CanvasLayer/MarginContainer/VBoxContainer/Sprite2D.visible = true
 	var text = ""
 	print(ps)
-	for i in ps:
-		text += str(i) + " " + get_parent().get_node(str(i)).get_node("Username").text + "\n"
+	#for i in ps:
+		#text += str(i) + " " + get_parent().get_node(str(i)).get_node("Username").text + "\n"
 	$CanvasLayer/MarginContainer/VBoxContainer/players.text = text
 
 func rockSpawn(pos: Vector3):
@@ -79,7 +79,7 @@ func add_player(peer_id):
 	var player = Player.instantiate()
 	ps.append(peer_id)
 	player.name = str(peer_id)
-	get_parent().add_child(player)
+	add_child(player)
 
 func remove_player(peer_id):
 	ps.erase(peer_id)
