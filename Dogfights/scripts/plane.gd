@@ -10,9 +10,11 @@ var charge = 0
 var health = 100
 var shield = 100
 var boostpower = 0
+var alive = true
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
+var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,15 +25,19 @@ func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta):
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity.y -= gravity * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
-	#rotation_degrees.z = 0
-	# Get the input direction and handle the movement/deceleration.
+	if health <= 0 and alive:
+		$ship.visible = false
+		death(global_position, transform.basis)
+		var timer = Timer.new()
+		timer.wait_time = 3.0
+		timer.one_shot = true
+		timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
+		add_child(timer)
+		timer.start()
+		alive = false
+		return
+	if health <= 0 and not alive:
+		return
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	global_transform.origin -= transform.basis.z.normalized() * SPEED * delta
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -80,13 +86,6 @@ func _physics_process(delta):
 		if (yvel < 0) :
 			yvel += 0.05
 	
-	
-	#print(rotation_degrees)
-	#rotation_degrees.z = 0
-	#rotate_y(xvel*0.02)
-	#rotate_x(yvel*0.02)
-	#rotation.z = 0
-	
 	if Input.is_action_pressed("shoot"):
 		charge += 1
 	if Input.is_action_just_released("shoot") and charge > 40:
@@ -104,14 +103,6 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-#func _input(event):
-#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#	if event is InputEventMouseMotion:
-#		transform.basis.x += Vector3.UP * event.relative.y * -0.003
-#		transform.basis.y += Vector3.UP * event.relative.x * -0.003
-		#parts["head"].rotation.x = clamp(parts["head"].rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
 func reverse():
 	if rev < 1: 
 		rev = 60
@@ -132,6 +123,15 @@ func chargeShot(pos, bas):
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 
+func death(pos, bas):
+	var instance = DEATH.instantiate()
+	instance.add_to_group(name)
+	instance.position = pos
+	instance.transform.basis = bas
+	instance.emitting = true
+	#print(str(position) + " " + str(instance.position))
+	get_parent().add_child(instance)
+
 func damage(num):
 	if shield < num and shield > 0:
 		shield = 0
@@ -140,6 +140,9 @@ func damage(num):
 		shield -= num
 	else:
 		health -= num
+
+func _on_Timer_timeout():
+	queue_free()
 
 func _on_area_3d_area_entered(area):
 	print(area.get_groups())

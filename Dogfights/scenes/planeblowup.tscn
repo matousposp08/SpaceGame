@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvb1cqakyvrhv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g5t5m"]
+direction = Vector3(1, 1, 1)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkn71"]
+albedo_color = Color(1, 0.521569, 0.109804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2548"]
+material = SubResource("StandardMaterial3D_tkn71")
+
+[node name="planeblowup" type="GPUParticles3D"]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_g5t5m")
+draw_pass_1 = SubResource("BoxMesh_x2548")
