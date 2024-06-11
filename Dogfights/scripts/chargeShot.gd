@@ -28,6 +28,7 @@ func destroy():
 	explode = true
 	$GPUParticles3D.emitting = true
 	$Area3D/CollisionShape3D.disabled = true
+	queue_free()
 
 func _on_area_3d_area_entered(area):
 	if not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):

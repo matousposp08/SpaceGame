@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwicxs5h2qwnl"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/shiptrail.gdshader" id="1_2hlfn"]
+[ext_resource type="Script" path="res://scripts/shiptrail.gd" id="1_7yvco"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ill7k"]
+render_priority = 0
+shader = ExtResource("1_2hlfn")
+shader_parameter/outside_time = null
+
+[sub_resource type="SphereMesh" id="SphereMesh_y7iap"]
+material = SubResource("ShaderMaterial_ill7k")
+
+[node name="shiptrail" type="Node3D"]
+script = ExtResource("1_7yvco")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.305276, 0, 0, 0, 0.305276, 0, 0, 0, 0.305276, 0, 0, 0)
+mesh = SubResource("SphereMesh_y7iap")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

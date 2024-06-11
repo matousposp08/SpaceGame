@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dw60a7sh0cuv7"]
+
+[sub_resource type="Curve" id="Curve_y80gy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994398, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x4r16"]
+curve = SubResource("Curve_y80gy")
+
+[sub_resource type="Gradient" id="Gradient_4gl06"]
+offsets = PackedFloat32Array(0, 0.46002, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.353406, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i3p45"]
+gradient = SubResource("Gradient_4gl06")
+
+[sub_resource type="Curve" id="Curve_ijjo0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.235294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1hd1l"]
+curve = SubResource("Curve_ijjo0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1k1c5"]
+angle_min = -10.0
+angle_max = 10.0
+direction = Vector3(-1, 0, 0)
+spread = 50.0
+flatness = 0.8
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_1hd1l")
+color_ramp = SubResource("GradientTexture1D_i3p45")
+alpha_curve = SubResource("CurveTexture_x4r16")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kuw7w"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_q4whk"]
+material = SubResource("StandardMaterial3D_kuw7w")
+
+[node name="Exhaust" type="GPUParticles3D"]
+transform = Transform3D(5.44573, 0, 0, 0, 5.44573, 0, 0, 0, 5.44573, 0, 0, 0)
+emitting = false
+amount = 400
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_1k1c5")
+draw_pass_1 = SubResource("BoxMesh_q4whk")

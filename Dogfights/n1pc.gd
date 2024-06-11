@@ -9,7 +9,13 @@ var health = 1000
 var mission_time = 3600
 var x = 0
 
+#shiptrails stuff
+var exhaust_model = load("res://scenes/exhaust.tscn")
+var exhaust
+
 func _ready() -> void:
+	exhaust = exhaust_model.instantiate()
+	exhaust.emitting = true
 	player = $ship
 	var timer = Timer.new()
 	timer.wait_time = 60.0
@@ -25,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	#print((get_parent().get_node("ship").position))
 	#print($MeshInstance3D.transform.basis)
 	#print($MeshInstance3D.rotation)
+	if (x % 15 == 0):
+		move_ship_trail(exhaust)
 	if (x % 180 == 0) :
 		print("shot")
 		shoot_laser(global_position, transform.basis)
@@ -50,6 +58,12 @@ func shoot_laser(pos, bas):
 	#instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+	
+func move_ship_trail(exhaust):
+	var pos = get_parent().get_node("npc").global_position
+	pos.x -= 30
+	exhaust.position = pos
+	get_parent().add_child(exhaust)
 
 
 func _on_area_3d_area_entered(area):
