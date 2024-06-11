@@ -9,7 +9,7 @@ var enet_peer = ENetMultiplayerPeer.new()
 
 var ps = 1
 
-var ROCK : PackedScene = preload('res://scenes/asteroids.tscn')
+var ROCK : PackedScene = preload('res://scenes/asteroid_scenes/asteroids.tscn')
 var SUN : PackedScene = preload('res://scenes/star.tscn')
 var rng = RandomNumberGenerator.new()
 var SUN_added = false

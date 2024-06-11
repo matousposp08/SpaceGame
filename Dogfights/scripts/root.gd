@@ -3,9 +3,9 @@ extends Node3D
 var SMALL_ROCK : PackedScene = preload('res://scenes/asteroid_scenes/asteroids.tscn')
 var LONG_ROCK : PackedScene = preload('res://scenes/asteroid_scenes/long_asteroid.tscn')
 var ROCKS = [SMALL_ROCK, LONG_ROCK]
-var SUN : PackedScene = preload('res://scenes/star.tscn')
+#var SUN : PackedScene = preload('res://scenes/star.tscn')
 var rng = RandomNumberGenerator.new()
-var SUN_added = false
+#var SUN_added = false
 var x = 90
 var played = false;
 var SUCCESS : PackedScene = preload('res://scenes/success.tscn')
@@ -19,12 +19,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if (!SUN_added):
-		var instance = SUN.instantiate()
-		instance.position = Vector3(100.0, 100.0, 0.0)
-		instance.scale *= 1
-		get_parent().add_child(instance)
-		SUN_added = true
+	#if (!SUN_added):
+		#var instance = SUN.instantiate()
+		#instance.position = Vector3(100.0, 100.0, 0.0)
+		#instance.scale *= 1
+		#get_parent().add_child(instance)
+		#SUN_added = true
 	if (x > 0) :
 		x -= 1
 		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))

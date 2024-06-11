@@ -1,6 +1,6 @@
 extends Node3D
 
-var IMPACT : PackedScene = preload('res://scenes/asteroidexplode.tscn')
+var IMPACT : PackedScene = preload('res://scenes/asteroid_scenes/asteroidexplode.tscn')
 var BOOST : PackedScene = preload('res://scenes/boost_pu.tscn')
 
 var rng = RandomNumberGenerator.new()
