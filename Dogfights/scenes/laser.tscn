@@ -52,7 +52,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_degnb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 2, 2.64, -0.5, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 2, 2.64, -0.5, -1)
 shape = SubResource("BoxShape3D_ohbds")
 
 [node name="Area3D2" type="Area3D" parent="."]
@@ -65,7 +65,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4tuwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 2, 0.64, -0.5, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 2, 0.64, -0.5, -1)
 shape = SubResource("BoxShape3D_ohbds")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://80ylm8unwjl8"]
+
+[ext_resource type="Script" path="res://scripts/strengthPU.gd" id="1_m48xw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pydjh"]
+albedo_color = Color(1, 0.356863, 0.0470588, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lrgg8"]
+material = SubResource("StandardMaterial3D_pydjh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_750h8"]
+
+[node name="strengthPU" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_m48xw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lrgg8")
+
+[node name="Area3D" type="Area3D" parent="." groups=["strength"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_750h8")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

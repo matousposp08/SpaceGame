@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://blui50682ws2n"]
+
+[ext_resource type="Script" path="res://scripts/healthPU.gd" id="1_y3r4e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_auat5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf5op"]
+albedo_color = Color(0, 1, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1xrnu"]
+material = SubResource("StandardMaterial3D_rf5op")
+
+[node name="healthPU" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_y3r4e")
+
+[node name="Area3D" type="Area3D" parent="." groups=["heal"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_auat5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_1xrnu")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b443ceba685uv"]
+[gd_scene load_steps=8 format=3 uid="uid://da807cpuf7s8a"]
 
-[ext_resource type="Script" path="res://scripts/plane.gd" id="1_6vsd0"]
-[ext_resource type="PackedScene" uid="uid://6vf4hbcww1sg" path="res://ship.glb" id="2_glmua"]
-[ext_resource type="PackedScene" uid="uid://cocv4thwj48tu" path="res://models/low-poly_spaceship_2.glb" id="3_8w1rn"]
-[ext_resource type="PackedScene" uid="uid://ctrxxju7y0exu" path="res://scenes/plaine_ui.tscn" id="4_g28xp"]
+[ext_resource type="Script" path="res://scenes/multiplayer/multiship.gd" id="1_0cijx"]
+[ext_resource type="PackedScene" uid="uid://6vf4hbcww1sg" path="res://ship.glb" id="2_pfibg"]
+[ext_resource type="PackedScene" uid="uid://cocv4thwj48tu" path="res://models/low-poly_spaceship_2.glb" id="3_rrs41"]
+[ext_resource type="PackedScene" uid="uid://ctrxxju7y0exu" path="res://scenes/plaine_ui.tscn" id="4_vuhmr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yc67g"]
 
@@ -29,14 +29,14 @@ properties/5/path = NodePath("Username:text")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
-[node name="ship" type="CharacterBody3D"]
+[node name="multiship" type="CharacterBody3D"]
 collision_layer = 2
-script = ExtResource("1_6vsd0")
+script = ExtResource("1_0cijx")
 
-[node name="ship" parent="." instance=ExtResource("2_glmua")]
+[node name="ship" parent="." instance=ExtResource("2_pfibg")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_8w1rn")]
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_rrs41")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.113396, 0, -0.477441)
 visible = false
 
@@ -44,7 +44,7 @@ visible = false
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("BoxShape3D_yc67g")
 
-[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+[node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
@@ -67,6 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.35326, 0)
 pixel_size = 0.05
 billboard = 2
 
-[node name="PLAINE UI" parent="." instance=ExtResource("4_g28xp")]
+[node name="PLAINE UI" parent="." instance=ExtResource("4_vuhmr")]
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

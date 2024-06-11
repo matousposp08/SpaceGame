@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmvow20oifgj4" path="res://scenes/star.tscn" id="2_iuqas"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="4_mr8k5"]
 [ext_resource type="PackedScene" uid="uid://co535kb5mnsby" path="res://models/asteroids/Asteroids.glb" id="5_fatki"]
-[ext_resource type="PackedScene" path="res://scenes/sun.glb" id="7_ntphl"]
+[ext_resource type="PackedScene" uid="uid://b6kjpa6ypagg6" path="res://scenes/sun.glb" id="7_ntphl"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_miglh"]
 
@@ -98,6 +98,7 @@ transform = Transform3D(-1.5, 0, 2.59808, 0, 3, 0, -2.59808, 0, -1.5, 0, 1.33715
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.928135, 0, 0.372243, 0, 1, 0, -0.372243, 0, -0.928135, 2.91663, 2.22024, -2.97804)
+current = true
 
 [node name="PlaneUI" parent="." instance=ExtResource("2_0gnub")]
 

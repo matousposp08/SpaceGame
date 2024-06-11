@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3qak1pe51wke"]
+
+[ext_resource type="Script" path="res://scenes/multiplayer/multiplayerlvl_1.gd" id="1_ppq8g"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_31p6c"]
+[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="3_hjlv5"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="6_8mjet"]
+[ext_resource type="PackedScene" uid="uid://dfoo45pcvssu2" path="res://scenes/ready_up.tscn" id="7_lb80m"]
+[ext_resource type="PackedScene" uid="uid://cu8ag46rc8qju" path="res://scenes/multiplayer/multiplayer_ops.tscn" id="8_fa6dr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_br6vi"]
+panorama = ExtResource("2_31p6c")
+
+[sub_resource type="Sky" id="Sky_6eomh"]
+sky_material = SubResource("PanoramaSkyMaterial_br6vi")
+
+[sub_resource type="Environment" id="Environment_8tah0"]
+background_mode = 2
+sky = SubResource("Sky_6eomh")
+
+[sub_resource type="Animation" id="Animation_v5yea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_th22u"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.3, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x6g0x"]
+resource_name = "fade1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgaht"]
+_data = {
+"RESET": SubResource("Animation_v5yea"),
+"fade": SubResource("Animation_th22u"),
+"fade1": SubResource("Animation_x6g0x")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mf3bk"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="multiplayerlvl_1" type="Node3D"]
+script = ExtResource("1_ppq8g")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
+environment = SubResource("Environment_8tah0")
+
+[node name="Asteroids" parent="Scenery" instance=ExtResource("3_hjlv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
+
+[node name="level1" type="Label" parent="."]
+visible = false
+offset_left = 322.0
+offset_top = 266.0
+offset_right = 817.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("6_8mjet")
+theme_override_font_sizes/font_size = 150
+text = "LEVEL 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level1"]
+libraries = {
+"": SubResource("AnimationLibrary_sgaht")
+}
+
+[node name="readyUp" parent="." instance=ExtResource("7_lb80m")]
+
+[node name="multiplayerOps" parent="." instance=ExtResource("8_fa6dr")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer/multiship.tscn")
+spawn_path = NodePath("..")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("../readyUp")
+replication_config = SubResource("SceneReplicationConfig_mf3bk")

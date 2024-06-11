@@ -14,6 +14,7 @@ func _ready():
 	$Area3D.add_to_group(get_groups()[1])
 	$Area3D2.add_to_group(get_groups()[0])
 	$Area3D2.add_to_group(get_groups()[1])
+	print(get_groups())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
