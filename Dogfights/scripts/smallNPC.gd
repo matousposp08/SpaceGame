@@ -13,6 +13,7 @@ var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
 
 func _ready():
 	$Area3D.add_to_group(name)
+	$detector.add_to_group(name)
 
 func _physics_process(delta):
 	x += 1
@@ -22,9 +23,9 @@ func _physics_process(delta):
 		death(position, transform.basis)
 		queue_free()
 	
-	if $RayCast3D.is_colliding():
-		if $RayCast3D.get_collider().is_in_group("asteroid"):
-			laser(position, transform.basis)
+	#if $RayCast3D.is_colliding():
+	#	if $RayCast3D.get_collider().is_in_group("asteroid"):
+	#		laser(position, transform.basis)
 	
 	if (x > 120 and x % 3 == 0) :
 		laser(position, transform.basis)
@@ -92,3 +93,9 @@ func _on_area_3d_area_entered(area):
 			damage(50)
 		if area.is_in_group("blastshot"):
 			damage(70)
+
+
+func _on_detector_area_entered(area):
+	if (area.is_in_group("asteroids") or area.is_in_group("player")):
+		print("pluh")
+		laser(position,transform.basis)
