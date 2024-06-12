@@ -1,5 +1,4 @@
-res://scenes/lvlselect.tscn
-res://lvl_3.tscn
 res://menu.tscn
-res://lvl_2.tscn
-res://lvl_3.gd
+res://scenes/lvlselect.tscn
+res://scenes/lvl_3.tscn
+res://scenes/lvlselect.gd
