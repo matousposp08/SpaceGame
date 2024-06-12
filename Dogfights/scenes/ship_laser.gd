@@ -4,9 +4,10 @@ var direction = Vector3.ZERO
 @export var speed: float = 220.0
 
 func _ready():
-	var player = get_parent().get_node("ship")
+	#var player = get_parent().get_node("ship")
 	#print(player.name)
-	look_at(player.global_transform.origin, Vector3.UP)
+	#look_at(player.global_transform.origin, Vector3.UP)
+	pass
 
 func _process(delta):
 	var player = get_parent().get_node("ship")

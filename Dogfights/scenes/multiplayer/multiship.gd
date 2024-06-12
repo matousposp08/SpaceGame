@@ -24,15 +24,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	#$Username.billboard = true
-	##var username = get_parent().get_node("multiplayerOps/CanvasLayer/MarginContainer/VBoxContainer/Username").text
-	#if(username != ""):
-		#if not is_multiplayer_authority(): return
-		#$Username.text = username
-		#$Username.billboard = true
-	#else:
-		#if not is_multiplayer_authority(): return
-		#$Username.text = "guest"+name
-		#$Username.billboard = true
+	var username = get_parent().get_parent().get_node("multiplayerOps/CanvasLayer/MarginContainer/VBoxContainer/Username").text
+	if(username != ""):
+		if not is_multiplayer_authority(): return
+		$Username.text = username
+		$Username.billboard = true
+	else:
+		if not is_multiplayer_authority(): return
+		$Username.text = "guest"+name
+		$Username.billboard = true
 
 func _ready():	
 	add_to_group(name)
@@ -176,7 +176,8 @@ func damage(num):
 		health -= num
 
 func _on_Timer_timeout():
-	queue_free()
+	#queue_free()
+	pass
 
 func _on_area_3d_area_entered(area):
 	print(area.get_groups())

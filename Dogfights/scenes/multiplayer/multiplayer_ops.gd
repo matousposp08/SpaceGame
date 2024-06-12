@@ -79,6 +79,7 @@ func add_player(peer_id):
 	var player = Player.instantiate()
 	ps.append(peer_id)
 	player.name = str(peer_id)
+	#player.scale *= 0.1
 	add_child(player)
 
 func remove_player(peer_id):
