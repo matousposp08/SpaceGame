@@ -57,10 +57,13 @@ func shoot_laser(pos, bas):
 		var p = get_tree().get_nodes_in_group("player")
 		var target
 		var distance = 10000
+		print(p)
 		for i in p:
-			if (position.length() - i.position.length()) < distance:
+			if (abs(position.length() - i.position.length())) < distance:
 				target = i
-		instance.look_at(target.global_position)
+		#print(target.name) 
+		if target != null:
+			instance.look_at(target.global_position)
 	else:
 		instance.look_at(get_parent().get_node("ship").global_position)
 	instance.position = pos
