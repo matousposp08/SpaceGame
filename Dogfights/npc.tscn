@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ug3tljlva4"]
+[gd_scene load_steps=9 format=3 uid="uid://ug3tljlva4"]
 
 [ext_resource type="Script" path="res://n1pc.gd" id="1_c7gfc"]
 [ext_resource type="PackedScene" uid="uid://bwbp6yomwrj4g" path="res://models/low_poly_spaceship_stardestroyer.glb" id="2_bs1ox"]
@@ -14,6 +14,14 @@ size = Vector3(2, 2, 2)
 size = Vector3(1, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8hgle"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gohbj"]
+properties/0/path = NodePath("boss1Health/ProgressBar:value")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("boss1Health/ProgressBar2:value")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="npc" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_c7gfc")
@@ -42,4 +50,9 @@ shape = SubResource("BoxShape3D_8hgle")
 
 [node name="boss1Health" parent="." instance=ExtResource("4_tq81m")]
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_gohbj")
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+
+[editable path="boss1Health"]

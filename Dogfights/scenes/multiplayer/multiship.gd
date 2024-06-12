@@ -24,6 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	#$Username.billboard = true
+	$"PLAINE UI".visible = is_multiplayer_authority()
 	var username = get_parent().get_parent().get_node("multiplayerOps/CanvasLayer/MarginContainer/VBoxContainer/Username").text
 	if(username != ""):
 		if not is_multiplayer_authority(): return

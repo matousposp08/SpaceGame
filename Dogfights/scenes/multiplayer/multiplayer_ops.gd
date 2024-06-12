@@ -15,6 +15,7 @@ var SUN_added = false
 var x = 90
 var nonlocal = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#position += Vector2(20,20)
@@ -41,10 +42,12 @@ func _process(delta):
 		#return
 	$CanvasLayer/MarginContainer/VBoxContainer/Sprite2D.visible = true
 	var text = ""
-	print(ps)
-	#for i in ps:
-		#text += str(i) + " " + get_parent().get_node(str(i)).get_node("Username").text + "\n"
-	$CanvasLayer/MarginContainer/VBoxContainer/players.text = text
+	if is_multiplayer_authority():
+		print(ps)
+		if $CanvasLayer.visible:
+			for i in ps:
+				text += get_node(str(i)).get_node("Username").text + "\n"
+			$CanvasLayer/MarginContainer/VBoxContainer/players.text = text
 
 func rockSpawn(pos: Vector3):
 	var instance = ROCK.instantiate()

@@ -122,4 +122,4 @@ root_path = NodePath("../readyUp")
 replication_config = SubResource("SceneReplicationConfig_mf3bk")
 
 [node name="npc" parent="." instance=ExtResource("7_jy10k")]
-transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 0, 0, 14.0882)
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 58.9976, 0, 14.0882)

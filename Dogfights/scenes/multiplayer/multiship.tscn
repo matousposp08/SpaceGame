@@ -28,6 +28,9 @@ properties/4/replication_mode = 1
 properties/5/path = NodePath("Username:text")
 properties/5/spawn = true
 properties/5/replication_mode = 1
+properties/6/path = NodePath(".:visible")
+properties/6/spawn = true
+properties/6/replication_mode = 1
 
 [node name="multiship" type="CharacterBody3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -61,6 +64,7 @@ light_size = 1.0
 distance_fade_enabled = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+process_mode = 1
 replication_config = SubResource("SceneReplicationConfig_2tupg")
 
 [node name="Username" type="Label3D" parent="."]

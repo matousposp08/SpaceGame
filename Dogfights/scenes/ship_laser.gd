@@ -4,6 +4,17 @@ var direction = Vector3.ZERO
 @export var speed: float = 220.0
 
 func _ready():
+	if get_parent().name == "multiplayerlvl_1":
+		var p = get_tree().get_nodes_in_group("player")
+		var target
+		var distance = 10000
+		for i in p:
+			if (position.length() - i.position.length()) < distance:
+				target = i
+		if target != null:
+			look_at(target.global_position)
+	else:
+		look_at(get_parent().get_node("ship").global_position)
 	#var player = get_parent().get_node("ship")
 	#print(player.name)
 	#look_at(player.global_transform.origin, Vector3.UP)

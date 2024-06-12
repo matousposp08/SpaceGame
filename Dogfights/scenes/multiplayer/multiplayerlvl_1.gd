@@ -27,9 +27,16 @@ func _process(delta):
 	if (x > 0) :
 		x -= 1
 		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))
-	#if ($npc.health <= 0) :
-	#	var instance = SUCCESS.instantiate()
-	#	get_parent().add_child(instance)
+	if ($npc.health <= 0) :
+		succeed()
+
+func succeed():
+	var instance = SUCCESS.instantiate()
+	get_parent().add_child(instance)
+	rpc("rpc_succeed")
+
+@rpc func rpc_succeed():
+	succeed()
 
 func rockSpawn(pos: Vector3):
 	var random_rock_type = rng.randi_range(0, 1)
