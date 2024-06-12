@@ -61,7 +61,7 @@ func _physics_process(delta):
 		return
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	global_transform.origin -= transform.basis.z.normalized() * SPEED * delta
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Input.get_vector("left", "right", "up", "down")
 	#var direction = (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	if (Input.is_action_pressed("boost")) :
 		SPEED = -40
