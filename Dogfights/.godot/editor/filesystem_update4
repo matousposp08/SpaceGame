@@ -1,4 +1,10 @@
 res://menu.tscn
 res://scenes/lvlselect.tscn
 res://scenes/lvl_3.tscn
+res://scenes/lvl_2.tscn
+res://scenes/lvl_4.tscn
+res://scenes/multiplayer/multiplayerWorld.tscn
+res://scenes/multiplayerlvl_1.tscn
 res://scenes/lvlselect.gd
+res://scenes/plane_ui.gd
+res://scenes/plane_ui.tscn

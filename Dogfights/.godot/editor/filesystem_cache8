@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1718211067
+::res://::1718212235
 lvl_3.gd::GDScript::-1::1718200823::0::1::::<>Node3D<>::
-menu.tscn::PackedScene::1509004501112673603::1718202800::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://cvpkbofikuto7::::res://plane.tscn<>uid://bnn3lhrxu3tu5::::res://scenes/plane_ui.tscn<>uid://dmvow20oifgj4::::res://scenes/star.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf<>uid://co535kb5mnsby::::res://models/asteroids/Asteroids.glb<>uid://b6kjpa6ypagg6::::res://scenes/sun.glb
+menu.tscn::PackedScene::1509004501112673603::1718211815::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://cvpkbofikuto7::::res://plane.tscn<>uid://bnn3lhrxu3tu5::::res://scenes/plane_ui.tscn<>uid://dmvow20oifgj4::::res://scenes/star.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf<>uid://co535kb5mnsby::::res://models/asteroids/Asteroids.glb<>uid://b6kjpa6ypagg6::::res://scenes/sun.glb
 n1pc.gd::GDScript::-1::1718124245::0::1::::<>CharacterBody3D<>::
 npc.gd::GDScript::-1::1717802409::0::1::::<>CharacterBody3D<>::
 npc.tscn::PackedScene::1226555136119929::1717944045::0::1::::<><>::res://n1pc.gd<>uid://bwbp6yomwrj4g::::res://models/low_poly_spaceship_stardestroyer.glb<>uid://2fpuwlbn03hw::::res://scenes/boss_1_health.tscn
@@ -37,7 +37,7 @@ LongAsteroid.glb::PackedScene::4526264042994806479::1717693161::1717944272::1:::
 ::res://music/::1717944152
 ready.mp3::AudioStreamMP3::6585280942243551939::1717944045::1717944152::1::::<><>::
 results.mp3::AudioStreamMP3::2091801578181822826::1717944045::1717944152::1::::<><>::
-::res://scenes/::1718210659
+::res://scenes/::1718211816
 blast_shot.tscn::PackedScene::152836743214097699::1718058302::0::1::::<><>::res://scripts/blastShot.gd
 boost_pu.tscn::PackedScene::409136109840279262::1717802409::0::1::::<><>::res://scripts/boostPU.gd
 boss_1_health.tscn::PackedScene::1906368310337142892::1717886918::0::1::::<><>::res://scripts/boss1Health.gd
@@ -46,12 +46,12 @@ exhaust.tscn::PackedScene::8768931955216273210::1718124245::0::1::::<><>::
 health_pu.tscn::PackedScene::3200326191060958379::1718058302::0::1::::<><>::res://scripts/healthPU.gd
 jetbooster.tscn::PackedScene::2872059796464687604::1716338827::0::1::::<><>::uid://cped5ifdu15tk::::res://textures/light_01.png
 laser.tscn::PackedScene::4120667032220864641::1718200527::0::1::::<><>::res://scripts/laser.gd
-lvlselect.gd::GDScript::-1::1718124191::0::1::::<>Node2D<>::
-lvlselect.tscn::PackedScene::1796100539798421772::1718202800::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf<>res://scenes/lvlselect.gd
+lvlselect.gd::GDScript::-1::1718211813::0::1::::<>Node2D<>::
+lvlselect.tscn::PackedScene::1796100539798421772::1718211816::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://bacrfw16ijp8k::::res://textures/GlacialIndifference-Regular.otf<>res://scenes/lvlselect.gd
 lvl_1.gd::GDScript::-1::1717002338::0::1::::<>Node3D<>::
 lvl_1.tscn::PackedScene::935009545940325704::1718061393::0::1::::<><>::res://scripts/root.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://ug3tljlva4::::res://npc.tscn<>uid://dfoo45pcvssu2::::res://scenes/ready_up.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
 lvl_2.tscn::PackedScene::4817150360631167071::1718210659::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/lvl_2.gd<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf<>uid://demdu0l3p4tmx::::res://scenes/small_npc.tscn
-lvl_3.tscn::PackedScene::8994455104712161122::1718210659::0::1::::<><>::res://lvl_3.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://b443ceba685uv::::res://scenes/ship.tscn
+lvl_3.tscn::PackedScene::8994455104712161122::1718211816::0::1::::<><>::res://lvl_3.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://b443ceba685uv::::res://scenes/ship.tscn
 lvl_4.tscn::PackedScene::46251633994611867::1718210659::0::1::::<><>::uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://b443ceba685uv::::res://scenes/ship.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf
 multiplayer.tscn::PackedScene::5218198873189531056::1718061394::0::1::::<><>::res://scripts/multiplayerWorld.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>res://scripts/reticle.gd
 multiplayerlvl_1.tscn::PackedScene::4384757596564062624::1718061394::0::1::::<><>::res://scenes/multiplayer/multiplayerlvl_1.gd<>uid://gqdtxl4r2dox::::res://textures/SolAsteroidBeltHDRI.png<>uid://q3misfv5wrv3::::res://scenes/asteroid_scenes/asteroids.tscn<>uid://ctej8a0x0iyec::::res://textures/JudgeExpanded-7BxGB.ttf<>uid://dfoo45pcvssu2::::res://scenes/ready_up.tscn<>uid://cu8ag46rc8qju::::res://scenes/multiplayer/multiplayer_ops.tscn

@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://scenes/plane_ui.gd" id="1_egh0s"]
 
 [sub_resource type="FontFile" id="FontFile_4xlxs"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/23/0/ascent = 0.0
 cache/0/23/0/descent = 0.0
 cache/0/23/0/underline_position = 0.0
@@ -34,6 +37,9 @@ corner_radius_top_right = 11
 corner_radius_bottom_right = 11
 
 [sub_resource type="FontFile" id="FontFile_2y65a"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/23/0/ascent = 0.0
 cache/0/23/0/descent = 0.0
 cache/0/23/0/underline_position = 0.0
@@ -50,6 +56,9 @@ cache/0/16/0/kerning_overrides/23/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_0g7wj"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/23/0/ascent = 0.0
 cache/0/23/0/descent = 0.0
 cache/0/23/0/underline_position = 0.0
@@ -108,3 +117,4 @@ text = "  OPTIONS"
 alignment = 0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
