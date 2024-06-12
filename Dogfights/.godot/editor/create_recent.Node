@@ -1,5 +1,5 @@
-MultiplayerSpawner
 MeshInstance3D
+MultiplayerSpawner
 Label
 AudioStreamPlayer
 ColorRect
@@ -12,4 +12,3 @@ Node
 Label3D
 LineEdit
 MultiplayerSynchronizer
-Node3D
