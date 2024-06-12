@@ -182,4 +182,4 @@ func _on_area_3d_area_entered(area):
 		if area.is_in_group("heal"):
 			heal(30)
 		if area.is_in_group("strength"):
-			strength = 480
+			strength = 5

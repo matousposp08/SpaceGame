@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://d1e8mj4fchr0u"]
+
+[ext_resource type="Script" path="res://lvl_3.gd" id="1_iirdq"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_t57cj"]
+[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="2_722kd"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_8pex0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bejmh"]
+panorama = ExtResource("1_t57cj")
+
+[sub_resource type="Sky" id="Sky_f8kay"]
+sky_material = SubResource("PanoramaSkyMaterial_bejmh")
+
+[sub_resource type="Environment" id="Environment_4sapy"]
+background_mode = 2
+sky = SubResource("Sky_f8kay")
+
+[sub_resource type="TorusMesh" id="TorusMesh_bkb7w"]
+inner_radius = 0.885
+outer_radius = 1.121
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucpty"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jx0wd"]
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfy2o"]
+transparency = 4
+albedo_color = Color(0, 1, 0.972549, 0.278431)
+
+[node name="lvl3" type="Node3D"]
+script = ExtResource("1_iirdq")
+
+[node name="Scenery2" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery2"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery2"]
+environment = SubResource("Environment_4sapy")
+
+[node name="Asteroids" parent="Scenery2" instance=ExtResource("2_722kd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
+
+[node name="ship" parent="." instance=ExtResource("3_8pex0")]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0, 7.897, 60)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278e-07, 2.5, 0, -2.5, -1.09278e-07, 0, 0.372, 3.526)
+mesh = SubResource("TorusMesh_bkb7w")
+surface_material_override/0 = SubResource("StandardMaterial3D_ucpty")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 7.10543e-15, 0, -7.10543e-15, 2, 0, -0.035, 0.095)
+mesh = SubResource("CylinderMesh_jx0wd")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfy2o")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278e-07, 2.5, 0, -2.5, -1.09278e-07, 0, 1.46545, 8.64407)
+mesh = SubResource("TorusMesh_bkb7w")
+surface_material_override/0 = SubResource("StandardMaterial3D_ucpty")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(2, 0, 0, 0, 2, 7.10543e-15, 0, -7.10543e-15, 2, 8.41141e-05, -0.0891585, 0.212313)
+mesh = SubResource("CylinderMesh_jx0wd")
+skeleton = NodePath("../../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfy2o")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278e-07, 2.5, 0, -2.5, -1.09278e-07, 0, 4.01684, 20.5068)
+mesh = SubResource("TorusMesh_bkb7w")
+surface_material_override/0 = SubResource("StandardMaterial3D_ucpty")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D5"]
+transform = Transform3D(2, 0, 0, 0, 2, 7.10543e-15, 0, -7.10543e-15, 2, 0, -0.252069, -0.00393414)
+mesh = SubResource("CylinderMesh_jx0wd")
+skeleton = NodePath("../../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfy2o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278e-07, 2.5, 0, -2.5, -1.09278e-07, 0, 7.26447, 27.526)
+mesh = SubResource("TorusMesh_bkb7w")
+surface_material_override/0 = SubResource("StandardMaterial3D_ucpty")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(2, 0, 0, 0, 2, 7.10543e-15, 0, -7.10543e-15, 2, 0, -0.0603991, -0.00698924)
+mesh = SubResource("CylinderMesh_jx0wd")
+skeleton = NodePath("../../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfy2o")

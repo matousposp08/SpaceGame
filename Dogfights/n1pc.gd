@@ -53,7 +53,19 @@ func can_shoot() -> bool:
 
 func shoot_laser(pos, bas):
 	var instance = laser_scene.instantiate()
-	instance.look_at(get_parent().get_node("ship").global_position)
+	if get_parent().name == "multiplayerlvl_1":
+		var p = get_tree().get_nodes_in_group("player")
+		var target
+		var distance = 10000
+		print(p)
+		for i in p:
+			if (abs(position.length() - i.position.length())) < distance:
+				target = i
+		#print(target.name) 
+		if target != null:
+			instance.look_at(target.global_position)
+	else:
+		instance.look_at(get_parent().get_node("ship").global_position)
 	instance.position = pos
 	#instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))

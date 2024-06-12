@@ -18,9 +18,9 @@ func _process(delta):
 
 func explode():
 	var x = rng.randi_range(1,100)
-	if (x <= 15):
+	if (x <= 10):
 		spawnBoost(position)
-	if (x > 15 and x <= 30):
+	if (x > 10 and x <= 18):
 		spawnHeal(position)
 	if (x > 30 and x <= 33):
 		spawnStrength(position)

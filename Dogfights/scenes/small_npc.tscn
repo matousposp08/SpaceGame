@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://demdu0l3p4tmx"]
+[gd_scene load_steps=5 format=3 uid="uid://demdu0l3p4tmx"]
 
 [ext_resource type="Script" path="res://scripts/smallNPC.gd" id="1_t2bjk"]
 [ext_resource type="PackedScene" uid="uid://c1cr4oe3ogjmk" path="res://models/low-poly_spaceship (1).glb" id="2_v7ctl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvwff"]
 size = Vector3(30, 30, 70)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mti78"]
+size = Vector3(20, 20, 100)
 
 [node name="smallNPC" type="CharacterBody3D"]
 transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -20,9 +23,11 @@ shape = SubResource("BoxShape3D_mvwff")
 
 [node name="eyes" type="Node3D" parent="."]
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -1)
-collide_with_areas = true
-collide_with_bodies = false
+[node name="detector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detector"]
+transform = Transform3D(1, -1.32349e-23, 5.3906e-24, 5.3906e-24, 1, -5.3906e-24, -1.32349e-23, 1.32349e-23, 1, 2.60521e-14, -2.60521e-14, -74.6967)
+shape = SubResource("BoxShape3D_mti78")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]

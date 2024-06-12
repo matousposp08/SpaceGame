@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cavp06vaemwt8"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_jcxps"]
-[ext_resource type="Script" path="res://lvl_2.gd" id="1_k576f"]
+[ext_resource type="Script" path="res://scripts/lvl_2.gd" id="1_k576f"]
 [ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="2_wottn"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_74uw6"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="5_ely83"]
@@ -10,12 +10,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
 panorama = ExtResource("1_jcxps")
 
-[sub_resource type="Sky" id="Sky_f8kay"]
+[sub_resource type="Sky" id="Sky_tmw3w"]
 sky_material = SubResource("PanoramaSkyMaterial_t5du2")
 
 [sub_resource type="Environment" id="Environment_je47j"]
 background_mode = 2
-sky = SubResource("Sky_f8kay")
+sky = SubResource("Sky_tmw3w")
 
 [sub_resource type="Animation" id="Animation_o55r7"]
 length = 0.001
