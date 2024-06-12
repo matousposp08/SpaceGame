@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://wn003354j20"]
+[gd_scene load_steps=15 format=3 uid="uid://wn003354j20"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_fbr8g"]
+[ext_resource type="Script" path="res://scripts/lvl_4.gd" id="1_sswd3"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_vk28k"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_r60w8"]
 
@@ -17,16 +18,16 @@ sky = SubResource("Sky_6eomh")
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_gdgls"]
 flip_faces = true
 radius = 10.0
+radial_steps = 4
 section_length = 100.0
-cap_top = false
 cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m76i8"]
 albedo_color = Color(0, 1, 1, 1)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ol6pb"]
-height = 25.0
-radius = 0.47
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hkd2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6akkt"]
 
 [sub_resource type="Animation" id="Animation_o55r7"]
 length = 0.001
@@ -66,6 +67,7 @@ _data = {
 }
 
 [node name="Lvl4" type="Node3D"]
+script = ExtResource("1_sswd3")
 
 [node name="Scenery" type="Node3D" parent="."]
 
@@ -80,16 +82,35 @@ environment = SubResource("Environment_g07rg")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.000401453, 1, 0, -1, 0.000401453, 0, 0.352386, 250.248)
+transform = Transform3D(-1.42899, -2.04633e-08, -1.39928, 1.39928, 1.05642e-07, -1.42899, 8.85325e-08, -2, -6.11643e-08, 0, 0.352386, 458.206)
 mesh = SubResource("TubeTrailMesh_gdgls")
 surface_material_override/0 = SubResource("StandardMaterial3D_m76i8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(20, -1.39515e-14, -6.09838e-22, 0, -8.74228e-07, 20, -1.39515e-14, -20, -8.74228e-07, 0.00545269, 0.425293, 250.959)
-shape = SubResource("CylinderShape3D_ol6pb")
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.03507e-11, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(-14.0431, -0.712026, 3.10925e-05, 0, -4.37114e-08, -999, 14.2405, -0.702153, 3.06614e-05, 4.64994, 239.736, 4.55325)
+shape = SubResource("BoxShape3D_2hkd2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(-14.0431, -0.712026, 3.10925e-05, 0, -4.37114e-08, -999, 14.2405, -0.702153, 3.06614e-05, -4.60317, 239.736, -4.50743)
+shape = SubResource("BoxShape3D_6akkt")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(-14.2405, 0.702153, -3.06614e-05, 0, -4.37114e-08, -999, -14.0431, -0.712026, 3.10925e-05, 2.80551, 239.736, -6.67417)
+shape = SubResource("BoxShape3D_6akkt")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(-14.2405, 0.702153, -3.06614e-05, 0, -4.37114e-08, -999, -14.0431, -0.712026, 3.10925e-05, -6.68726, 239.736, 3.0202)
+shape = SubResource("BoxShape3D_6akkt")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(-14.2405, 0, 701.451, 4.26326e-14, 1, 3.63798e-11, -14.0431, 0, -711.314, -4.38237, 248.95, 5.27716)
+shape = SubResource("BoxShape3D_6akkt")
 
 [node name="ship" parent="." instance=ExtResource("2_vk28k")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.287201, -9.8088)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.287201, -26.1388)
 
 [node name="level4" type="Label" parent="."]
 visible = false
