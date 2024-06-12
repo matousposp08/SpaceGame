@@ -1,18 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://wn003354j20"]
+[gd_scene load_steps=13 format=3 uid="uid://wn003354j20"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_fbr8g"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_vk28k"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_r60w8"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xsjl8"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_10akm"]
 panorama = ExtResource("1_fbr8g")
 
-[sub_resource type="Sky" id="Sky_f8kay"]
-sky_material = SubResource("PanoramaSkyMaterial_xsjl8")
+[sub_resource type="Sky" id="Sky_6eomh"]
+sky_material = SubResource("PanoramaSkyMaterial_10akm")
 
-[sub_resource type="Environment" id="Environment_jqqi5"]
+[sub_resource type="Environment" id="Environment_g07rg"]
 background_mode = 2
-sky = SubResource("Sky_f8kay")
+sky = SubResource("Sky_6eomh")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_gdgls"]
+flip_faces = true
+radius = 10.0
+section_length = 100.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m76i8"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ol6pb"]
+height = 25.0
 
 [sub_resource type="Animation" id="Animation_o55r7"]
 length = 0.001
@@ -51,26 +64,31 @@ _data = {
 "fade2": SubResource("Animation_51x4b")
 }
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_u7h4t"]
-top_radius = 5.0
-bottom_radius = 5.0
-height = 999.0
-radial_segments = 360
-cap_top = false
-cap_bottom = false
-
 [node name="Lvl4" type="Node3D"]
 
-[node name="Scenery2" type="Node3D" parent="."]
+[node name="Scenery" type="Node3D" parent="."]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery2"]
-transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 4.53081, 38.4584)
+light_energy = 0.5
+light_angular_distance = 89.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery2"]
-environment = SubResource("Environment_jqqi5")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
+environment = SubResource("Environment_g07rg")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.000401453, 1, 0, -1, 0.000401453, 0, 0.352386, 250.248)
+mesh = SubResource("TubeTrailMesh_gdgls")
+surface_material_override/0 = SubResource("StandardMaterial3D_m76i8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(20, -1.39515e-14, -6.09838e-22, 0, -8.74228e-07, 20, -1.39515e-14, -20, -8.74228e-07, 0.00545269, 0.425293, 250.959)
+shape = SubResource("CylinderShape3D_ol6pb")
 
 [node name="ship" parent="." instance=ExtResource("2_vk28k")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.04633, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.04633, -9.8088)
 
 [node name="level4" type="Label" parent="."]
 visible = false
@@ -87,7 +105,3 @@ text = "LEVEL 2"
 libraries = {
 "": SubResource("AnimationLibrary_qydi2")
 }
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.00860434, -0.999963, 0, 0.999963, -0.00860434, 0, 1.19909, 497.512)
-mesh = SubResource("CylinderMesh_u7h4t")
