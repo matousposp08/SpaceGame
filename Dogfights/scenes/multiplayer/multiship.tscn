@@ -33,7 +33,6 @@ properties/6/spawn = true
 properties/6/replication_mode = 1
 
 [node name="multiship" type="CharacterBody3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 collision_layer = 2
 script = ExtResource("1_0cijx")
 
@@ -48,7 +47,7 @@ visible = false
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("BoxShape3D_yc67g")
 
-[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+[node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(23, 0, 0, 0, 6, 0, 0, 0, 20, 0, 0, 0)
