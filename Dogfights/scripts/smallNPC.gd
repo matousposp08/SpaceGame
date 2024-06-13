@@ -35,7 +35,19 @@ func _physics_process(delta):
 	#$eyes.look_at(get_parent().get_node("ship").global_position)
 	#rotate_y(deg_to_rad($eyes.rotation.y)*0.01)
 	#rotate_x(deg_to_rad($eyes.rotation.x)*0.01)
-	look_at(get_parent().get_node("ship").position)
+	if get_parent().name == "multiplayerlvl_2":
+		var p = get_parent().get_node("multiplayerOps").ps
+		var target
+		var distance = 10000
+		for i in p:
+			if (abs(position.length() - get_parent().get_node("multiplayerOps/"+str(i)).position.length())) < distance:
+				distance = abs(position.length() - get_parent().get_node("multiplayerOps/"+str(i)).position.length())
+				target = get_parent().get_node("multiplayerOps/"+str(i))
+		if target != null:
+			look_at(target.global_position)
+	else:
+		#look_at(get_parent().get_node("ship").global_position)
+		pass
 	
 	position += transform.basis * Vector3(0,0,-SPEED) * delta
 	# Add the gravity.

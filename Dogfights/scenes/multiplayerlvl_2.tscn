@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://daog8fdndt381"]
+[gd_scene load_steps=15 format=3 uid="uid://daog8fdndt381"]
 
-[ext_resource type="Script" path="res://scripts/lvl_2.gd" id="1_0gb3p"]
+[ext_resource type="Script" path="res://scripts/multiplayerlvl_2.gd" id="1_ksvd2"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_amlgn"]
 [ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="3_ghvej"]
-[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="4_q016p"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="5_4fvf6"]
 [ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="6_ikolp"]
+[ext_resource type="PackedScene" uid="uid://cu8ag46rc8qju" path="res://scenes/multiplayer/multiplayer_ops.tscn" id="7_242dh"]
 [ext_resource type="PackedScene" uid="uid://b5kk818wngo17" path="res://scenes/worm_hole.tscn" id="7_ylgyp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
@@ -55,8 +55,28 @@ _data = {
 "fade2": SubResource("Animation_51x4b")
 }
 
-[node name="lvl2" type="Node3D"]
-script = ExtResource("1_0gb3p")
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_h8x6i"]
+properties/0/path = NodePath("smallNPC7:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("smallNPC8:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("smallNPC9:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("smallNPC10:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("smallNPC11:position")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("smallNPC12:position")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+[node name="multiplayerlvl_2" type="Node3D"]
+script = ExtResource("1_ksvd2")
 
 [node name="Scenery2" type="Node3D" parent="."]
 
@@ -68,9 +88,6 @@ environment = SubResource("Environment_je47j")
 
 [node name="Asteroids" parent="Scenery2" instance=ExtResource("3_ghvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
-
-[node name="ship" parent="." instance=ExtResource("4_q016p")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="level2" type="Label" parent="."]
 visible = false
@@ -108,3 +125,12 @@ transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.7
 
 [node name="WormHole" parent="." instance=ExtResource("7_ylgyp")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 713.566, 440.951, 1.12606)
+
+[node name="multiplayerOps" parent="." instance=ExtResource("7_242dh")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer/multiship.tscn")
+spawn_path = NodePath("..")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_h8x6i")

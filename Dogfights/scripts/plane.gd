@@ -106,11 +106,11 @@ func _physics_process(delta):
 	if (Input.is_action_just_pressed("shoot")) and not strength > 0:
 		laser(position, transform.basis)
 	if is_on_ceiling():
-		damage(50)
+		damage(1)
 	if is_on_floor():
-		damage(50)
+		damage(1)
 	if is_on_wall():
-		damage(50)
+		damage(1)
 	move_and_slide()
 	
 func reverse():
