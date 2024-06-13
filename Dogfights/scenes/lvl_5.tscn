@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://t2dmewcab3jd"]
+[gd_scene load_steps=14 format=3 uid="uid://t2dmewcab3jd"]
 
 [ext_resource type="Script" path="res://scenes/lvl_5.gd" id="1_n3rs5"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_p6f66"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_4rxfh"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_iewo1"]
 [ext_resource type="PackedScene" uid="uid://dmvow20oifgj4" path="res://scenes/star.tscn" id="4_g7jy1"]
+[ext_resource type="Script" path="res://scenes/rotation_script.gd" id="6_d4q1n"]
 [ext_resource type="PackedScene" uid="uid://dt3xoyt2hwlde" path="res://scenes/planet.tscn" id="6_kpr8p"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mbu3m"]
@@ -89,40 +90,52 @@ libraries = {
 [node name="SolarSystem1" type="Node3D" parent="."]
 
 [node name="star1" parent="SolarSystem1" instance=ExtResource("4_g7jy1")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -400, -400, -400)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -400, 0, 0)
 
 [node name="Planets" type="Node3D" parent="SolarSystem1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -400, -400, -400)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -400, 0, 0)
+script = ExtResource("6_d4q1n")
 
 [node name="p1Planet1" parent="SolarSystem1/Planets" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -500, -500, -500)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 0)
+gravity_scale = 0.0
 
 [node name="p1Planet2" parent="SolarSystem1/Planets" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600, -600, -600)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 0, 0)
+gravity_scale = 0.0
 
 [node name="p1Planet3" parent="SolarSystem1/Planets" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -700, -700, -700)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -900, 0, 0)
+gravity_scale = 0.0
 
 [node name="p1Planet4" parent="SolarSystem1/Planets" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, -800, -800)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1200, 0, 0)
+gravity_scale = 0.0
 
 [node name="SolarSystem2" type="Node3D" parent="."]
 
 [node name="star2" parent="SolarSystem2" instance=ExtResource("4_g7jy1")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 400, 400, 400)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 400, 0, 0)
 
-[node name="p2Planet1" parent="SolarSystem2" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 500, 500)
+[node name="Planets" type="Node3D" parent="SolarSystem2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 400, 0, 0)
+
+[node name="p2Planet1" parent="SolarSystem2/Planets" instance=ExtResource("6_kpr8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 0)
+gravity_scale = 0.0
 player_num = 1
 
-[node name="p2Planet2" parent="SolarSystem2" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 600, 600)
+[node name="p2Planet2" parent="SolarSystem2/Planets" instance=ExtResource("6_kpr8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 0, 0)
+gravity_scale = 0.0
 player_num = 1
 
-[node name="p2Planet3" parent="SolarSystem2" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 700, 700, 700)
+[node name="p2Planet3" parent="SolarSystem2/Planets" instance=ExtResource("6_kpr8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 0, 0)
+gravity_scale = 0.0
 player_num = 1
 
-[node name="p2Planet4" parent="SolarSystem2" instance=ExtResource("6_kpr8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 800, 800, 800)
+[node name="p2Planet4" parent="SolarSystem2/Planets" instance=ExtResource("6_kpr8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, 0)
+gravity_scale = 0.0
 player_num = 1
