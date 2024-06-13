@@ -44,3 +44,7 @@ func rockSpawn(pos: Vector3):
 	instance.position = pos
 	instance.scale *= rng.randi_range(1, 5)
 	get_parent().add_child(instance)
+	rpc("rpc_rockSpawn",pos)
+
+@rpc func rpc_rockSpawn(pos: Vector3):
+	rockSpawn(pos)
