@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://daog8fdndt381"]
+
+[ext_resource type="Script" path="res://scripts/lvl_2.gd" id="1_0gb3p"]
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_amlgn"]
+[ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="3_ghvej"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="4_q016p"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="5_4fvf6"]
+[ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="6_ikolp"]
+[ext_resource type="PackedScene" uid="uid://b5kk818wngo17" path="res://scenes/worm_hole.tscn" id="7_ylgyp"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
+panorama = ExtResource("2_amlgn")
+
+[sub_resource type="Sky" id="Sky_tmw3w"]
+sky_material = SubResource("PanoramaSkyMaterial_t5du2")
+
+[sub_resource type="Environment" id="Environment_je47j"]
+background_mode = 2
+sky = SubResource("Sky_tmw3w")
+
+[sub_resource type="Animation" id="Animation_o55r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_51x4b"]
+resource_name = "fade2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.4, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qydi2"]
+_data = {
+"RESET": SubResource("Animation_o55r7"),
+"fade2": SubResource("Animation_51x4b")
+}
+
+[node name="lvl2" type="Node3D"]
+script = ExtResource("1_0gb3p")
+
+[node name="Scenery2" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery2"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 10, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery2"]
+environment = SubResource("Environment_je47j")
+
+[node name="Asteroids" parent="Scenery2" instance=ExtResource("3_ghvej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.738)
+
+[node name="ship" parent="." instance=ExtResource("4_q016p")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="level2" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 322.0
+offset_top = 266.0
+offset_right = 817.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("5_4fvf6")
+theme_override_font_sizes/font_size = 150
+text = "LEVEL 2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level2"]
+libraries = {
+"": SubResource("AnimationLibrary_qydi2")
+}
+
+[node name="smallNPC7" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, -226.583, 0, 41.9717)
+
+[node name="smallNPC8" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 1013.96, 289.423, -205.473)
+
+[node name="smallNPC9" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 689.56, 289.423, -205.473)
+
+[node name="smallNPC10" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 689.56, 289.423, -376.861)
+
+[node name="smallNPC11" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 689.56, -113.492, -86.1562)
+
+[node name="smallNPC12" parent="." instance=ExtResource("6_ikolp")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 1220.97, -19.4401, -160.838)
+
+[node name="WormHole" parent="." instance=ExtResource("7_ylgyp")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 713.566, 440.951, 1.12606)

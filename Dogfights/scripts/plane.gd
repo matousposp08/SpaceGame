@@ -105,7 +105,12 @@ func _physics_process(delta):
 		rotation_degrees.x += yvel
 	if (Input.is_action_just_pressed("shoot")) and not strength > 0:
 		laser(position, transform.basis)
-	
+	if is_on_ceiling():
+		damage(50)
+	if is_on_floor():
+		damage(50)
+	if is_on_wall():
+		damage(50)
 	move_and_slide()
 	
 func reverse():
