@@ -183,3 +183,5 @@ func _on_area_3d_area_entered(area):
 			heal(30)
 		if area.is_in_group("strength"):
 			strength = 5
+		if area.is_in_group("black_hole"):
+			damage(health + shield) #this basically kills the player
