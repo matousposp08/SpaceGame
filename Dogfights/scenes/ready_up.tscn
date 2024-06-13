@@ -37,7 +37,6 @@ editable = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5okk3")
-autoplay = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 418.0

@@ -15,9 +15,9 @@ color = Color(0.32549, 0.717647, 1, 0.27451)
 [node name="TextEdit" type="TextEdit" parent="."]
 modulate = Color(1, 1, 1, 0.619608)
 offset_left = 411.0
-offset_top = 183.0
+offset_top = 303.0
 offset_right = 752.0
-offset_bottom = 269.0
+offset_bottom = 389.0
 text = "
 "
 editable = false
@@ -27,42 +27,8 @@ stream = ExtResource("2_0oe0k")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 439.0
-offset_top = 203.0
+offset_top = 324.0
 offset_right = 727.0
-offset_bottom = 245.0
+offset_bottom = 366.0
 theme_override_font_sizes/font_size = 30
 text = "MISSION SUCCESS !!"
-
-[node name="return" type="Button" parent="."]
-offset_left = 411.0
-offset_top = 317.0
-offset_right = 752.0
-offset_bottom = 396.0
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 435.0
-offset_top = 338.0
-offset_right = 723.0
-offset_bottom = 380.0
-theme_override_font_sizes/font_size = 30
-text = "Main Menu"
-horizontal_alignment = 1
-
-[node name="nextlevel" type="Button" parent="."]
-offset_left = 409.0
-offset_top = 444.0
-offset_right = 754.0
-offset_bottom = 523.0
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 435.0
-offset_top = 461.0
-offset_right = 723.0
-offset_bottom = 503.0
-theme_override_font_sizes/font_size = 30
-text = "Next Level"
-horizontal_alignment = 1
-
-[connection signal="pressed" from="return" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="nextlevel" to="." method="_on_nextlevel_pressed"]
