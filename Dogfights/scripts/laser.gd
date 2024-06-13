@@ -51,6 +51,8 @@ func _on_area_3d_area_entered(area):
 	print("n: " + str(area.get_groups()))
 	if not is_in_group("player"):
 		if area.is_in_group("player"):
+			print(get_parent().name)
+			get_parent().get_parent().get_node("update").text = area.get_parent().name + " laser " + str(randi_range(0,1000))
 			destroy()
 	elif not area.is_in_group("laser"):
 		destroy()

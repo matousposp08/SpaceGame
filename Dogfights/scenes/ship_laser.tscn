@@ -51,3 +51,5 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_g4650")
 draw_pass_1 = SubResource("BoxMesh_26rif")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

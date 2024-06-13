@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cavp06vaemwt8"]
+[gd_scene load_steps=14 format=3 uid="uid://bbfjc8sdsj2es"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_jcxps"]
 [ext_resource type="Script" path="res://scripts/lvl_2.gd" id="1_k576f"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_74uw6"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="5_ely83"]
 [ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="6_f11qq"]
-[ext_resource type="PackedScene" path="res://scenes/worm_hole.tscn" id="7_e08sp"]
+[ext_resource type="PackedScene" uid="uid://b5kk818wngo17" path="res://scenes/worm_hole.tscn" id="7_e08sp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
 panorama = ExtResource("1_jcxps")

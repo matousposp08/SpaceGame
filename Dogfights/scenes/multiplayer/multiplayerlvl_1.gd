@@ -25,7 +25,7 @@ func _process(delta):
 	#	get_parent().add_child(instance)
 	#	SUN_added = true
 	if (x > 0) :
-		x -= 1
+		x -= 1 
 		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))
 	if ($npc.health <= 0) :
 		succeed()

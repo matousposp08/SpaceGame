@@ -11,6 +11,7 @@ var health = 100
 var shield = 100
 var boostpower = 0
 var alive = true
+var old = ""
 
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
@@ -47,6 +48,23 @@ func _ready():
 func _physics_process(delta):
 	$"PLAINE UI".visible = is_multiplayer_authority()
 	if not is_multiplayer_authority() or get_parent().get_node("CanvasLayer").visible: return
+	print( get_parent().get_parent().get_node("update").text)
+	if get_multiplayer_authority() != 1 and get_parent().get_parent().get_node("update").text != "":
+		var p = get_parent().get_parent().get_node("update").text.split(" ")
+		print(p)
+		if p[0] == str(get_multiplayer_authority()):
+			if p[1] == "laser":
+				damage(2)
+			if p[1] == "charge":
+				damage(20)
+			if p[1] == "blast":
+				damage(50)
+			if p[1] == "boost":
+				boostpower = 900
+			if p[1] == "enemyship":
+				damage(30)
+			get_parent().get_parent().get_node("update").text  = ""
+			p = []
 	if health <= 0 and alive:
 		visible = false
 		death(global_position, transform.basis)
@@ -187,6 +205,12 @@ func _on_Timer_timeout():
 	#queue_free()
 	pass
 
+func heal(num):
+	health += num
+	if health > 100:
+		shield += health - 100
+		health = 100
+
 func _on_area_3d_area_entered(area):
 	#if is_multiplayer_authority(): return
 	if get_multiplayer_authority() != 1:
@@ -209,3 +233,5 @@ func _on_area_3d_area_entered(area):
 			damage(30)
 		if area.is_in_group("boost"):
 			boostpower = 900
+		if area.is_in_group("enemyship"):
+			damage(30)

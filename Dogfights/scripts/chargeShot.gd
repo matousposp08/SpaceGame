@@ -31,10 +31,20 @@ func destroy():
 	queue_free()
 
 func _on_area_3d_area_entered(area):
-	if not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):
+	if not is_in_group("player"):
+		if area.is_in_group("player"):
+			print(get_parent().name)
+			get_parent().get_parent().get_node("update").text = area.get_parent().name + " charge " + str(randi_range(0,1000))
+			destroy()
+	elif not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):
 		destroy()
 
 
 func _on_area_3d_body_entered(body):
-	if not body.is_in_group(get_groups()[0]) and not body.is_in_group(get_groups()[1]):
+	if not is_in_group("player"):
+		if body.is_in_group("player"):
+			print(get_parent().name)
+			get_parent().get_parent().get_node("update").text = body.name + " charge " + str(randi_range(0,1000))
+			destroy()
+	elif not body.is_in_group(get_groups()[0]) and not body.is_in_group(get_groups()[1]):
 		destroy()

@@ -73,6 +73,10 @@ func move_ship_trail(exhaust):
 
 func _on_area_3d_area_entered(area):
 	if not (area.is_in_group("enemy")) :
+		if not is_in_group("player"):
+			if area.is_in_group("player"):
+				print(get_parent().name)
+				get_parent().get_parent().get_node("update").text = area.get_parent().name + " laser " + str(randi_range(0,1000))
 		if (area.is_in_group("laser")):
 			health -= 2
 		if (area.is_in_group("charge")):
