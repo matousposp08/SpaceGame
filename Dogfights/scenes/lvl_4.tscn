@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://wn003354j20"]
+[gd_scene load_steps=19 format=3 uid="uid://wn003354j20"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_fbr8g"]
 [ext_resource type="Script" path="res://scripts/lvl_4.gd" id="1_sswd3"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_vk28k"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_r60w8"]
+[ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="5_qqjjy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_10akm"]
 panorama = ExtResource("1_fbr8g")
@@ -89,7 +90,7 @@ environment = SubResource("Environment_g07rg")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-transform = Transform3D(-1.42899, -2.04633e-08, -1.39928, 1.39928, 1.05642e-07, -1.42899, 8.85325e-08, -2, -6.11643e-08, 0, 0.352386, -62.6794)
+transform = Transform3D(-1.42899, -2.04633e-08, -1.39928, 1.39928, 1.05642e-07, -1.42899, 8.85325e-08, -2, -6.11643e-08, 0, 0.352386, 295.87)
 mesh = SubResource("TubeTrailMesh_gdgls")
 surface_material_override/0 = SubResource("StandardMaterial3D_m76i8")
 
@@ -109,7 +110,7 @@ transform = Transform3D(-14.2405, 0.702153, -3.06614e-05, 0, -4.37114e-08, -999,
 shape = SubResource("BoxShape3D_6akkt")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(-14.2405, 0.702153, -3.06614e-05, 0, -4.37114e-08, -999, -14.0431, -0.712026, 3.10925e-05, -6.68726, 239.736, 3.0202)
+transform = Transform3D(-14.2405, 0.702153, -3.06614e-05, 2.84217e-14, -4.37114e-08, -999, -14.0431, -0.712026, 3.10925e-05, -6.68726, 239.736, 3.0202)
 shape = SubResource("BoxShape3D_6akkt")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
@@ -315,3 +316,12 @@ text = "LEVEL 2"
 libraries = {
 "": SubResource("AnimationLibrary_qydi2")
 }
+
+[node name="smallNPC" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 0, 0, -119.985)
+
+[node name="smallNPC3" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, -8.48935, 0, -119.985)
+
+[node name="smallNPC5" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 8.58684, 0, -119.985)
