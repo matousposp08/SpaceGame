@@ -48,6 +48,7 @@ func _process(delta):
 			for i in ps:
 				text += get_node(str(i)).get_node("Username").text + "\n"
 			$CanvasLayer/MarginContainer/VBoxContainer/players.text = text
+	#ps = $CanvasLayer/MarginContainer/VBoxContainer/players.text.split("\n")
 
 func rockSpawn(pos: Vector3):
 	var instance = ROCK.instantiate()

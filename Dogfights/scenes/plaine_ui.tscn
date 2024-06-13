@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctrxxju7y0exu"]
+[gd_scene load_steps=6 format=3 uid="uid://ctrxxju7y0exu"]
 
 [ext_resource type="Script" path="res://scripts/plaine_ui.gd" id="1_wbnpd"]
-[ext_resource type="Texture2D" path="res://textures/crosshair.png" id="2_7gp7h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4dns"]
 bg_color = Color(0.819608, 0.796078, 0.780392, 1)
@@ -44,5 +43,4 @@ show_percentage = false
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(575, 280)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_7gp7h")
 offset = Vector2(20, 20)

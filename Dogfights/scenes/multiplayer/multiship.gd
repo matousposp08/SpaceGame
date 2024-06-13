@@ -45,6 +45,7 @@ func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta):
+	$"PLAINE UI".visible = is_multiplayer_authority()
 	if not is_multiplayer_authority() or get_parent().get_node("CanvasLayer").visible: return
 	if health <= 0 and alive:
 		visible = false
@@ -173,6 +174,7 @@ func death(pos, bas):
 
 func damage(num):
 	if not is_multiplayer_authority(): return
+	print("z: " + str(get_multiplayer_authority()) + " h: " + str(health) + " c : " + str($Area3D/CollisionShape3D.disabled)) 
 	if shield < num and shield > 0:
 		shield = 0
 		health -= num - shield
@@ -188,11 +190,12 @@ func _on_Timer_timeout():
 func _on_area_3d_area_entered(area):
 	#if is_multiplayer_authority(): return
 	if get_multiplayer_authority() != 1:
-		print("z: " + str(get_multiplayer_authority()))
+		pass
+		#print("z: " + str(get_multiplayer_authority()) + " h: " + str(health) + " c : " + str($Area3D/CollisionShape3D.disabled)) 
 	#print(name + " " + str(area.get_groups()))
 	#print(area.get_groups())
 	#if not is_multiplayer_authority(): return
-	if not area.is_in_group("player"):
+	if true:
 		if area.is_in_group("laser"):
 			damage(2)
 		if area.is_in_group("asteroid"):
