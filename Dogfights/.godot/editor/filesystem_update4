@@ -12,3 +12,9 @@ res://npc.tscn
 res://scenes/lvl_4.tscn
 res://lvl_3.gd
 res://scenes/lvl_3.tscn
+res://menu.tscn
+res://scenes/lvlselect.tscn
+res://options.tscn
+res://options.gd
+res://scenes/plane_ui.gd
+res://scenes/plane_ui.tscn
