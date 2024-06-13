@@ -5,12 +5,13 @@ var direction = Vector3.ZERO
 
 func _ready():
 	if get_parent().name == "multiplayerlvl_1":
-		var p = get_tree().get_nodes_in_group("player")
+		var p = get_parent().get_node("multiplayerOps").ps
 		var target
 		var distance = 10000
 		for i in p:
-			if (position.length() - i.position.length()) < distance:
-				target = i
+			if (abs(position.length() - get_parent().get_node("multiplayerOps/"+str(i)).position.length())) < distance:
+				distance = abs(position.length() - get_parent().get_node("multiplayerOps/"+str(i)).position.length())
+				target = get_parent().get_node("multiplayerOps/"+str(i))
 		if target != null:
 			look_at(target.global_position)
 	else:

@@ -43,7 +43,7 @@ func _process(delta):
 	$CanvasLayer/MarginContainer/VBoxContainer/Sprite2D.visible = true
 	var text = ""
 	if is_multiplayer_authority():
-		print(ps)
+		#print(ps)
 		if $CanvasLayer.visible:
 			for i in ps:
 				text += get_node(str(i)).get_node("Username").text + "\n"

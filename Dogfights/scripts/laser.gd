@@ -4,9 +4,9 @@ var SPEED = -180
 var x
 var explode = false
 var y = 20
+var BLOW : PackedScene = preload('res://scenes/laserblowup.tscn')
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$GPUParticles3D.emitting = false
 	scale *= 5
 	x = 600
 	y = 60
@@ -27,25 +27,38 @@ func _process(delta):
 
 func destroy():
 	explode = true
-	$GPUParticles3D.emitting = true
-	$Area3D/CollisionShape3D.disabled = true
-	$Area3D2/CollisionShape3D.disabled = true
+	blow(global_position)
+	queue_free()
+
+func blow(pos):
+	var instance = BLOW.instantiate()
+	instance.position = pos
+	instance.emitting = true
+	get_parent().add_child(instance)
+	rpc("rpc_blow",pos)
+	
+@rpc func rpc_blow(pos):
+	blow(pos)
 
 func _on_area_3d_area_entered(area):
-	if not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):
+	print(area.get_groups())
+	if not area.is_in_group(get_groups()[1]):
 		destroy()
 
 
 func _on_area_3d_2_area_entered(area):
-	if not area.is_in_group(get_groups()[0]) and not area.is_in_group(get_groups()[1]):
+	print(area.get_groups())
+	if not area.is_in_group(get_groups()[1]):
 		destroy()
 
 
 func _on_area_3d_body_entered(body):
-	if not body.is_in_group(get_groups()[0]) and not body.is_in_group(get_groups()[1]):
+	print(body.get_groups())
+	if not body.is_in_group(get_groups()[1]):
 		destroy()
 
 
 func _on_area_3d_2_body_entered(body):
-	if not body.is_in_group(get_groups()[0]) and not body.is_in_group(get_groups()[1]):
+	print(body.get_groups())
+	if not body.is_in_group(get_groups()[1]):
 		destroy()

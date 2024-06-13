@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp4qskbga1f7g"]
+[gd_scene load_steps=9 format=3 uid="uid://cp4qskbga1f7g"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/black_hole.gdshader" id="1_b8gxq"]
 
@@ -12,8 +12,8 @@ material = SubResource("StandardMaterial3D_c5s3x")
 
 [sub_resource type="Curve" id="Curve_k0gtu"]
 min_value = -1.0
-_data = [Vector2(0.0109051, 0.0355376), 0.0, 0.0, 0, 0, Vector2(0.251908, 0.630885), 0.0, 0.0, 0, 0, Vector2(0.479825, -0.381205), 12.9568, 12.9568, 0, 0, Vector2(0.59651, 0.037919), 0.0, 0.0, 0, 0, Vector2(0.780807, 0.018868), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0.0109051, 0.0355376), 0.0, 0.0, 0, 0, Vector2(0.0815047, 0.576163), 0.0, 0.0, 0, 0, Vector2(0.269592, -0.486905), 0.0, 0.0, 0, 0, Vector2(0.401254, -0.188135), 0.554115, 0.554115, 0, 0, Vector2(0.59651, 0.037919), 0.0, 0.0, 0, 0, Vector2(0.780807, 0.018868), 0.0, 0.0, 0, 0]
+point_count = 6
 
 [sub_resource type="CurveTexture" id="CurveTexture_cioqm"]
 curve = SubResource("Curve_k0gtu")
@@ -29,12 +29,20 @@ shader_parameter/curve = SubResource("CurveTexture_cioqm")
 resource_local_to_scene = true
 material = SubResource("ShaderMaterial_ber77")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_bip4x"]
+
 [node name="BlackHole" type="Node3D"]
 
 [node name="BlackHoleMain" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.39657, 0, 0, 0, 2.39657, 0, 0, 0, 2.39657, 0, 0, 1.08475)
+transform = Transform3D(2.39657, 0, 0, 0, 2.39657, 0, 0, 0, 2.39657, 0, 0, 0)
 mesh = SubResource("SphereMesh_r523n")
 
 [node name="BlackHoleEffect" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.34703, 0, 0, 0, 7.34703, 0, 0, 0, 7.34703, 0, 0, 1.08475)
+transform = Transform3D(7.34703, 0, 0, 0, 7.34703, 0, 0, 0, 7.34703, 0, 0, 0)
 mesh = SubResource("QuadMesh_qlpkk")
+
+[node name="Area3D" type="Area3D" parent="." groups=["black_hole"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_bip4x")
