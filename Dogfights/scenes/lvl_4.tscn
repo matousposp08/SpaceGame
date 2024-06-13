@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://wn003354j20"]
+[gd_scene load_steps=19 format=3 uid="uid://wn003354j20"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_fbr8g"]
 [ext_resource type="Script" path="res://scripts/lvl_4.gd" id="1_sswd3"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_vk28k"]
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_r60w8"]
+[ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="5_qqjjy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_10akm"]
 panorama = ExtResource("1_fbr8g")
@@ -315,3 +316,12 @@ text = "LEVEL 2"
 libraries = {
 "": SubResource("AnimationLibrary_qydi2")
 }
+
+[node name="smallNPC" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 0, 0, -119.985)
+
+[node name="smallNPC3" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, -8.48935, 0, -119.985)
+
+[node name="smallNPC5" parent="." instance=ExtResource("5_qqjjy")]
+transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.74393e-17, -1.74393e-17, 1.74393e-17, 0.05, 8.58684, 0, -119.985)
