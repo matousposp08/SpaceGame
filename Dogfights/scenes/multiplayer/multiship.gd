@@ -35,7 +35,7 @@ func _enter_tree():
 		$Username.text = "guest"+name
 		$Username.billboard = true
 
-func _ready():	
+func _ready():
 	add_to_group(name)
 	$Area3D.add_to_group(name)
 	if not is_multiplayer_authority(): return
@@ -45,9 +45,9 @@ func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta):
-	if not is_multiplayer_authority(): return
+	if not is_multiplayer_authority() or get_parent().get_node("CanvasLayer").visible: return
 	if health <= 0 and alive:
-		$ship.visible = false
+		visible = false
 		death(global_position, transform.basis)
 		var timer = Timer.new()
 		timer.wait_time = 3.0
@@ -142,8 +142,8 @@ func laser(position, basis):
 	instance.position = position
 	instance.transform.basis = basis
 	#get_parent().areas[instance.get_node("Area3D")] = name
-	instance.get_node("Area3D").add_to_group(name)
-	instance.add_to_group(name)
+	#instance.get_node("Area3D").add_to_group(name)
+	#instance.add_to_group(name)
 	get_parent().add_child(instance)
 	rpc("spawn_laser", position, basis)
 
@@ -171,9 +171,8 @@ func death(pos, bas):
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
 
-
-
 func damage(num):
+	if not is_multiplayer_authority(): return
 	if shield < num and shield > 0:
 		shield = 0
 		health -= num - shield
@@ -187,8 +186,12 @@ func _on_Timer_timeout():
 	pass
 
 func _on_area_3d_area_entered(area):
+	#if is_multiplayer_authority(): return
+	print(name + " " + str(area.get_groups()))
 	#print(area.get_groups())
-	if not area.is_in_group(name):
+	#if not is_multiplayer_authority(): return
+	if not area.is_in_group("player"):
+		print("yeah")
 		if area.is_in_group("laser"):
 			damage(2)
 		if area.is_in_group("asteroid"):

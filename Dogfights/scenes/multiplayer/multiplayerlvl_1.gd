@@ -18,12 +18,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (!SUN_added):
-		var instance = SUN.instantiate()
-		instance.position = Vector3(100.0, 100.0, 0.0)
-		instance.scale *= 1
-		get_parent().add_child(instance)
-		SUN_added = true
+	#if (!SUN_added):
+	#	var instance = SUN.instantiate()
+	#	instance.position = Vector3(100.0, 100.0, 0.0)
+	#	instance.scale *= 1
+	#	get_parent().add_child(instance)
+	#	SUN_added = true
 	if (x > 0) :
 		x -= 1
 		rockSpawn(Vector3(rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0), rng.randf_range(-50.0, 50.0)))

@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	if (x % 15 == 0):
 		move_ship_trail(exhaust)
 	if (x % 180 == 0) :
-		print("shot")
+		#print("shot")
 		shoot_laser(global_position, transform.basis)
 	if accelerating:
 		speed += acceleration * delta
@@ -53,12 +53,17 @@ func can_shoot() -> bool:
 
 func shoot_laser(pos, bas):
 	var instance = laser_scene.instantiate()
-	print(get_parent().name)
+	#print(get_parent().name)
 	instance.position = pos
 	#instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+	if get_parent().name == "multiplayerlvl_1":
+		rpc("rpc_shoot_laser",pos,bas)
 	
+@rpc func rpc_shoot_laser(pos,bas):
+	shoot_laser(pos,bas)
+
 func move_ship_trail(exhaust):
 	var pos = get_parent().get_node("npc").global_position
 	pos.x -= 30

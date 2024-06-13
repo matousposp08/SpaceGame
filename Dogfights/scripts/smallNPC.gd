@@ -46,8 +46,7 @@ func _physics_process(delta):
 		if target != null:
 			look_at(target.global_position)
 	else:
-		#look_at(get_parent().get_node("ship").global_position)
-		pass
+		look_at(get_parent().get_node("ship").global_position)
 	
 	position += transform.basis * Vector3(0,0,-SPEED) * delta
 	# Add the gravity.

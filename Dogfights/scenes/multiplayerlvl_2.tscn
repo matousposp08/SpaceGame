@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://daog8fdndt381"]
+[gd_scene load_steps=16 format=3 uid="uid://daog8fdndt381"]
 
 [ext_resource type="Script" path="res://scripts/multiplayerlvl_2.gd" id="1_ksvd2"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="2_amlgn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="6_ikolp"]
 [ext_resource type="PackedScene" uid="uid://cu8ag46rc8qju" path="res://scenes/multiplayer/multiplayer_ops.tscn" id="7_242dh"]
 [ext_resource type="PackedScene" uid="uid://b5kk818wngo17" path="res://scenes/worm_hole.tscn" id="7_ylgyp"]
+[ext_resource type="PackedScene" uid="uid://dfoo45pcvssu2" path="res://scenes/ready_up.tscn" id="8_dyxow"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5du2"]
 panorama = ExtResource("2_amlgn")
@@ -74,6 +75,9 @@ properties/4/replication_mode = 1
 properties/5/path = NodePath("smallNPC12:position")
 properties/5/spawn = true
 properties/5/replication_mode = 1
+properties/6/path = NodePath("readyUp:visible")
+properties/6/spawn = true
+properties/6/replication_mode = 1
 
 [node name="multiplayerlvl_2" type="Node3D"]
 script = ExtResource("1_ksvd2")
@@ -125,6 +129,8 @@ transform = Transform3D(0.05, -1.74393e-17, 1.74393e-17, 1.74393e-17, 0.05, -1.7
 
 [node name="WormHole" parent="." instance=ExtResource("7_ylgyp")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 713.566, 440.951, 1.12606)
+
+[node name="readyUp" parent="." instance=ExtResource("8_dyxow")]
 
 [node name="multiplayerOps" parent="." instance=ExtResource("7_242dh")]
 

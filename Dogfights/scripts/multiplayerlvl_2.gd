@@ -23,23 +23,34 @@ func _ready():
 func _process(delta):
 	y += 1
 	if y % 480 == 0:
-		spawnNPC()
+		var x = randi_range(0,2)
+		spawnNPC(p[x])
 	
 	if (!SUN_added):
-		var instance = SUN.instantiate()
-		instance.position = Vector3(100.0, 100.0, 0.0)
-		instance.scale *= 1
-		get_parent().add_child(instance)
-		SUN_added = true
+		sun()
 	if (x > 0) :
 		x -= 1
 		rockSpawn(Vector3(rng.randf_range(-50.0, 350.0), rng.randf_range(-50.0, 350.0), rng.randf_range(-50.0, 350.0)))
 
-func spawnNPC():
+func sun():
+	var instance = SUN.instantiate()
+	instance.position = Vector3(100.0, 100.0, 0.0)
+	instance.scale *= 1
+	get_parent().add_child(instance)
+	SUN_added = true
+	rpc("rpc_sun")
+
+@rpc func rpc_sun():
+	sun()
+
+func spawnNPC(pos):
 	var instance = NPC.instantiate()
-	var x = randi_range(0,2)
-	instance.position = p[x]
+	instance.position = pos
 	add_child(instance)
+	rpc("rpc_spawnNPC",pos)
+
+@rpc func rpc_spawnNPC(pos):
+	spawnNPC(pos)
 
 func rockSpawn(pos: Vector3):
 	var random_rock_type = rng.randi_range(0, 1)
@@ -47,3 +58,7 @@ func rockSpawn(pos: Vector3):
 	instance.position = pos
 	instance.scale *= rng.randi_range(5, 15)
 	get_parent().add_child(instance)
+	rpc("rpc_rockSpawn",pos)
+
+@rpc func rpc_rockSpawn(pos):
+	rockSpawn(pos)
