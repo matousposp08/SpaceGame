@@ -63,6 +63,6 @@ theme_override_font_sizes/font_size = 30
 text = "Next Level"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="return" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="nextlevel" to="." method="_on_nextlevel_pressed"]
