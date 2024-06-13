@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1e8mj4fchr0u"]
+[gd_scene load_steps=17 format=3 uid="uid://d1e8mj4fchr0u"]
 
 [ext_resource type="Script" path="res://lvl_3.gd" id="1_iirdq"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_t57cj"]
 [ext_resource type="PackedScene" uid="uid://q3misfv5wrv3" path="res://scenes/asteroid_scenes/asteroids.tscn" id="2_722kd"]
 [ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="3_8pex0"]
+[ext_resource type="PackedScene" uid="uid://demdu0l3p4tmx" path="res://scenes/small_npc.tscn" id="5_b5maw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bejmh"]
 panorama = ExtResource("1_t57cj")
@@ -128,6 +129,15 @@ theme_override_font_sizes/font_size = 100
 text = "YOU WON 
 YESSIR SKIBIDI"
 horizontal_alignment = 1
+
+[node name="smallNPC" parent="." instance=ExtResource("5_b5maw")]
+transform = Transform3D(-0.0499968, 1.72413e-17, -0.000564607, 1.74393e-17, 0.05, -1.74393e-17, 0.000564607, -1.76351e-17, -0.0499968, 0, 0, -20.1398)
+
+[node name="smallNPC2" parent="." instance=ExtResource("5_b5maw")]
+transform = Transform3D(-0.0497057, 1.92261e-17, 0.00541732, 1.74393e-17, 0.05, -1.74393e-17, -0.00541732, -1.54472e-17, -0.0497057, 5.48439, 0, -18.4232)
+
+[node name="smallNPC3" parent="." instance=ExtResource("5_b5maw")]
+transform = Transform3D(-0.0499986, 1.73088e-17, -0.000372629, 1.74393e-17, 0.05, -1.74393e-17, 0.000372629, -1.75688e-17, -0.0499986, -5.64964, 0, -19.0595)
 
 [connection signal="area_entered" from="MeshInstance3D/fo/check4" to="." method="_on_check_4_area_entered"]
 [connection signal="area_entered" from="MeshInstance3D4/tre/check3" to="." method="_on_check_3_area_entered"]
