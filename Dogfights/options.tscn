@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv034x4j6i4t5"]
+[gd_scene load_steps=4 format=3 uid="uid://dwnv5vi5pqhdo"]
 
 [ext_resource type="Script" path="res://options.gd" id="1_d7mee"]
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_rercj"]
@@ -29,4 +29,12 @@ offset_bottom = 364.0
 value = 10.0
 rounded = true
 
+[node name="Back" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 67.0
+offset_right = 232.0
+offset_bottom = 110.0
+text = "Back"
+
 [connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
