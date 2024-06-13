@@ -12,12 +12,11 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/lvlselect.tscn")
+	get_tree().change_scene_to_file("res://scenes/multiplayerlvl_1.tscn")
 
 
 func _on_button_2_pressed():
-	get_tree().change_scene_to_file("res://scenes/multilvlselect.tscn")
+	get_tree().change_scene_to_file("res://scenes/multiplayerlvl_2.tscn")
 
-
-func _on_button_3_pressed():
-	get_tree().change_scene_to_file("res://options.tscn")
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://menu.tscn")

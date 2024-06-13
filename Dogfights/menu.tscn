@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://vq8c3ymtfknj"]
+[gd_scene load_steps=23 format=3 uid="uid://vq8c3ymtfknj"]
 
 [ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_5asoa"]
 [ext_resource type="PackedScene" uid="uid://cvpkbofikuto7" path="res://plane.tscn" id="1_ed7my"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="4_mr8k5"]
 [ext_resource type="PackedScene" uid="uid://co535kb5mnsby" path="res://models/asteroids/Asteroids.glb" id="5_fatki"]
 [ext_resource type="PackedScene" uid="uid://b6kjpa6ypagg6" path="res://scenes/sun.glb" id="7_ntphl"]
+[ext_resource type="AudioStream" uid="uid://ds48il73f7lmm" path="res://music/standby.mp3" id="8_kmpyt"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_miglh"]
 
@@ -101,6 +102,7 @@ transform = Transform3D(-0.928135, 0, 0.372243, 0, 1, 0, -0.372243, 0, -0.928135
 current = true
 
 [node name="PlaneUI" parent="." instance=ExtResource("2_0gnub")]
+position = Vector2(-8, 0)
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -143,3 +145,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.44125, 3.56019, 14.1793)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("7_ntphl")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.2529, 0, 35.8083)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kmpyt")
+autoplay = true
