@@ -72,6 +72,20 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 03"
 
+[node name="Button4" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 402.0
+offset_right = 634.0
+offset_bottom = 433.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "LEVEL 04
+"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

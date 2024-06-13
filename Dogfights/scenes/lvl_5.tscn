@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://t2dmewcab3jd"]
+
+[ext_resource type="Texture2D" uid="uid://gqdtxl4r2dox" path="res://textures/SolAsteroidBeltHDRI.png" id="1_p6f66"]
+[ext_resource type="PackedScene" uid="uid://b443ceba685uv" path="res://scenes/ship.tscn" id="2_4rxfh"]
+[ext_resource type="FontFile" uid="uid://ctej8a0x0iyec" path="res://textures/JudgeExpanded-7BxGB.ttf" id="3_iewo1"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mbu3m"]
+panorama = ExtResource("1_p6f66")
+
+[sub_resource type="Sky" id="Sky_6eomh"]
+sky_material = SubResource("PanoramaSkyMaterial_mbu3m")
+
+[sub_resource type="Environment" id="Environment_e05r3"]
+background_mode = 2
+sky = SubResource("Sky_6eomh")
+
+[sub_resource type="Animation" id="Animation_o55r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_51x4b"]
+resource_name = "fade2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.4, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qydi2"]
+_data = {
+"RESET": SubResource("Animation_o55r7"),
+"fade2": SubResource("Animation_51x4b")
+}
+
+[node name="Lvl_5" type="Node3D"]
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(0.688355, 0.526168, -0.499315, 0, 0.688355, 0.725374, 0.725374, -0.499315, 0.473832, 0, 4.53081, 38.4584)
+light_energy = 0.5
+light_angular_distance = 89.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenery"]
+environment = SubResource("Environment_e05r3")
+
+[node name="ship" parent="." instance=ExtResource("2_4rxfh")]
+transform = Transform3D(0.104255, 0, 0, 0, 0.104255, 0, 0, 0, 0.104255, -154.443, -0.271992, 0.896716)
+
+[node name="level5" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 322.0
+offset_top = 266.0
+offset_right = 817.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("3_iewo1")
+theme_override_font_sizes/font_size = 150
+text = "LEVEL 5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level5"]
+libraries = {
+"": SubResource("AnimationLibrary_qydi2")
+}
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]

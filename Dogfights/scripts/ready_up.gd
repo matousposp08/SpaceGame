@@ -3,7 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer.playing = true
+	#$AudioStreamPlayer.playing = true
 	get_tree().paused = true
 
 

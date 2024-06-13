@@ -17,6 +17,7 @@ var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
 var BLAST : PackedScene = preload('res://scenes/blast_shot.tscn')
 var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
+var SUCCESS : PackedScene = preload('res://scenes/success.tscn')
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -183,3 +184,8 @@ func _on_area_3d_area_entered(area):
 			heal(30)
 		if area.is_in_group("strength"):
 			strength = 5
+		if area.is_in_group("black_hole"):
+			damage(health + shield) #this basically kills the player
+		if area.is_in_group("wormhole"):
+			var instance = SUCCESS.instantiate()
+			get_parent().add_child(instance)
