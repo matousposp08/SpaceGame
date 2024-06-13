@@ -37,4 +37,4 @@ func rockSpawn(pos: Vector3):
 	var instance = ROCKS[random_rock_type].instantiate()
 	instance.position = pos
 	instance.scale *= rng.randi_range(1, 5)
-	get_parent().add_child(instance)
+	get_parent().add_child(instance) 

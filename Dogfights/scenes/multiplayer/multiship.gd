@@ -110,17 +110,17 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot"):
 		charge += 1
 	if Input.is_action_just_released("shoot") and charge > 40:
-		chargeShot(position, transform.basis)
+		chargeShot(global_position, transform.basis)
 		charge = 0
 	elif Input.is_action_just_released("shoot"):
 		charge = 0
-		laser(position, transform.basis)
+		laser(global_position, transform.basis)
 	
 	rotation_degrees.y -= xvel
 	if rotation_degrees.x < 87 or rotation_degrees.x > -87:
 		rotation_degrees.x += yvel
 	if (Input.is_action_just_pressed("shoot")):
-		laser(position, transform.basis)
+		laser(global_position, transform.basis)
 	
 	move_and_slide()
 	
@@ -157,6 +157,10 @@ func chargeShot(pos, bas):
 	instance.transform.basis = bas
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+	rpc("rpc_chargeShot",pos, bas)
+
+@rpc func rpc_chargeShot(pos, bas):
+	chargeShot(pos,bas)
 
 func death(pos, bas):
 	var instance = DEATH.instantiate()
@@ -166,6 +170,8 @@ func death(pos, bas):
 	instance.emitting = true
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)
+
+
 
 func damage(num):
 	if shield < num and shield > 0:
@@ -181,14 +187,14 @@ func _on_Timer_timeout():
 	pass
 
 func _on_area_3d_area_entered(area):
-	print(area.get_groups())
+	#print(area.get_groups())
 	if not area.is_in_group(name):
 		if area.is_in_group("laser"):
 			damage(2)
 		if area.is_in_group("asteroid"):
 			health -= 20
 		if area.is_in_group("charge"):
-			print(area.get_groups())
+			#print(area.get_groups())
 			damage(20)
 		if area.is_in_group("blast"):
 			damage(50)
