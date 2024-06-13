@@ -75,6 +75,8 @@ func laser(pos, bas):
 	instance.add_to_group(name)
 	instance.position = pos
 	instance.transform.basis = bas
+	instance.get_node("Area3D").add_to_group(name)
+	instance.get_node("Area3D2").add_to_group(name)
 	instance.SPEED *= -1
 	#print(str(position) + " " + str(instance.position))
 	get_parent().add_child(instance)

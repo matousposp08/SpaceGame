@@ -49,13 +49,19 @@ func blow(pos):
 
 func _on_area_3d_area_entered(area):
 	print("n: " + str(area.get_groups()))
-	if not area.is_in_group("laser"):
+	if not is_in_group("player"):
+		if area.is_in_group("player"):
+			destroy()
+	elif not area.is_in_group("laser"):
 		destroy()
 
 
 func _on_area_3d_2_area_entered(area):
 	print("n: " + str(area.get_groups()))
-	if not area.is_in_group("laser"):
+	if not is_in_group("player"):
+		if area.is_in_group("player"):
+			destroy()
+	elif not area.is_in_group("laser"):
 		destroy()
 
 

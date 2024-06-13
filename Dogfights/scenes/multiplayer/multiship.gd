@@ -187,11 +187,12 @@ func _on_Timer_timeout():
 
 func _on_area_3d_area_entered(area):
 	#if is_multiplayer_authority(): return
-	print(name + " " + str(area.get_groups()))
+	if get_multiplayer_authority() != 1:
+		print("z: " + str(get_multiplayer_authority()))
+	#print(name + " " + str(area.get_groups()))
 	#print(area.get_groups())
 	#if not is_multiplayer_authority(): return
 	if not area.is_in_group("player"):
-		print("yeah")
 		if area.is_in_group("laser"):
 			damage(2)
 		if area.is_in_group("asteroid"):
