@@ -38,9 +38,9 @@ texture = ExtResource("1_55m06")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 474.0
-offset_top = 262.0
+offset_top = 263.0
 offset_right = 634.0
-offset_bottom = 293.0
+offset_bottom = 294.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
@@ -50,9 +50,9 @@ text = "LEVEL 01"
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 474.0
-offset_top = 311.0
+offset_top = 312.0
 offset_right = 634.0
-offset_bottom = 342.0
+offset_bottom = 343.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
@@ -62,9 +62,9 @@ text = "LEVEL 02"
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 474.0
-offset_top = 361.0
+offset_top = 358.0
 offset_right = 634.0
-offset_bottom = 392.0
+offset_bottom = 389.0
 theme_override_fonts/font = ExtResource("1_i3q8u")
 theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
@@ -85,7 +85,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
 text = "LEVEL 04
 "
 
+[node name="back" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 471.0
+offset_right = 580.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("1_i3q8u")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xftfn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_epdi6")
+text = "BACK
+"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
