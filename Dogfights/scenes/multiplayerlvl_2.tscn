@@ -78,9 +78,16 @@ properties/5/replication_mode = 1
 properties/6/path = NodePath("readyUp:visible")
 properties/6/spawn = true
 properties/6/replication_mode = 1
+properties/7/path = NodePath("update:text")
+properties/7/spawn = true
+properties/7/replication_mode = 1
 
 [node name="multiplayerlvl_2" type="Node3D"]
 script = ExtResource("1_ksvd2")
+
+[node name="update" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Scenery2" type="Node3D" parent="."]
 

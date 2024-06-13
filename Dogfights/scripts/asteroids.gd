@@ -69,4 +69,7 @@ func impactGen(pos: Vector3):
 func _on_area_3d_area_entered(area):
 	print(area.get_parent().name)
 	if area.is_in_group("player") or area.is_in_group("enemy") or area.is_in_group("laser") or area.is_in_group("charge") or area.is_in_group("blastshot"):
+		if area.is_in_group("player"):
+			print(get_parent().name)
+			get_parent().get_node("multiplayerlvl_2/update").text = area.get_parent().name + " asteroid " + str(randi_range(0,1000))
 		explode()

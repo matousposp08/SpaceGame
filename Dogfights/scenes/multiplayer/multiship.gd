@@ -16,6 +16,7 @@ var old = ""
 var LASER : PackedScene = preload('res://scenes/laser.tscn')
 var CHARGE : PackedScene = preload('res://scenes/charge_shot.tscn')
 var DEATH : PackedScene = preload('res://scenes/planeblowup.tscn')
+var SUCCESS : PackedScene = preload('res://scenes/success.tscn')
 
 @onready var camera = $Camera3D
 
@@ -63,6 +64,9 @@ func _physics_process(delta):
 				boostpower = 900
 			if p[1] == "enemyship":
 				damage(30)
+			if p[1] == "wormhole":
+				var instance = SUCCESS.instantiate()
+				get_parent().add_child(instance)
 			get_parent().get_parent().get_node("update").text  = ""
 			p = []
 	if health <= 0 and alive:
